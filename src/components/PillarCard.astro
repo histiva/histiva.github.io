@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon/components';
+interface Props {
+  index: string;
+  iconName: string;
+  title: string;
+  body: string;
+  href?: string;
+  learnMoreLabel?: string;
+}
+const { index, iconName, title, body, href, learnMoreLabel } = Astro.props;
+---
+<article class="bg-white border border-slate-200 rounded-xl p-6 hover:border-primary-500 transition-colors flex flex-col">
+  <div class="flex items-center gap-3 mb-4">
+    <span class="text-xs font-bold tracking-[0.12em] text-ink-600">{index}</span>
+    <Icon name={iconName} size={22} class="text-primary-700" />
+  </div>
+  <h3 class="text-lg text-primary-900 mb-2">{title}</h3>
+  <p class="text-sm text-ink-600 leading-relaxed flex-1">{body}</p>
+  {href && learnMoreLabel && (
+    <a href={href} class="mt-4 text-sm font-semibold text-primary-700 inline-flex items-center gap-1">
+      {learnMoreLabel} <span aria-hidden="true">→</span>
+    </a>
+  )}
+</article>

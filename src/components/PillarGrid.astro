@@ -1,0 +1,26 @@
+---
+import PillarCard from './PillarCard.astro';
+import { type Locale, t, localizedPath } from '~/i18n/utils';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const pillars = [
+  { index: '01', iconName: 'lucide:brain-circuit', titleKey: 'pillars.ai.title', bodyKey: 'pillars.ai.body', href: '/ai' },
+  { index: '02', iconName: 'lucide:smartphone', titleKey: 'pillars.mobile.title', bodyKey: 'pillars.mobile.body', href: '/product' },
+  { index: '03', iconName: 'lucide:globe', titleKey: 'pillars.standards.title', bodyKey: 'pillars.standards.body', href: '/product' },
+  { index: '04', iconName: 'lucide:shield-check', titleKey: 'pillars.security.title', bodyKey: 'pillars.security.body', href: '/product' },
+];
+---
+<section class="container-page py-12">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    {pillars.map((p) => (
+      <PillarCard
+        index={p.index}
+        iconName={p.iconName}
+        title={t(p.titleKey, locale)}
+        body={t(p.bodyKey, locale)}
+        href={localizedPath(p.href, locale)}
+        learnMoreLabel={t('common.learn_more', locale)}
+      />
+    ))}
+  </div>
+</section>

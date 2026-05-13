@@ -12,7 +12,8 @@
   },
   "common": {
     "schedule_demo": "Schedule a demo",
-    "for_donors": "For donors"
+    "for_donors": "For donors",
+    "learn_more": "Learn more"
   },
   "banner": {
     "translation_pending": "Translation in progress. Showing English content."
@@ -33,5 +34,23 @@
     "learn_more": "Learn more",
     "accept": "Accept",
     "decline": "Decline"
+  },
+  "pillars": {
+    "ai": {
+      "title": "AI-Powered",
+      "body": "Cloud or local LLM. Triage suggestions, clinical summaries, decision support — running offline when needed."
+    },
+    "mobile": {
+      "title": "Mobile-first",
+      "body": "Any browser, any device. From doctors' phones to nurses' aging tablets."
+    },
+    "standards": {
+      "title": "Standards-compliant",
+      "body": "HL7/FHIR-ready, ICD-10, multilingual. Interoperable with international healthcare tooling."
+    },
+    "security": {
+      "title": "Secure & auditable",
+      "body": "Role-based access, full audit trail, row-level security, KVKK/GDPR-ready data model."
+    }
   }
 }
