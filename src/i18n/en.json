@@ -16,5 +16,15 @@
   },
   "banner": {
     "translation_pending": "Translation in progress. Showing English content."
+  },
+  "footer": {
+    "tagline": "A nonprofit hospital information system for low-resource clinics.",
+    "about": "About",
+    "connect": "Connect",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "license": "Apache-2.0 (HBYS source)",
+    "builtwith": "Built with Astro",
+    "opensource": "Open source on GitHub"
   }
 }
