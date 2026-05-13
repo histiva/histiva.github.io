@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "product": "Product",
+    "ai": "AI",
+    "for_hospitals": "For Hospitals",
+    "for_donors": "For Donors",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "common": {
+    "schedule_demo": "Schedule a demo",
+    "for_donors": "For donors"
+  }
+}
