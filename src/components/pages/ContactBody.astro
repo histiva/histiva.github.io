@@ -9,7 +9,7 @@ import Analytics from '~/components/Analytics.astro';
 import ContactForm from '~/components/ContactForm.astro';
 import { type Locale, t } from '~/i18n/utils';
 
-interface Props { locale: Locale; defaultInterest?: 'hospital' | 'donor' | 'press' | 'opensource' | 'other'; }
+interface Props { locale: Locale; defaultInterest?: 'hospital' | 'donor' | 'press' | 'other'; }
 const { locale, defaultInterest = 'hospital' } = Astro.props;
 const pathname = Astro.url.pathname;
 ---

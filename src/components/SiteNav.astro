@@ -1,7 +1,6 @@
 ---
 import { type Locale, t, localizedPath } from '~/i18n/utils';
 import LanguageSwitcher from './LanguageSwitcher.astro';
-import { Icon } from 'astro-icon/components';
 interface Props { locale: Locale; pathname: string; }
 const { locale, pathname } = Astro.props;
 const navItems = [
@@ -23,9 +22,6 @@ const navItems = [
     </ul>
     <div class="flex items-center gap-2">
       <LanguageSwitcher current={locale} pathname={pathname} />
-      <a href="https://github.com/histiva" rel="noopener" class="p-2 rounded-md hover:bg-primary-100" aria-label="GitHub">
-        <Icon name="lucide:github" size={18} />
-      </a>
     </div>
   </nav>
 </header>

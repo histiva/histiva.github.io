@@ -1,6 +1,6 @@
 ---
 import { type Locale, t, localizedPath } from '~/i18n/utils';
-interface Props { locale: Locale; defaultInterest?: 'hospital' | 'donor' | 'press' | 'opensource' | 'other'; }
+interface Props { locale: Locale; defaultInterest?: 'hospital' | 'donor' | 'press' | 'other'; }
 const { locale, defaultInterest = 'hospital' } = Astro.props;
 const endpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
 const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PUBLIC_SITE_URL ?? 'https://histiva.github.io').toString();
@@ -44,7 +44,6 @@ const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PU
           <option value="hospital" selected={defaultInterest === 'hospital'}>{t('form.interest_hospital', locale)}</option>
           <option value="donor" selected={defaultInterest === 'donor'}>{t('form.interest_donor', locale)}</option>
           <option value="press" selected={defaultInterest === 'press'}>{t('form.interest_press', locale)}</option>
-          <option value="opensource" selected={defaultInterest === 'opensource'}>{t('form.interest_opensource', locale)}</option>
           <option value="other" selected={defaultInterest === 'other'}>{t('form.interest_other', locale)}</option>
         </select>
       </label>

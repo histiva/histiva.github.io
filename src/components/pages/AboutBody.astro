@@ -16,7 +16,7 @@ const pathname = Astro.url.pathname;
 const entry = await getEntry('pages', 'abouten');
 const { Content } = await render(entry!);
 
-const principleKeys = ['opensource', 'clinician_led', 'privacy_default', 'low_resource_tested', 'nonprofit_governed', 'ai_guardrails'] as const;
+const principleKeys = ['auditable', 'clinician_led', 'privacy_default', 'low_resource_tested', 'nonprofit_governed', 'ai_guardrails'] as const;
 ---
 <Layout title={t('about.meta_title', locale)} description={t('about.meta_description', locale)} locale={locale}>
   <TopRibbon slot="ribbon" locale={locale} />

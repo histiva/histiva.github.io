@@ -24,9 +24,8 @@
     "connect": "Connect",
     "legal": "Legal",
     "privacy": "Privacy",
-    "license": "Apache-2.0 (HBYS source)",
     "builtwith": "Built with Astro",
-    "opensource": "Open source on GitHub"
+    "proprietary": "Proprietary software, nonprofit governed"
   },
   "cookie": {
     "title": "We use cookies for analytics",
@@ -142,7 +141,6 @@
     "interest_hospital": "Bring Histiva to our clinic",
     "interest_donor": "Sponsor a deployment",
     "interest_press": "Press inquiry",
-    "interest_opensource": "Contribute / open source",
     "interest_other": "Other",
     "message": "Message",
     "consent": "I consent to Histiva storing my submission to respond.",
@@ -179,7 +177,7 @@
     "hero_title": "A hospital system for the clinics that need it most.",
     "hero_subtitle": "Histiva is operated by a small working group of clinicians and engineers, supported by donors who believe modern hospital software shouldn't be a luxury.",
     "principles_title": "What we hold to",
-    "principle_opensource": { "title": "Open-source first", "body": "Code is published. Trust through visibility." },
+    "principle_auditable": { "title": "Auditable by design", "body": "Every patient-record action logged. Every clinical decision traceable." },
     "principle_clinician_led": { "title": "Clinician-led", "body": "Every feature passes a real clinician's smell test." },
     "principle_privacy_default": { "title": "Privacy by default", "body": "Patient data stays where the hospital wants it." },
     "principle_low_resource_tested": { "title": "Low-resource tested", "body": "If it doesn't work on an old tablet over flaky wifi, it's not done." },
@@ -196,9 +194,9 @@
     "meta_title": "Thanks for reaching out",
     "meta_description": "Your message has been received.",
     "title": "Thanks for reaching out.",
-    "body": "We received your message and will respond within 3 business days. In the meantime, feel free to explore the project on GitHub or read the AI deep-dive.",
+    "body": "We received your message and will respond within 3 business days. In the meantime, feel free to read the AI deep-dive or learn how a deployment unfolds.",
     "home": "Back to home",
-    "github": "Histiva on GitHub"
+    "learn_more": "How deployment works"
   },
   "privacy": {
     "meta_title": "Privacy · Histiva",

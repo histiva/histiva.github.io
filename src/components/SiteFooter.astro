@@ -23,14 +23,12 @@ const year = new Date().getFullYear();
       <p class="text-xs uppercase tracking-wider text-primary-100/80 mb-3">{t('footer.connect', locale)}</p>
       <ul class="space-y-2 text-sm">
         <li><a href={localizedPath('/contact', locale)} class="text-white hover:underline">{t('nav.contact', locale)}</a></li>
-        <li><a href="https://github.com/histiva" rel="noopener" class="text-white hover:underline">GitHub</a></li>
       </ul>
     </div>
     <div>
       <p class="text-xs uppercase tracking-wider text-primary-100/80 mb-3">{t('footer.legal', locale)}</p>
       <ul class="space-y-2 text-sm">
         <li><a href={localizedPath('/privacy', locale)} class="text-white hover:underline">{t('footer.privacy', locale)}</a></li>
-        <li class="text-primary-100/90">{t('footer.license', locale)}</li>
       </ul>
       <div class="mt-4"><LanguageSwitcher current={locale} pathname={pathname} onDark /></div>
     </div>
@@ -38,7 +36,7 @@ const year = new Date().getFullYear();
   <div class="border-t border-primary-700/40">
     <div class="container-page py-4 text-xs text-primary-100/90 flex flex-wrap items-center justify-between gap-2">
       <span>© {year} Histiva · {t('footer.builtwith', locale)}</span>
-      <span>{t('footer.opensource', locale)}</span>
+      <span>{t('footer.proprietary', locale)}</span>
     </div>
   </div>
 </footer>
