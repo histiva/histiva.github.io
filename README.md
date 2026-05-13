@@ -1,5 +1,7 @@
 # Histiva Marketing Site
 
+**Status:** Live at https://histiva.github.io/ since 2026-05-13.
+
 Static marketing site for Histiva — a nonprofit hospital information system for low-resource clinics.
 
 **Production:** https://histiva.github.io/

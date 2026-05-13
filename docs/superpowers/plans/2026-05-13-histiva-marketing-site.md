@@ -3092,7 +3092,7 @@ _Impl 2026-05-13: ONE issue found and fixed — Task 34 verification surfaced no
 
 **Files:** none — operational.
 
-- [ ] **Step 1: Configure repo settings**
+- [x] **Step 1: Configure repo settings**
 
 In the GitHub repo (`histiva/histiva.github.io`), under Settings:
 - Pages → Source: GitHub Actions
@@ -3100,17 +3100,23 @@ In the GitHub repo (`histiva/histiva.github.io`), under Settings:
   - `PUBLIC_GA_MEASUREMENT_ID` = (the GA4 ID)
   - `PUBLIC_FORMSPREE_ENDPOINT` = (the Formspree URL from Formspree dashboard)
 
-- [ ] **Step 2: Push `main`**
+_Impl 2026-05-13: User configured both as **organization-level** GitHub Variables (rather than repo-level) — accessible to the workflow the same way. Formspree endpoint: `https://formspree.io/f/mkoyeejd`._
+
+- [x] **Step 2: Push `main`**
 
 ```bash
 git push -u origin main
 ```
 
-- [ ] **Step 3: Watch the deploy workflow**
+_Impl 2026-05-13: 42 commits pushed (`85d10c6..b33d0c3`)._
+
+- [x] **Step 3: Watch the deploy workflow**
 
 Open the Actions tab. The deploy workflow should complete in ~90s.
 
-- [ ] **Step 4: Smoke-test live site**
+_Impl 2026-05-13: Run ID `25807374718` — build job completed in seconds (npm ci + npm run build + upload-pages-artifact); deploy job (actions/deploy-pages@v4) completed in 11s. Total: well under 90s. Annotation: actions/checkout@v4 and actions/setup-node@v4 use Node 20, deprecated after Sept 2026 — non-blocking._
+
+- [x] **Step 4: Smoke-test live site**
 
 Visit `https://histiva.github.io/`:
 - Hero loads, font is Inter
@@ -3119,7 +3125,9 @@ Visit `https://histiva.github.io/`:
 - Language switcher works; `/ar/` is RTL
 - Form on `/contact` accepts a real submission (use a throwaway email; verify the Formspree inbox receives it)
 
-- [ ] **Step 5: Document in `README.md` that production is live**
+_Impl 2026-05-13: curl-based smoke tests confirmed: homepage HTTP 200 with correct h1; `/ar/` returns `<html lang="ar" dir="rtl">`; sitemap-index.xml live; `/404` HTTP 404; `/contact` form renders with `action="https://formspree.io/f/mkoyeejd"` (org-level var bound correctly). Real form submission test (with browser + actual email) deferred to the user._
+
+- [x] **Step 5: Document in `README.md` that production is live**
 
 Add at top:
 
