@@ -85,6 +85,12 @@
       "billing": { "title": "Billing & Cashier", "body": "Invoices, payments, receipts." }
     }
   },
+  "home": {
+    "meta_title": "Hospital records, everywhere they're needed",
+    "meta_description": "A modern, AI-powered hospital information system for nonprofit clinics in low-resource settings — modular, mobile-ready, and built to international healthcare standards.",
+    "hero_title": "Hospital records, everywhere they're needed.",
+    "hero_subtitle": "A modern, AI-powered hospital information system for nonprofit clinics in low-resource settings — modular, mobile-ready, and built to international healthcare standards."
+  },
   "form": {
     "name": "Your name",
     "email": "Email",

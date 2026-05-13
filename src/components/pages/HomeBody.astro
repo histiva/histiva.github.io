@@ -1,0 +1,47 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import TopRibbon from '~/components/TopRibbon.astro';
+import SiteNav from '~/components/SiteNav.astro';
+import SiteFooter from '~/components/SiteFooter.astro';
+import TranslationBanner from '~/components/TranslationBanner.astro';
+import CookieBanner from '~/components/CookieBanner.astro';
+import Analytics from '~/components/Analytics.astro';
+import Hero from '~/components/Hero.astro';
+import PillarGrid from '~/components/PillarGrid.astro';
+import StorySection from '~/components/StorySection.astro';
+import ModuleGrid from '~/components/ModuleGrid.astro';
+import TwoPathCTA from '~/components/TwoPathCTA.astro';
+import { type Locale, t, localizedPath } from '~/i18n/utils';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+<Layout title={t('home.meta_title', locale)} description={t('home.meta_description', locale)} locale={locale}>
+  <TopRibbon slot="ribbon" locale={locale} />
+  <SiteNav slot="nav" locale={locale} pathname={pathname} />
+  <TranslationBanner slot="translation-banner" locale={locale} />
+
+  <Hero
+    title={t('home.hero_title', locale)}
+    subtitle={t('home.hero_subtitle', locale)}
+    primaryCta={{ label: t('common.schedule_demo', locale), href: localizedPath('/contact', locale) }}
+    secondaryCta={{ label: t('common.for_donors', locale), href: localizedPath('/for-donors', locale) }}
+  />
+
+  <PillarGrid locale={locale} />
+
+  <StorySection
+    eyebrow={t('story.eyebrow', locale)}
+    title={t('story.title', locale)}
+    body={t('story.body', locale)}
+  />
+
+  <ModuleGrid locale={locale} />
+
+  <TwoPathCTA locale={locale} />
+
+  <SiteFooter slot="footer" locale={locale} pathname={pathname} />
+  <CookieBanner slot="cookie-banner" locale={locale} />
+  <Analytics slot="analytics" />
+</Layout>
