@@ -1,0 +1,71 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import TopRibbon from '~/components/TopRibbon.astro';
+import SiteNav from '~/components/SiteNav.astro';
+import SiteFooter from '~/components/SiteFooter.astro';
+import TranslationBanner from '~/components/TranslationBanner.astro';
+import CookieBanner from '~/components/CookieBanner.astro';
+import Analytics from '~/components/Analytics.astro';
+import Hero from '~/components/Hero.astro';
+import ContactForm from '~/components/ContactForm.astro';
+import { type Locale, t, localizedPath } from '~/i18n/utils';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+<Layout title={t('for_donors.meta_title', locale)} description={t('for_donors.meta_description', locale)} locale={locale}>
+  <TopRibbon slot="ribbon" locale={locale} />
+  <SiteNav slot="nav" locale={locale} pathname={pathname} />
+  <TranslationBanner slot="translation-banner" locale={locale} />
+
+  <Hero
+    eyebrow={t('for_donors.eyebrow', locale)}
+    title={t('for_donors.hero_title', locale)}
+    subtitle={t('for_donors.hero_subtitle', locale)}
+    primaryCta={{ label: t('for_donors.cta', locale), href: localizedPath('/contact', locale) }}
+  />
+
+  <section class="container-page py-12">
+    <h2 class="text-2xl text-primary-900 mb-6">{t('for_donors.funds_title', locale)}</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {['install', 'training', 'support', 'development'].map((key) => (
+        <article class="bg-white border border-slate-200 rounded-xl p-5">
+          <p class="text-xl font-bold text-success-700">$—</p>
+          <h3 class="text-base text-primary-900 mt-1">{t(`for_donors.fund_${key}.title`, locale)}</h3>
+          <p class="text-sm text-ink-600 mt-1">{t(`for_donors.fund_${key}.body`, locale)}</p>
+        </article>
+      ))}
+    </div>
+    <p class="text-xs text-ink-600 mt-3 italic">{t('for_donors.funds_note', locale)}</p>
+  </section>
+
+  <section class="container-page py-8">
+    <h2 class="text-2xl text-primary-900 mb-6">{t('for_donors.tiers_title', locale)}</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      {['individual', 'partner', 'implementation'].map((key) => (
+        <article class="bg-success-50 border border-emerald-200 rounded-xl p-5">
+          <h3 class="text-lg text-success-700">{t(`for_donors.tier_${key}.title`, locale)}</h3>
+          <p class="text-sm text-ink-900 mt-2 leading-relaxed">{t(`for_donors.tier_${key}.body`, locale)}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-page py-8">
+    <div class="bg-primary-100/40 rounded-xl p-6 max-w-3xl">
+      <p class="text-xs uppercase tracking-[0.12em] text-primary-700 font-semibold">{t('for_donors.transparency_eyebrow', locale)}</p>
+      <h3 class="text-xl text-primary-900 mt-1">{t('for_donors.transparency_title', locale)}</h3>
+      <p class="text-ink-600 mt-2">{t('for_donors.transparency_body', locale)}</p>
+    </div>
+  </section>
+
+  <section class="container-page py-12">
+    <h2 class="text-2xl text-primary-900 mb-4">{t('for_donors.cta_title', locale)}</h2>
+    <ContactForm locale={locale} defaultInterest="donor" />
+  </section>
+
+  <SiteFooter slot="footer" locale={locale} pathname={pathname} />
+  <CookieBanner slot="cookie-banner" locale={locale} />
+  <Analytics slot="analytics" />
+</Layout>

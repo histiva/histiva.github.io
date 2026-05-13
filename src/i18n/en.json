@@ -149,5 +149,27 @@
     "privacy_link": "Privacy notice",
     "submit": "Send message",
     "endpoint_missing": "Contact form not configured yet. Please email contact@histiva.org directly."
+  },
+  "for_donors": {
+    "meta_title": "For Donors & Funders · Histiva",
+    "meta_description": "Fund a hospital deployment. Transparent cost breakdown, sponsorship tiers, and how to start.",
+    "eyebrow": "For donors & funders",
+    "hero_title": "Fund a hospital. Not a feature.",
+    "hero_subtitle": "Your support brings Histiva to one clinic — installation, training, and a year of support. Concrete impact, transparent numbers.",
+    "cta": "Start a conversation",
+    "funds_title": "What your support funds",
+    "fund_install": { "title": "Installation", "body": "Hardware sizing, on-site install, initial data load." },
+    "fund_training": { "title": "Training", "body": "Role-based workshops for clinicians, admin, and IT." },
+    "fund_support": { "title": "Year-one support", "body": "12 months of bug fixes, patches, and help-desk access." },
+    "fund_development": { "title": "Software development", "body": "Ongoing improvements that benefit every clinic in the program." },
+    "funds_note": "Per-line numbers finalized after the first full deployment closes its books — expected Q3 2026.",
+    "tiers_title": "Ways to engage",
+    "tier_individual": { "title": "Individual donor", "body": "Smaller contributions pool with others to fund a deployment. Recognized on the supporters page (with permission)." },
+    "tier_partner": { "title": "Partner foundation", "body": "Multi-clinic programs. Quarterly reports, named recognition, optional advisory seat." },
+    "tier_implementation": { "title": "Implementation sponsor", "body": "Fund a specific clinic end-to-end. Direct line to the deployment team, on-the-ground updates." },
+    "transparency_eyebrow": "Transparency",
+    "transparency_title": "Where the money goes — visible.",
+    "transparency_body": "Once our nonprofit legal entity is formed and the first annual financial report is published, that report will live on this page. Until then, every sponsorship engagement is documented in a private quarterly update shared with the funder.",
+    "cta_title": "Sponsor a deployment"
   }
 }
