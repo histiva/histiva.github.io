@@ -87,7 +87,7 @@ The Contact form is **one form**, with a hidden "interest type" select (default 
 
 **Localized routes:** `/tr/...`, `/fr/...`, `/ar/...` — same shells; v1 ships EN content only, others fall back to EN with a "Translation coming soon" banner.
 
-**Footer-only links:** Sitemap (`/sitemap-index.xml`), RSS (none v1), GitHub repo, License (Apache-2.0 or MIT — TBD with legal counsel; v1 footer says "Open source · Apache-2.0").
+**Footer-only links:** Sitemap (`/sitemap-index.xml`), RSS (none v1). Footer copyright row notes "Proprietary software, nonprofit governed" — HBYS is closed-source.
 
 **Excluded from v1** (Phase-2 candidates): Blog, Press, Case studies, Resources/Docs, Team detail pages, Roadmap, Careers.
 
@@ -161,10 +161,11 @@ Sections:
 ### 5.6 `/about` — Mission, team, history
 
 - Mission statement (3-4 paragraphs). The story of why Histiva exists. Written in plain language, no jargon.
-- Principles (5-6 short statements: open-source-first, clinician-led, privacy-by-default, low-resource-tested, nonprofit-governed, AI-with-guardrails).
+- Principles (5-6 short statements: auditable-by-design, clinician-led, privacy-by-default, low-resource-tested, nonprofit-governed, AI-with-guardrails).
 - Team — initially small (founders / core contributors). Photos + 1-line bios. Open to growth (v1 ships with whoever is on the team today).
 - Governance — nonprofit structure (when registered). Until then, generic: "Operated by the Histiva working group, in the process of forming a nonprofit legal entity." Specific framework (e.g., Türkiye dernek, US 501(c)(3), UK CIC) decided with counsel before launch — open question §17.
-- Open source — Apache-2.0 (default), link to GitHub org.
+
+_Resolved 2026-05-13: HBYS is closed-source proprietary. The earlier draft of this section included an "Open source — Apache-2.0" line; that has been removed from the live `/about` page (commit `a768b0b`). The principles grid swaps "open-source-first" for "auditable by design"._
 
 ### 5.7 `/contact` — Single form, dual-track
 
@@ -455,10 +456,11 @@ histiva.github.io/
 
 1. Legal entity name + jurisdiction for Privacy / About copy? (placeholder: "Histiva, a nonprofit in formation")
 2. Contact email address(es) — `contact@`, `privacy@`, `press@`?
-3. Apache-2.0 or MIT for the HBYS code license footer reference? Default Apache-2.0.
-4. First partner hospital — anonymized or named in launch copy? Need partner consent.
-5. OG image illustrator — DIY in Figma or use unDraw-derived templates? Default: unDraw-derived for v1.
-6. Cookie banner exact wording (legally-reviewable) — for v1, plain-language self-drafted; consider lawyer review pre-launch.
+3. First partner hospital — anonymized or named in launch copy? Need partner consent.
+4. OG image illustrator — DIY in Figma or use unDraw-derived templates? Default: unDraw-derived for v1.
+5. Cookie banner exact wording (legally-reviewable) — for v1, plain-language self-drafted; consider lawyer review pre-launch.
+
+_Resolved 2026-05-13: HBYS is closed-source proprietary. The original §3 ("Apache-2.0 or MIT for the HBYS code license") was based on an early assumption that the product would be open-source. That assumption no longer holds; the question is removed and footer copy ships as "Proprietary software, nonprofit governed" (commit `a768b0b`)._
 
 ---
 

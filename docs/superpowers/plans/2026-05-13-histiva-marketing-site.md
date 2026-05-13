@@ -1013,7 +1013,7 @@ const year = new Date().getFullYear();
   <div class="border-t border-primary-700/40">
     <div class="container-page py-4 text-xs opacity-70 flex flex-wrap items-center justify-between gap-2">
       <span>© {year} Histiva · {t('footer.builtwith', locale)}</span>
-      <span>{t('footer.opensource', locale)}</span>
+      <span>{t('footer.proprietary', locale)}</span>
     </div>
   </div>
 </footer>
@@ -1028,9 +1028,8 @@ const year = new Date().getFullYear();
   "connect": "Connect",
   "legal": "Legal",
   "privacy": "Privacy",
-  "license": "Apache-2.0 (HBYS source)",
   "builtwith": "Built with Astro",
-  "opensource": "Open source on GitHub"
+  "proprietary": "Proprietary software, nonprofit governed"
 }
 ```
 
@@ -1578,7 +1577,7 @@ git commit -m "feat: FAQItem + FAQList using native disclosure"
 ```astro
 ---
 import { type Locale, t, localizedPath } from '~/i18n/utils';
-interface Props { locale: Locale; defaultInterest?: 'hospital' | 'donor' | 'press' | 'opensource' | 'other'; }
+interface Props { locale: Locale; defaultInterest?: 'hospital' | 'donor' | 'press' | 'other'; }
 const { locale, defaultInterest = 'hospital' } = Astro.props;
 const endpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
 const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PUBLIC_SITE_URL ?? 'https://histiva.github.io').toString();
@@ -1621,7 +1620,6 @@ const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PU
         <option value="hospital" selected={defaultInterest === 'hospital'}>{t('form.interest_hospital', locale)}</option>
         <option value="donor" selected={defaultInterest === 'donor'}>{t('form.interest_donor', locale)}</option>
         <option value="press" selected={defaultInterest === 'press'}>{t('form.interest_press', locale)}</option>
-        <option value="opensource" selected={defaultInterest === 'opensource'}>{t('form.interest_opensource', locale)}</option>
         <option value="other" selected={defaultInterest === 'other'}>{t('form.interest_other', locale)}</option>
       </select>
     </label>
@@ -1663,7 +1661,6 @@ const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PU
   "interest_hospital": "Bring Histiva to our clinic",
   "interest_donor": "Sponsor a deployment",
   "interest_press": "Press inquiry",
-  "interest_opensource": "Contribute / open source",
   "interest_other": "Other",
   "message": "Message",
   "consent": "I consent to Histiva storing my submission to respond.",
@@ -2452,10 +2449,6 @@ We will publish full team biographies once our nonprofit legal entity is registe
 
 Operated by the Histiva working group, in the process of forming a nonprofit legal entity. The specific framework (Türkiye dernek, US 501(c)(3), UK CIC, or equivalent) is being decided with legal counsel based on where the first major funding originates and which jurisdiction is most efficient for the clinics we serve. We expect to finalize structure by Q3 2026.
 
-## Open source
-
-The product code is published on GitHub under the [Apache-2.0 license](https://github.com/histiva/histiva-app). Pull requests are welcomed — read `CONTRIBUTING.md` first.
-
 ## Get in touch
 
 - Bring Histiva to your clinic: [/for-hospitals](/for-hospitals)
@@ -2471,7 +2464,7 @@ Same Layout/chrome scaffolding pattern as Task 24's `AiBody.astro` (replicate th
 <section class="container-page py-12">
   <h2 class="text-2xl text-primary-900 mb-6">{t('about.principles_title', locale)}</h2>
   <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {['opensource', 'clinician_led', 'privacy_default', 'low_resource_tested', 'nonprofit_governed', 'ai_guardrails'].map((key) => (
+    {['auditable', 'clinician_led', 'privacy_default', 'low_resource_tested', 'nonprofit_governed', 'ai_guardrails'].map((key) => (
       <li class="bg-white border border-slate-200 rounded-lg p-4">
         <h3 class="text-sm font-semibold text-primary-900">{t(`about.principle_${key}.title`, locale)}</h3>
         <p class="text-sm text-ink-600 mt-1 leading-relaxed">{t(`about.principle_${key}.body`, locale)}</p>
@@ -2491,7 +2484,7 @@ Same Layout/chrome scaffolding pattern as Task 24's `AiBody.astro` (replicate th
   "hero_title": "A hospital system for the clinics that need it most.",
   "hero_subtitle": "Histiva is operated by a small working group of clinicians and engineers, supported by donors who believe modern hospital software shouldn't be a luxury.",
   "principles_title": "What we hold to",
-  "principle_opensource": { "title": "Open-source first", "body": "Code is published. Trust through visibility." },
+  "principle_auditable": { "title": "Auditable by design", "body": "Every patient-record action logged. Every clinical decision traceable." },
   "principle_clinician_led": { "title": "Clinician-led", "body": "Every feature passes a real clinician's smell test." },
   "principle_privacy_default": { "title": "Privacy by default", "body": "Patient data stays where the hospital wants it." },
   "principle_low_resource_tested": { "title": "Low-resource tested", "body": "If it doesn't work on an old tablet over flaky wifi, it's not done." },
@@ -2531,7 +2524,7 @@ import Analytics from '~/components/Analytics.astro';
 import ContactForm from '~/components/ContactForm.astro';
 import { type Locale, t } from '~/i18n/utils';
 
-interface Props { locale: Locale; defaultInterest?: 'hospital' | 'donor' | 'press' | 'opensource' | 'other'; }
+interface Props { locale: Locale; defaultInterest?: 'hospital' | 'donor' | 'press' | 'other'; }
 const { locale, defaultInterest = 'hospital' } = Astro.props;
 const pathname = Astro.url.pathname;
 ---
@@ -3167,9 +3160,10 @@ These are NOT plan tasks (they're business decisions, not engineering work), but
 
 1. Legal entity name + jurisdiction (placeholder text shipped — needs replacement before legal exposure).
 2. Contact email addresses (`contact@`, `privacy@`, `press@`) need to be set up at the chosen domain (currently `histiva.org` is referenced as a placeholder).
-3. Open-source license confirmation (default Apache-2.0).
-4. First-partner hospital consent for naming.
-5. OG image illustrator decision (DIY in Figma vs. unDraw-derived templates).
-6. Cookie-banner legal-review pass.
+3. First-partner hospital consent for naming.
+4. OG image illustrator decision (DIY in Figma vs. unDraw-derived templates).
+5. Cookie-banner legal-review pass.
+
+_Resolved 2026-05-13: HBYS is closed-source proprietary. The earlier §3 "Open-source license confirmation (default Apache-2.0)" was based on an outdated assumption. All open-source / Apache-2.0 references were removed from the site copy in commit `a768b0b`; footer now reads "Proprietary software, nonprofit governed"._
 
 If any of these resolve during implementation, update the relevant content file + spec §17 in the same commit.

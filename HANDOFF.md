@@ -128,10 +128,11 @@ The spec §17 captured 6 business questions that intentionally did NOT get answe
 
 1. **Legal entity name + jurisdiction.** Placeholder: "Histiva, a nonprofit in formation". Affects: `/privacy`, `/about` governance section, footer.
 2. **Contact email address(es).** Placeholder: `contact@histiva.org`, `privacy@histiva.org`. Affects: form fallback messaging, privacy policy.
-3. **Open-source license.** Default in plan: Apache-2.0. Confirm with user before footer copy ships.
-4. **First-partner hospital naming consent.** Until obtained: "First pilot joining Q3 2026" copy on the homepage logo strip.
-5. **OG image illustrator.** Default in plan: unDraw-derived templates. Switch to a designer-DIY in Figma if the user prefers.
-6. **Cookie banner wording — legal review.** v1 ships plain-language self-drafted; flag to user before going live if a lawyer should review.
+3. **First-partner hospital naming consent.** Until obtained: "First pilot joining Q3 2026" copy on the homepage logo strip.
+4. **OG image illustrator.** Default in plan: unDraw-derived templates. Switch to a designer-DIY in Figma if the user prefers.
+5. **Cookie banner wording — legal review.** v1 ships plain-language self-drafted; flag to user before going live if a lawyer should review.
+
+_Resolved 2026-05-13: HBYS is closed-source proprietary software. Open-source / Apache-2.0 references were removed from the site (commit `a768b0b`). No public license decision needed._
 
 ---
 
