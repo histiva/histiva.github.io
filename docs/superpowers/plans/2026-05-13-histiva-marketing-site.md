@@ -50,11 +50,11 @@
   },
   "dependencies": {
     "astro": "^6.3.0",
-    "@astrojs/mdx": "^4.0.0",
-    "@astrojs/sitemap": "^4.0.0",
-    "@astrojs/check": "^0.10.0",
+    "@astrojs/mdx": "^5.0.0",
+    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/check": "^0.9.0",
     "@fontsource-variable/inter": "^5.2.0",
-    "astro-icon": "^2.1.0",
+    "astro-icon": "^1.1.0",
     "@iconify-json/lucide": "^1.2.0",
     "tailwindcss": "^4.0.0",
     "@tailwindcss/vite": "^4.0.0",
@@ -72,6 +72,8 @@
   }
 }
 ```
+
+_Note (impl 2026-05-13): version pins for `@astrojs/mdx`, `@astrojs/sitemap`, `@astrojs/check`, and `astro-icon` adjusted from the original plan to match the current npm-registry state for Astro-6 compatibility._
 
 - [ ] **Step 3: Create `tsconfig.json`**
 
