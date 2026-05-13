@@ -26,5 +26,12 @@
     "license": "Apache-2.0 (HBYS source)",
     "builtwith": "Built with Astro",
     "opensource": "Open source on GitHub"
+  },
+  "cookie": {
+    "title": "We use cookies for analytics",
+    "body": "Histiva uses Google Analytics to understand how the site is used. Nothing personal is shared.",
+    "learn_more": "Learn more",
+    "accept": "Accept",
+    "decline": "Decline"
   }
 }

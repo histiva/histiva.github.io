@@ -1,0 +1,34 @@
+---
+import { type Locale, t } from '~/i18n/utils';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+---
+<div id="cookie-banner" class="fixed bottom-0 inset-x-0 z-30 bg-white border-t border-slate-200 shadow-lg hidden" role="dialog" aria-labelledby="cookie-title">
+  <div class="container-page py-4 flex flex-wrap items-center justify-between gap-4">
+    <div class="text-sm max-w-2xl">
+      <p id="cookie-title" class="font-semibold text-ink-900 mb-1">{t('cookie.title', locale)}</p>
+      <p class="text-ink-600">{t('cookie.body', locale)} <a href="/privacy" class="underline">{t('cookie.learn_more', locale)}</a></p>
+    </div>
+    <div class="flex gap-2">
+      <button type="button" id="cookie-decline" class="px-4 py-2 text-sm rounded-md border border-slate-300 hover:bg-slate-50">{t('cookie.decline', locale)}</button>
+      <button type="button" id="cookie-accept" class="px-4 py-2 text-sm rounded-md bg-primary-700 text-white hover:bg-primary-900">{t('cookie.accept', locale)}</button>
+    </div>
+  </div>
+</div>
+<script>
+  const KEY = 'histiva.consent';
+  const banner = document.getElementById('cookie-banner');
+  const stored = localStorage.getItem(KEY);
+  if (banner && stored === null) banner.classList.remove('hidden');
+
+  function setConsent(value: 'accept' | 'decline') {
+    localStorage.setItem(KEY, value);
+    banner?.classList.add('hidden');
+    if (value === 'accept') {
+      document.dispatchEvent(new CustomEvent('histiva:consent-accepted'));
+    }
+  }
+
+  document.getElementById('cookie-accept')?.addEventListener('click', () => setConsent('accept'));
+  document.getElementById('cookie-decline')?.addEventListener('click', () => setConsent('decline'));
+</script>
