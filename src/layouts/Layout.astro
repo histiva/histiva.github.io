@@ -1,0 +1,61 @@
+---
+import '~/styles/global.css';
+import { type Locale, getLocaleDir, DEFAULT_LOCALE, isValidLocale } from '~/i18n/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  locale?: Locale;
+  ogImage?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  locale = DEFAULT_LOCALE,
+  ogImage = '/og/default.png',
+  noindex = false,
+} = Astro.props;
+
+const safeLocale: Locale = isValidLocale(locale) ? locale : DEFAULT_LOCALE;
+const dir = getLocaleDir(safeLocale);
+const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://histiva.github.io';
+const canonical = new URL(Astro.url.pathname, siteUrl).toString();
+---
+<!doctype html>
+<html lang={safeLocale} dir={dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} · Histiva</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${title} · Histiva`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(ogImage, siteUrl).toString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- hreflang alternates -->
+    <link rel="alternate" hreflang="en" href={new URL(Astro.url.pathname.replace(/^\/(tr|fr|ar)/, ''), siteUrl).toString()} />
+    <link rel="alternate" hreflang="tr" href={new URL('/tr' + Astro.url.pathname.replace(/^\/(tr|fr|ar)/, ''), siteUrl).toString()} />
+    <link rel="alternate" hreflang="fr" href={new URL('/fr' + Astro.url.pathname.replace(/^\/(tr|fr|ar)/, ''), siteUrl).toString()} />
+    <link rel="alternate" hreflang="ar" href={new URL('/ar' + Astro.url.pathname.replace(/^\/(tr|fr|ar)/, ''), siteUrl).toString()} />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot name="ribbon" />
+    <slot name="nav" />
+    <slot name="translation-banner" />
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+    <slot name="footer" />
+    <slot name="cookie-banner" />
+    <slot name="analytics" />
+  </body>
+</html>
