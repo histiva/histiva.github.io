@@ -84,5 +84,22 @@
       "inventory": { "title": "Inventory", "body": "Stock, batches, expiry tracking." },
       "billing": { "title": "Billing & Cashier", "body": "Invoices, payments, receipts." }
     }
+  },
+  "form": {
+    "name": "Your name",
+    "email": "Email",
+    "organization": "Organization",
+    "country": "Country",
+    "interest": "I'd like to",
+    "interest_hospital": "Bring Histiva to our clinic",
+    "interest_donor": "Sponsor a deployment",
+    "interest_press": "Press inquiry",
+    "interest_opensource": "Contribute / open source",
+    "interest_other": "Other",
+    "message": "Message",
+    "consent": "I consent to Histiva storing my submission to respond.",
+    "privacy_link": "Privacy notice",
+    "submit": "Send message",
+    "endpoint_missing": "Contact form not configured yet. Please email contact@histiva.org directly."
   }
 }
