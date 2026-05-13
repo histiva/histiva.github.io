@@ -560,7 +560,7 @@ git commit -m "docs: readme + claude.md + robots + placeholder favicon"
 - Create: `src/i18n/fr.json`
 - Create: `src/i18n/ar.json`
 
-- [ ] **Step 1: Create empty locale JSONs (shells)**
+- [x] **Step 1: Create empty locale JSONs (shells)**
 
 `src/i18n/en.json`:
 
@@ -587,9 +587,9 @@ git commit -m "docs: readme + claude.md + robots + placeholder favicon"
 {}
 ```
 
-- [ ] **Step 2: Add Vitest config snippet to `package.json`** (vitest auto-discovers, no extra config needed for simple unit tests, but ensure `tests/` is in `tsconfig` includes via the `**/*` glob already present)
+- [x] **Step 2: Add Vitest config snippet to `package.json`** (vitest auto-discovers, no extra config needed for simple unit tests, but ensure `tests/` is in `tsconfig` includes via the `**/*` glob already present)
 
-- [ ] **Step 3: Write failing test in `tests/i18n.test.ts`**
+- [x] **Step 3: Write failing test in `tests/i18n.test.ts`**
 
 ```ts
 import { describe, it, expect } from 'vitest';
@@ -629,12 +629,12 @@ describe('i18n utils', () => {
 });
 ```
 
-- [ ] **Step 4: Run test and verify it FAILS**
+- [x] **Step 4: Run test and verify it FAILS**
 
 Run: `npm test`
 Expected: FAIL — `utils.ts` does not exist yet.
 
-- [ ] **Step 5: Commit failing test**
+- [x] **Step 5: Commit failing test**
 
 ```bash
 git add tests/i18n.test.ts src/i18n/en.json src/i18n/tr.json src/i18n/fr.json src/i18n/ar.json
@@ -648,7 +648,7 @@ git commit -m "test: failing i18n util tests + locale shells"
 **Files:**
 - Create: `src/i18n/utils.ts`
 
-- [ ] **Step 1: Create `src/i18n/utils.ts`**
+- [x] **Step 1: Create `src/i18n/utils.ts`**
 
 ```ts
 import en from './en.json' assert { type: 'json' };
@@ -700,12 +700,12 @@ export function localizedPath(path: string, locale: Locale): string {
 }
 ```
 
-- [ ] **Step 2: Run tests and verify they PASS**
+- [x] **Step 2: Run tests and verify they PASS**
 
 Run: `npm test`
 Expected: all 6 i18n tests PASS.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add src/i18n/utils.ts
@@ -719,7 +719,7 @@ git commit -m "feat: i18n utils (t, getLocaleDir, isValidLocale, withFallback, l
 **Files:**
 - Create: `src/layouts/Layout.astro`
 
-- [ ] **Step 1: Create `src/layouts/Layout.astro`**
+- [x] **Step 1: Create `src/layouts/Layout.astro`**
 
 ```astro
 ---
@@ -785,17 +785,19 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
 </html>
 ```
 
-- [ ] **Step 2: Verify type-check passes**
+- [x] **Step 2: Verify type-check passes**
 
 Run: `npm run check`
 Expected: 0 errors.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add src/layouts/Layout.astro
 git commit -m "feat: Layout shell with locale, dir, og meta, hreflang"
 ```
+
+_Note (impl 2026-05-13): Task 9 surfaced a latent Task 4 tooling gap — `eslint-plugin-astro`'s recommended config auto-detects `@typescript-eslint/parser` for TS-script blocks in `.astro` frontmatter but doesn't declare it as a peerDependency. Without it, `import type { ... }` in any `.astro` file fails lint with "Parsing error: Unexpected token". Installed as a devDependency in a separate preceding commit (`8bbb790`) before the Layout commit (`a901ef1`)._
 
 ---
 
@@ -805,7 +807,7 @@ git commit -m "feat: Layout shell with locale, dir, og meta, hreflang"
 - Create: `src/components/TopRibbon.astro`
 - Create: `src/components/TranslationBanner.astro`
 
-- [ ] **Step 1: Create `src/components/TopRibbon.astro`**
+- [x] **Step 1: Create `src/components/TopRibbon.astro`**
 
 ```astro
 ---
@@ -821,7 +823,7 @@ const { locale } = Astro.props;
 </div>
 ```
 
-- [ ] **Step 2: Add ribbon key to `src/i18n/en.json`** under `nav` block sibling (top-level key `ribbon`)
+- [x] **Step 2: Add ribbon key to `src/i18n/en.json`** under `nav` block sibling (top-level key `ribbon`)
 
 ```json
 {
@@ -835,7 +837,7 @@ const { locale } = Astro.props;
 
 Merge with existing `en.json` — don't overwrite.
 
-- [ ] **Step 3: Create `src/components/TranslationBanner.astro`**
+- [x] **Step 3: Create `src/components/TranslationBanner.astro`**
 
 ```astro
 ---
@@ -853,7 +855,7 @@ const show = withFallback(locale);
 )}
 ```
 
-- [ ] **Step 4: Add banner key to `en.json`**
+- [x] **Step 4: Add banner key to `en.json`**
 
 ```json
 "banner": {
@@ -861,12 +863,12 @@ const show = withFallback(locale);
 }
 ```
 
-- [ ] **Step 5: Verify check**
+- [x] **Step 5: Verify check**
 
 Run: `npm run check`
 Expected: 0 errors.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/components/TopRibbon.astro src/components/TranslationBanner.astro src/i18n/en.json
@@ -881,7 +883,7 @@ git commit -m "feat: TopRibbon + TranslationBanner components"
 - Create: `src/components/SiteNav.astro`
 - Create: `src/components/LanguageSwitcher.astro`
 
-- [ ] **Step 1: Create `src/components/LanguageSwitcher.astro`**
+- [x] **Step 1: Create `src/components/LanguageSwitcher.astro`**
 
 ```astro
 ---
@@ -913,7 +915,7 @@ const labels: Record<Locale, string> = {
 </details>
 ```
 
-- [ ] **Step 2: Create `src/components/SiteNav.astro`**
+- [x] **Step 2: Create `src/components/SiteNav.astro`**
 
 ```astro
 ---
@@ -949,12 +951,12 @@ const navItems = [
 </header>
 ```
 
-- [ ] **Step 3: Verify check + build**
+- [x] **Step 3: Verify check + build**
 
 Run: `npm run check && npm run build`
 Expected: 0 errors. (Build still warns "no pages found" — pages come later.)
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add src/components/SiteNav.astro src/components/LanguageSwitcher.astro
@@ -968,7 +970,7 @@ git commit -m "feat: SiteNav with sticky header + LanguageSwitcher dropdown"
 **Files:**
 - Create: `src/components/SiteFooter.astro`
 
-- [ ] **Step 1: Create `src/components/SiteFooter.astro`**
+- [x] **Step 1: Create `src/components/SiteFooter.astro`**
 
 ```astro
 ---
@@ -1017,7 +1019,7 @@ const year = new Date().getFullYear();
 </footer>
 ```
 
-- [ ] **Step 2: Add footer keys to `src/i18n/en.json`**
+- [x] **Step 2: Add footer keys to `src/i18n/en.json`**
 
 ```json
 "footer": {
@@ -1032,17 +1034,19 @@ const year = new Date().getFullYear();
 }
 ```
 
-- [ ] **Step 3: Verify**
+- [x] **Step 3: Verify**
 
 Run: `npm run check`
 Expected: 0 errors.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add src/components/SiteFooter.astro src/i18n/en.json
 git commit -m "feat: SiteFooter with 4-col layout + language switcher"
 ```
+
+_Phase D follow-up: `<LanguageSwitcher>` was designed for light backgrounds (`text-ink-900`, `hover:bg-primary-100`). It renders inside SiteFooter's dark Trust Blue column with no styling adjustment — expect a low-contrast appearance when pages start rendering. Verify visually in Task 22 and either (a) add a `variant` prop to the switcher, (b) override classes inline from the footer, or (c) accept the visual as-is if it reads acceptably. Not blocking; the plan prescribed the current reuse._
 
 ---
 
@@ -1052,7 +1056,7 @@ git commit -m "feat: SiteFooter with 4-col layout + language switcher"
 - Create: `src/components/CookieBanner.astro`
 - Create: `src/components/Analytics.astro`
 
-- [ ] **Step 1: Create `src/components/CookieBanner.astro`**
+- [x] **Step 1: Create `src/components/CookieBanner.astro`**
 
 ```astro
 ---
@@ -1091,7 +1095,7 @@ const { locale } = Astro.props;
 </script>
 ```
 
-- [ ] **Step 2: Create `src/components/Analytics.astro`**
+- [x] **Step 2: Create `src/components/Analytics.astro`**
 
 ```astro
 ---
@@ -1118,7 +1122,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 )}
 ```
 
-- [ ] **Step 3: Add cookie keys to `src/i18n/en.json`**
+- [x] **Step 3: Add cookie keys to `src/i18n/en.json`**
 
 ```json
 "cookie": {
@@ -1130,12 +1134,12 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 }
 ```
 
-- [ ] **Step 4: Verify check**
+- [x] **Step 4: Verify check**
 
 Run: `npm run check`
 Expected: 0 errors.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/components/CookieBanner.astro src/components/Analytics.astro src/i18n/en.json
