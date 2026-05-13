@@ -1,0 +1,88 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import TopRibbon from '~/components/TopRibbon.astro';
+import SiteNav from '~/components/SiteNav.astro';
+import SiteFooter from '~/components/SiteFooter.astro';
+import TranslationBanner from '~/components/TranslationBanner.astro';
+import CookieBanner from '~/components/CookieBanner.astro';
+import Analytics from '~/components/Analytics.astro';
+import Hero from '~/components/Hero.astro';
+import FAQList from '~/components/FAQList.astro';
+import ContactForm from '~/components/ContactForm.astro';
+import { getEntry } from 'astro:content';
+import { type Locale, t, localizedPath } from '~/i18n/utils';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const pathname = Astro.url.pathname;
+const faq = await getEntry('faqs', 'for-hospitals');
+const steps = [
+  { n: '01', titleKey: 'for_hospitals.step1.title', bodyKey: 'for_hospitals.step1.body' },
+  { n: '02', titleKey: 'for_hospitals.step2.title', bodyKey: 'for_hospitals.step2.body' },
+  { n: '03', titleKey: 'for_hospitals.step3.title', bodyKey: 'for_hospitals.step3.body' },
+  { n: '04', titleKey: 'for_hospitals.step4.title', bodyKey: 'for_hospitals.step4.body' },
+];
+---
+<Layout title={t('for_hospitals.meta_title', locale)} description={t('for_hospitals.meta_description', locale)} locale={locale}>
+  <TopRibbon slot="ribbon" locale={locale} />
+  <SiteNav slot="nav" locale={locale} pathname={pathname} />
+  <TranslationBanner slot="translation-banner" locale={locale} />
+
+  <Hero
+    eyebrow={t('for_hospitals.eyebrow', locale)}
+    title={t('for_hospitals.hero_title', locale)}
+    subtitle={t('for_hospitals.hero_subtitle', locale)}
+    primaryCta={{ label: t('common.schedule_demo', locale), href: localizedPath('/contact', locale) }}
+  />
+
+  <section class="container-page py-12">
+    <h2 class="text-2xl text-primary-900 mb-6">{t('for_hospitals.steps_title', locale)}</h2>
+    <ol class="grid md:grid-cols-2 gap-4">
+      {steps.map((s) => (
+        <li class="bg-white border border-slate-200 rounded-xl p-5">
+          <span class="text-xs font-bold tracking-[0.12em] text-primary-700">{s.n}</span>
+          <h3 class="text-lg text-primary-900 mt-2">{t(s.titleKey, locale)}</h3>
+          <p class="text-sm text-ink-600 mt-1 leading-relaxed">{t(s.bodyKey, locale)}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="container-page py-8 grid md:grid-cols-2 gap-6">
+    <div class="bg-primary-100/40 rounded-xl p-6">
+      <h3 class="text-lg text-primary-900 mb-2">{t('for_hospitals.need_title', locale)}</h3>
+      <ul class="text-sm text-ink-900 space-y-1.5 list-disc list-inside">
+        <li>{t('for_hospitals.need_1', locale)}</li>
+        <li>{t('for_hospitals.need_2', locale)}</li>
+        <li>{t('for_hospitals.need_3', locale)}</li>
+      </ul>
+    </div>
+    <div class="bg-success-50 rounded-xl p-6">
+      <h3 class="text-lg text-success-700 mb-2">{t('for_hospitals.provide_title', locale)}</h3>
+      <ul class="text-sm text-ink-900 space-y-1.5 list-disc list-inside">
+        <li>{t('for_hospitals.provide_1', locale)}</li>
+        <li>{t('for_hospitals.provide_2', locale)}</li>
+        <li>{t('for_hospitals.provide_3', locale)}</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container-page py-8">
+    <div class="bg-white border border-slate-200 rounded-xl p-6 max-w-3xl">
+      <p class="text-xs uppercase tracking-[0.12em] text-warning-700 font-semibold">{t('for_hospitals.cost_eyebrow', locale)}</p>
+      <h3 class="text-xl text-primary-900 mt-1">{t('for_hospitals.cost_title', locale)}</h3>
+      <p class="text-ink-600 mt-2 leading-relaxed whitespace-pre-line">{t('for_hospitals.cost_body', locale)}</p>
+    </div>
+  </section>
+
+  {faq && <FAQList title={t('for_hospitals.faq_title', locale)} items={faq.data.items} />}
+
+  <section class="container-page py-12">
+    <h2 class="text-2xl text-primary-900 mb-4">{t('for_hospitals.cta_title', locale)}</h2>
+    <ContactForm locale={locale} defaultInterest="hospital" />
+  </section>
+
+  <SiteFooter slot="footer" locale={locale} pathname={pathname} />
+  <CookieBanner slot="cookie-banner" locale={locale} />
+  <Analytics slot="analytics" />
+</Layout>
