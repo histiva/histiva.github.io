@@ -21,3 +21,9 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm run build
+        env:
+          PUBLIC_FORMSPREE_ENDPOINT: https://formspree.io/f/test
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+        env:
+          PUBLIC_FORMSPREE_ENDPOINT: https://formspree.io/f/test
