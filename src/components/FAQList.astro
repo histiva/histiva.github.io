@@ -1,0 +1,14 @@
+---
+import FAQItem from './FAQItem.astro';
+interface Props {
+  items: { q: string; a: string }[];
+  title?: string;
+}
+const { items, title } = Astro.props;
+---
+<section class="container-page py-12">
+  {title && <h2 class="text-2xl text-primary-900 mb-6">{title}</h2>}
+  <div class="space-y-3 max-w-3xl">
+    {items.map((item) => <FAQItem question={item.q} answer={item.a} />)}
+  </div>
+</section>
