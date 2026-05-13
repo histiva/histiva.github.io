@@ -28,6 +28,8 @@ const pathname = Astro.url.pathname;
     subtitle={t('home.hero_subtitle', locale)}
     primaryCta={{ label: t('common.schedule_demo', locale), href: localizedPath('/contact', locale) }}
     secondaryCta={{ label: t('common.for_donors', locale), href: localizedPath('/for-donors', locale) }}
+    mockupSrc="/img/mockups/hero-dashboard.svg"
+    mockupAlt="Design preview — Histiva dashboard"
   />
 
   <PillarGrid locale={locale} />

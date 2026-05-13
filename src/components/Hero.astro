@@ -7,8 +7,10 @@ interface Props {
   primaryCta: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   image?: { src: ImageMetadata; alt: string };
+  mockupSrc?: string;
+  mockupAlt?: string;
 }
-const { eyebrow, title, subtitle, primaryCta, secondaryCta, image } = Astro.props;
+const { eyebrow, title, subtitle, primaryCta, secondaryCta, image, mockupSrc, mockupAlt = 'Design preview' } = Astro.props;
 ---
 <section class="bg-gradient-to-b from-primary-100/40 to-transparent">
   <div class="container-page py-16 md:py-20 grid md:grid-cols-[1.2fr_1fr] gap-10 items-center">
@@ -26,6 +28,11 @@ const { eyebrow, title, subtitle, primaryCta, secondaryCta, image } = Astro.prop
     {image && (
       <div class="rounded-xl overflow-hidden shadow-xl bg-slate-100 aspect-[4/3]">
         <Image src={image.src} alt={image.alt} class="w-full h-full object-cover" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 50vw" />
+      </div>
+    )}
+    {!image && mockupSrc && (
+      <div class="rounded-xl overflow-hidden shadow-2xl bg-slate-50 aspect-[16/10]">
+        <img src={mockupSrc} alt={mockupAlt} class="w-full h-full object-cover" loading="eager" decoding="async" />
       </div>
     )}
   </div>

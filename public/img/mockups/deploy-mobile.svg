@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 480" role="img" aria-label="Design preview of Histiva mobile app">
+  <defs>
+    <filter id="ms" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0c2461" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="280" height="480" fill="#f8fafc"/>
+
+  <!-- phone bezel -->
+  <g filter="url(#ms)">
+    <rect x="60" y="20" width="160" height="440" rx="28" fill="#0f172a"/>
+    <rect x="66" y="26" width="148" height="428" rx="24" fill="#ffffff"/>
+  </g>
+
+  <!-- notch -->
+  <rect x="118" y="26" width="44" height="14" rx="7" fill="#0f172a"/>
+
+  <!-- home indicator -->
+  <rect x="118" y="442" width="44" height="3" rx="1.5" fill="#0f172a"/>
+
+  <!-- screen content -->
+  <g font-family="ui-sans-serif, system-ui, sans-serif">
+    <!-- status bar -->
+    <text x="80" y="52" font-size="8" font-weight="700" fill="#0f172a">9:41</text>
+    <g transform="translate(180, 46)">
+      <rect x="0" y="0" width="2" height="6" rx="0.5" fill="#0f172a"/>
+      <rect x="3" y="-1" width="2" height="7" rx="0.5" fill="#0f172a"/>
+      <rect x="6" y="-2" width="2" height="8" rx="0.5" fill="#0f172a"/>
+      <rect x="14" y="-2" width="14" height="8" rx="1.5" fill="none" stroke="#0f172a" stroke-width="1"/>
+      <rect x="16" y="0" width="9" height="4" rx="0.5" fill="#0f172a"/>
+    </g>
+
+    <!-- app header -->
+    <text x="78" y="80" font-size="14" font-weight="700" fill="#0c2461">Patients</text>
+    <text x="78" y="93" font-size="8" fill="#475569">Outpatient · today</text>
+
+    <!-- search -->
+    <rect x="78" y="104" width="124" height="22" rx="11" fill="#f1f5f9"/>
+    <text x="88" y="118" font-size="8" fill="#94a3b8">Search by name or ID</text>
+
+    <!-- patient cards -->
+    <g transform="translate(78, 138)">
+      <rect width="124" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <circle cx="14" cy="20" r="9" fill="#dbeafe"/>
+      <text x="14" y="23" font-size="7" font-weight="700" fill="#1e40af" text-anchor="middle">AM</text>
+      <text x="28" y="18" font-size="9" font-weight="600" fill="#0f172a">Aisha M.</text>
+      <text x="28" y="30" font-size="7" fill="#475569">Diabetes follow-up · 09:20</text>
+      <rect x="100" y="14" width="18" height="12" rx="6" fill="#dcfce7"/>
+      <text x="109" y="22" font-size="6" font-weight="700" fill="#16a34a" text-anchor="middle">SEEN</text>
+    </g>
+
+    <g transform="translate(78, 184)">
+      <rect width="124" height="40" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5"/>
+      <circle cx="14" cy="20" r="9" fill="#fef3c7"/>
+      <text x="14" y="23" font-size="7" font-weight="700" fill="#b45309" text-anchor="middle">MI</text>
+      <text x="28" y="18" font-size="9" font-weight="600" fill="#0f172a">Mohamed I.</text>
+      <text x="28" y="30" font-size="7" fill="#475569">Chest pain · URGENT</text>
+      <rect x="92" y="14" width="26" height="12" rx="6" fill="#fef3c7"/>
+      <text x="105" y="22" font-size="6" font-weight="700" fill="#b45309" text-anchor="middle">WAITING</text>
+    </g>
+
+    <g transform="translate(78, 230)">
+      <rect width="124" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <circle cx="14" cy="20" r="9" fill="#dbeafe"/>
+      <text x="14" y="23" font-size="7" font-weight="700" fill="#1e40af" text-anchor="middle">FO</text>
+      <text x="28" y="18" font-size="9" font-weight="600" fill="#0f172a">Fatima O.</text>
+      <text x="28" y="30" font-size="7" fill="#475569">Prenatal · 10:00</text>
+      <rect x="100" y="14" width="18" height="12" rx="6" fill="#dbeafe"/>
+      <text x="109" y="22" font-size="6" font-weight="700" fill="#1e40af" text-anchor="middle">NEW</text>
+    </g>
+
+    <g transform="translate(78, 276)">
+      <rect width="124" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <circle cx="14" cy="20" r="9" fill="#dbeafe"/>
+      <text x="14" y="23" font-size="7" font-weight="700" fill="#1e40af" text-anchor="middle">JK</text>
+      <text x="28" y="18" font-size="9" font-weight="600" fill="#0f172a">Joseph K.</text>
+      <text x="28" y="30" font-size="7" fill="#475569">Lab follow-up · 10:30</text>
+      <rect x="100" y="14" width="18" height="12" rx="6" fill="#dbeafe"/>
+      <text x="109" y="22" font-size="6" font-weight="700" fill="#1e40af" text-anchor="middle">NEW</text>
+    </g>
+
+    <g transform="translate(78, 322)">
+      <rect width="124" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <circle cx="14" cy="20" r="9" fill="#dbeafe"/>
+      <text x="14" y="23" font-size="7" font-weight="700" fill="#1e40af" text-anchor="middle">SM</text>
+      <text x="28" y="18" font-size="9" font-weight="600" fill="#0f172a">Samuel M.</text>
+      <text x="28" y="30" font-size="7" fill="#475569">Hypertension · 11:00</text>
+      <rect x="100" y="14" width="18" height="12" rx="6" fill="#dbeafe"/>
+      <text x="109" y="22" font-size="6" font-weight="700" fill="#1e40af" text-anchor="middle">NEW</text>
+    </g>
+
+    <!-- bottom tab bar -->
+    <rect x="74" y="408" width="132" height="30" rx="0" fill="#ffffff"/>
+    <line x1="74" y1="408" x2="206" y2="408" stroke="#e2e8f0"/>
+
+    <g transform="translate(78, 414)">
+      <!-- patients (active) -->
+      <circle cx="14" cy="9" r="5" fill="#1e40af"/>
+      <text x="14" y="26" font-size="6" font-weight="700" fill="#1e40af" text-anchor="middle">Patients</text>
+
+      <!-- orders -->
+      <rect x="35" y="4" width="10" height="10" rx="1" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="40" y="26" font-size="6" fill="#94a3b8" text-anchor="middle">Orders</text>
+
+      <!-- pharmacy -->
+      <circle cx="66" cy="9" r="5" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="66" y="26" font-size="6" fill="#94a3b8" text-anchor="middle">Rx</text>
+
+      <!-- more -->
+      <circle cx="92" cy="9" r="1.5" fill="#94a3b8"/>
+      <circle cx="98" cy="9" r="1.5" fill="#94a3b8"/>
+      <circle cx="104" cy="9" r="1.5" fill="#94a3b8"/>
+      <text x="98" y="26" font-size="6" fill="#94a3b8" text-anchor="middle">More</text>
+    </g>
+  </g>
+
+  <!-- preview badge -->
+  <g transform="translate(168, 6)">
+    <rect width="92" height="14" rx="7" fill="#1e40af"/>
+    <text x="46" y="10" font-family="ui-sans-serif, system-ui, sans-serif" font-size="7" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.6">DESIGN PREVIEW</text>
+  </g>
+</svg>
