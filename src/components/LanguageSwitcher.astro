@@ -1,7 +1,7 @@
 ---
 import { LOCALES, type Locale, localizedPath } from '~/i18n/utils';
-interface Props { current: Locale; pathname: string; }
-const { current, pathname } = Astro.props;
+interface Props { current: Locale; pathname: string; onDark?: boolean; }
+const { current, pathname, onDark = false } = Astro.props;
 const stripped = pathname.replace(/^\/(tr|fr|ar)/, '') || '/';
 const labels: Record<Locale, string> = {
   en: 'English',
@@ -9,9 +9,10 @@ const labels: Record<Locale, string> = {
   fr: 'Français',
   ar: 'العربية',
 };
+const summaryColor = onDark ? 'text-white hover:bg-primary-700' : 'text-ink-900 hover:bg-primary-100';
 ---
 <details class="relative">
-  <summary class="cursor-pointer list-none px-3 py-1.5 rounded-md text-sm text-ink-900 hover:bg-primary-100 inline-flex items-center gap-2">
+  <summary class={`cursor-pointer list-none px-3 py-1.5 rounded-md text-sm ${summaryColor} inline-flex items-center gap-2`}>
     <span>{labels[current]}</span>
     <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
   </summary>
