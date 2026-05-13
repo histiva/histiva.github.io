@@ -19,6 +19,7 @@ export default defineConfig({
       defaultLocale: 'en',
       locales: { en: 'en', tr: 'tr', fr: 'fr', ar: 'ar' },
     },
+    filter: (page) => !page.includes('/thank-you'),
   }), icon({ iconDir: 'src/icons' })],
   vite: { plugins: [tailwindcss()] },
 });
