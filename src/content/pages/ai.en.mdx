@@ -1,0 +1,41 @@
+---
+title: AI & Local LLM
+description: How Histiva uses AI — cloud or local — and what it explicitly does not do.
+---
+
+## The two modes
+
+Histiva supports **cloud AI** (OpenAI, Anthropic, others) for clinics with reliable internet, and **local LLM** (Ollama, llama.cpp) for clinics where data must stay on-premise or where bandwidth is unreliable. Each clinic chooses at install time and can switch later.
+
+### Cloud mode
+
+- Lower setup cost — no GPU required on-site.
+- Higher quality (frontier models).
+- Tradeoff: requires internet and a per-call cost.
+
+### Local mode
+
+- Data never leaves the hospital network.
+- Works offline.
+- Tradeoff: needs a modest GPU server; quality is good but not frontier.
+
+## What the AI does
+
+- **Triage assistance.** Surfaces concerning findings in vitals and free-text notes for a clinician to confirm. Never makes the diagnosis.
+- **Clinical-note summarization.** Compresses long admission notes into a structured handoff summary, with the original preserved.
+- **Decision-support hints.** Flags drug interactions, missing tests, and standards-of-care gaps. Always optional, never blocking.
+- **Multilingual transcription.** Doctor speaks in any language; structured note appears in the patient record.
+
+## What the AI does *not* do
+
+- **No autonomous prescriptions, orders, or referrals.** Every action is human-confirmed.
+- **No PII leaves the site unless cloud mode is explicitly enabled.**
+- **No audit gaps.** Every AI call is logged: who asked, what was sent, what came back, what was accepted.
+
+## Agentic workflows (preview)
+
+In limited contexts, Histiva can run multi-step workflows on the clinician's behalf — e.g., "if a critical lab value comes back, draft the patient notification and route to the on-call doctor for approval." All steps are visible, reversible, and audited.
+
+## Want to see it?
+
+[Schedule a demo](/contact) — we'll walk you through both modes with anonymized examples.

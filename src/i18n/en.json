@@ -101,6 +101,13 @@
     "in_dev": "In development",
     "see_in_action": "See it in your clinic"
   },
+  "ai": {
+    "meta_title": "AI & Local LLM · Histiva",
+    "meta_description": "AI that works where the internet doesn't — cloud or local, clinician-supervised.",
+    "eyebrow": "AI & Local LLM",
+    "hero_title": "AI that works where the internet doesn't.",
+    "hero_subtitle": "Histiva runs on cloud or on-premise local LLMs. The clinic chooses. The clinician decides. Every AI call is auditable."
+  },
   "form": {
     "name": "Your name",
     "email": "Email",
