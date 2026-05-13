@@ -1,0 +1,32 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import TopRibbon from '~/components/TopRibbon.astro';
+import SiteNav from '~/components/SiteNav.astro';
+import SiteFooter from '~/components/SiteFooter.astro';
+import TranslationBanner from '~/components/TranslationBanner.astro';
+import CookieBanner from '~/components/CookieBanner.astro';
+import Analytics from '~/components/Analytics.astro';
+import { type Locale, t, localizedPath } from '~/i18n/utils';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+<Layout title={t('thank_you.meta_title', locale)} description={t('thank_you.meta_description', locale)} locale={locale} noindex>
+  <TopRibbon slot="ribbon" locale={locale} />
+  <SiteNav slot="nav" locale={locale} pathname={pathname} />
+  <TranslationBanner slot="translation-banner" locale={locale} />
+
+  <section class="container-page py-16 max-w-2xl text-center">
+    <h1 class="text-4xl text-primary-900 mb-4">{t('thank_you.title', locale)}</h1>
+    <p class="text-lg text-ink-600 mb-8">{t('thank_you.body', locale)}</p>
+    <div class="flex justify-center gap-3">
+      <a href={localizedPath('/', locale)} class="px-5 py-2.5 rounded-md bg-primary-700 text-white font-semibold">{t('thank_you.home', locale)}</a>
+      <a href="https://github.com/histiva" rel="noopener" class="px-5 py-2.5 rounded-md border border-primary-700 text-primary-700 font-semibold">{t('thank_you.github', locale)}</a>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" locale={locale} pathname={pathname} />
+  <CookieBanner slot="cookie-banner" locale={locale} />
+  <Analytics slot="analytics" />
+</Layout>

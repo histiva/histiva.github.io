@@ -1,0 +1,30 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import TopRibbon from '~/components/TopRibbon.astro';
+import SiteNav from '~/components/SiteNav.astro';
+import SiteFooter from '~/components/SiteFooter.astro';
+import TranslationBanner from '~/components/TranslationBanner.astro';
+import CookieBanner from '~/components/CookieBanner.astro';
+import Analytics from '~/components/Analytics.astro';
+import ContactForm from '~/components/ContactForm.astro';
+import { type Locale, t } from '~/i18n/utils';
+
+interface Props { locale: Locale; defaultInterest?: 'hospital' | 'donor' | 'press' | 'opensource' | 'other'; }
+const { locale, defaultInterest = 'hospital' } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+<Layout title={t('contact.meta_title', locale)} description={t('contact.meta_description', locale)} locale={locale}>
+  <TopRibbon slot="ribbon" locale={locale} />
+  <SiteNav slot="nav" locale={locale} pathname={pathname} />
+  <TranslationBanner slot="translation-banner" locale={locale} />
+
+  <section class="container-page py-12 max-w-3xl">
+    <h1 class="text-4xl text-primary-900 mb-3">{t('contact.title', locale)}</h1>
+    <p class="text-lg text-ink-600 mb-8">{t('contact.subtitle', locale)}</p>
+    <ContactForm locale={locale} defaultInterest={defaultInterest} />
+  </section>
+
+  <SiteFooter slot="footer" locale={locale} pathname={pathname} />
+  <CookieBanner slot="cookie-banner" locale={locale} />
+  <Analytics slot="analytics" />
+</Layout>

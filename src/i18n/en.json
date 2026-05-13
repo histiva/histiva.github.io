@@ -185,5 +185,19 @@
     "principle_low_resource_tested": { "title": "Low-resource tested", "body": "If it doesn't work on an old tablet over flaky wifi, it's not done." },
     "principle_nonprofit_governed": { "title": "Nonprofit-governed", "body": "Mission outranks revenue. Always." },
     "principle_ai_guardrails": { "title": "AI with guardrails", "body": "The clinician always decides. The audit log never lies." }
+  },
+  "contact": {
+    "meta_title": "Contact · Histiva",
+    "meta_description": "Get in touch — clinic admin, donor, press, or contributor. We respond within 3 business days.",
+    "title": "Get in touch",
+    "subtitle": "Tell us a bit about you and we'll route your message to the right person. We respond within 3 business days."
+  },
+  "thank_you": {
+    "meta_title": "Thanks for reaching out",
+    "meta_description": "Your message has been received.",
+    "title": "Thanks for reaching out.",
+    "body": "We received your message and will respond within 3 business days. In the meantime, feel free to explore the project on GitHub or read the AI deep-dive.",
+    "home": "Back to home",
+    "github": "Histiva on GitHub"
   }
 }
