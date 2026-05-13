@@ -52,5 +52,20 @@
       "title": "Secure & auditable",
       "body": "Role-based access, full audit trail, row-level security, KVKK/GDPR-ready data model."
     }
+  },
+  "story": {
+    "eyebrow": "Why we built this",
+    "title": "Built for the clinics that need it most.",
+    "body": "Most hospital software is built for wealthy hospitals in stable economies. Histiva exists because the clinics that need it most — in Chad, Somalia, and beyond — deserve software that works for them, not against them.\n\nNonprofit. Built by clinicians and engineers. Funded by people who care."
+  },
+  "paths": {
+    "hospital_eyebrow": "For hospitals & NGOs",
+    "hospital_title": "Bring Histiva to your clinic",
+    "hospital_body": "See how Histiva fits your operation. Walk through deployment with our team.",
+    "hospital_cta": "Schedule a demo",
+    "donor_eyebrow": "For donors & funders",
+    "donor_title": "Fund a deployment",
+    "donor_body": "Sponsor a single clinic or a multi-hospital program. See where your support goes.",
+    "donor_cta": "Start a conversation"
   }
 }

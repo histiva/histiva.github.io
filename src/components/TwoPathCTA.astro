@@ -1,0 +1,21 @@
+---
+import { type Locale, t, localizedPath } from '~/i18n/utils';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+---
+<section class="container-page py-12">
+  <div class="grid md:grid-cols-2 gap-4">
+    <a href={localizedPath('/for-hospitals', locale)} class="bg-primary-100 hover:bg-primary-100/70 rounded-xl p-6 transition-colors">
+      <p class="text-xs uppercase tracking-[0.12em] text-primary-700 font-semibold">{t('paths.hospital_eyebrow', locale)}</p>
+      <h3 class="text-xl text-primary-900 mt-1">{t('paths.hospital_title', locale)}</h3>
+      <p class="text-sm text-ink-600 mt-2">{t('paths.hospital_body', locale)}</p>
+      <span class="mt-4 inline-block text-sm font-semibold text-primary-700">{t('paths.hospital_cta', locale)} →</span>
+    </a>
+    <a href={localizedPath('/for-donors', locale)} class="bg-success-50 hover:bg-success-50/70 rounded-xl p-6 transition-colors">
+      <p class="text-xs uppercase tracking-[0.12em] text-success-700 font-semibold">{t('paths.donor_eyebrow', locale)}</p>
+      <h3 class="text-xl text-success-700 mt-1">{t('paths.donor_title', locale)}</h3>
+      <p class="text-sm text-ink-600 mt-2">{t('paths.donor_body', locale)}</p>
+      <span class="mt-4 inline-block text-sm font-semibold text-success-700">{t('paths.donor_cta', locale)} →</span>
+    </a>
+  </div>
+</section>

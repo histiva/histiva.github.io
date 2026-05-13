@@ -1,0 +1,18 @@
+---
+import { Icon } from 'astro-icon/components';
+interface Props {
+  iconName: string;
+  title: string;
+  body: string;
+  status?: 'shipping' | 'in-development';
+}
+const { iconName, title, body, status = 'shipping' } = Astro.props;
+---
+<article class="bg-white border border-slate-200 rounded-lg p-4 hover:border-primary-500 hover:shadow-sm transition-all">
+  <Icon name={iconName} size={20} class="text-primary-700 mb-3" />
+  <h4 class="text-sm font-semibold text-primary-900 flex items-center gap-2">
+    {title}
+    {status === 'in-development' && <span class="text-[10px] uppercase tracking-wider text-warning-700 bg-warning-50 px-1.5 py-0.5 rounded">In dev</span>}
+  </h4>
+  <p class="text-xs text-ink-600 leading-relaxed mt-1">{body}</p>
+</article>
