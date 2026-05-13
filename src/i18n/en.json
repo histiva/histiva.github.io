@@ -199,5 +199,11 @@
     "body": "We received your message and will respond within 3 business days. In the meantime, feel free to explore the project on GitHub or read the AI deep-dive.",
     "home": "Back to home",
     "github": "Histiva on GitHub"
+  },
+  "privacy": {
+    "meta_title": "Privacy · Histiva",
+    "meta_description": "How Histiva handles data collected on histiva.github.io.",
+    "eyebrow": "Privacy",
+    "title": "Privacy policy"
   }
 }
