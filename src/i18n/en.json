@@ -67,5 +67,22 @@
     "donor_title": "Fund a deployment",
     "donor_body": "Sponsor a single clinic or a multi-hospital program. See where your support goes.",
     "donor_cta": "Start a conversation"
+  },
+  "modules": {
+    "eyebrow": "What's inside",
+    "title": "Ten modules. One coherent system.",
+    "see_all": "See full product",
+    "items": {
+      "patient": { "title": "Patient", "body": "Records, history, allergies, vitals." },
+      "admission": { "title": "Admission & Visits", "body": "Registration, episodes, visit routing." },
+      "outpatient": { "title": "Outpatient", "body": "Exams, diagnoses, prescriptions." },
+      "emergency": { "title": "Emergency", "body": "Triage, orders, fast workflows." },
+      "inpatient": { "title": "Inpatient", "body": "Beds, observations, discharge." },
+      "lab": { "title": "Laboratory", "body": "Test orders, samples, results." },
+      "radiology": { "title": "Radiology", "body": "Imaging orders, reports." },
+      "pharmacy": { "title": "Pharmacy", "body": "Prescriptions, dispense, stock-linked." },
+      "inventory": { "title": "Inventory", "body": "Stock, batches, expiry tracking." },
+      "billing": { "title": "Billing & Cashier", "body": "Invoices, payments, receipts." }
+    }
   }
 }

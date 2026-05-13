@@ -1,0 +1,37 @@
+---
+import ModuleCard from './ModuleCard.astro';
+import { type Locale, t, localizedPath } from '~/i18n/utils';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const modules = [
+  { iconName: 'lucide:user-round', key: 'patient' },
+  { iconName: 'lucide:clipboard-check', key: 'admission' },
+  { iconName: 'lucide:stethoscope', key: 'outpatient' },
+  { iconName: 'lucide:siren', key: 'emergency' },
+  { iconName: 'lucide:bed', key: 'inpatient' },
+  { iconName: 'lucide:flask-conical', key: 'lab' },
+  { iconName: 'lucide:scan-line', key: 'radiology' },
+  { iconName: 'lucide:pill', key: 'pharmacy' },
+  { iconName: 'lucide:package', key: 'inventory' },
+  { iconName: 'lucide:receipt', key: 'billing', status: 'in-development' as const },
+];
+---
+<section class="container-page py-14">
+  <div class="flex items-end justify-between mb-6">
+    <div>
+      <p class="text-xs uppercase tracking-[0.12em] text-primary-700 font-semibold">{t('modules.eyebrow', locale)}</p>
+      <h2 class="text-2xl text-primary-900 mt-1">{t('modules.title', locale)}</h2>
+    </div>
+    <a href={localizedPath('/product', locale)} class="text-sm font-semibold text-primary-700 hover:underline hidden md:inline">{t('modules.see_all', locale)} →</a>
+  </div>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+    {modules.map((m) => (
+      <ModuleCard
+        iconName={m.iconName}
+        title={t(`modules.items.${m.key}.title`, locale)}
+        body={t(`modules.items.${m.key}.body`, locale)}
+        status={m.status}
+      />
+    ))}
+  </div>
+</section>
