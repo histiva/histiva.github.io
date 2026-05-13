@@ -8,6 +8,7 @@ import CookieBanner from '~/components/CookieBanner.astro';
 import Analytics from '~/components/Analytics.astro';
 import Hero from '~/components/Hero.astro';
 import PillarGrid from '~/components/PillarGrid.astro';
+import DeploymentOptions from '~/components/DeploymentOptions.astro';
 import StorySection from '~/components/StorySection.astro';
 import ModuleGrid from '~/components/ModuleGrid.astro';
 import TwoPathCTA from '~/components/TwoPathCTA.astro';
@@ -30,6 +31,8 @@ const pathname = Astro.url.pathname;
   />
 
   <PillarGrid locale={locale} />
+
+  <DeploymentOptions locale={locale} />
 
   <StorySection
     eyebrow={t('story.eyebrow', locale)}

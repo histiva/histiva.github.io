@@ -3,10 +3,12 @@ items:
   - q: How long does deployment take?
     a: From discovery call to go-live, typical pilots take 4–6 weeks. The on-site install itself is 1–2 days; training is roughly a week of part-time workshops.
   - q: What hardware do we need?
-    a: At minimum one server-grade laptop or small server, a router, and two client devices (any modern browser). For larger clinics we size up.
+    a: For an on-premise install, at minimum one server-grade laptop or small server, a router, and two client devices (any modern browser). For larger clinics we size up. For cloud deployments you don't need on-site hardware beyond the client devices.
+  - q: Can we run Histiva in the cloud?
+    a: Yes. Two options — we host it in our managed cloud, or we deploy into your own AWS / Azure / GCP account so data residency stays in your jurisdiction. Either way, patient data is yours; you can move it out at any time.
   - q: Does Histiva work without internet?
     a: Yes. Histiva can run fully on-premise on the clinic's local network. Cloud sync and AI features are optional and configurable per-clinic.
-  - q: What does Histiva cost?
-    a: The software is free to nonprofit clinics. Deployment cost — installation, training, year-one support — is typically funded by a sponsor; we can help match you with one.
+  - q: How is Histiva funded?
+    a: Histiva is built by a nonprofit. Many deployments are fully funded by donors and foundations who want to expand healthcare access. For clinics that prefer to fund their own deployment, we operate on a strict cost-recovery basis — no profit margin. Get in touch and we'll talk through what fits your situation.
   - q: Who owns our data?
     a: You do. Patient data stays on infrastructure you control. Our role is the software and support around it.

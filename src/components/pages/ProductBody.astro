@@ -6,6 +6,7 @@ import SiteFooter from '~/components/SiteFooter.astro';
 import TranslationBanner from '~/components/TranslationBanner.astro';
 import CookieBanner from '~/components/CookieBanner.astro';
 import Analytics from '~/components/Analytics.astro';
+import DeploymentOptions from '~/components/DeploymentOptions.astro';
 import { getCollection, render } from 'astro:content';
 import { Icon } from 'astro-icon/components';
 import { type Locale, t, localizedPath } from '~/i18n/utils';
@@ -25,6 +26,8 @@ const modules = (await getCollection('modules')).sort((a, b) => a.data.order - b
     <h1 class="text-4xl text-primary-900 max-w-3xl">{t('product.title', locale)}</h1>
     <p class="mt-4 text-lg text-ink-600 max-w-3xl">{t('product.subtitle', locale)}</p>
   </section>
+
+  <DeploymentOptions locale={locale} />
 
   <section class="container-page pb-8">
     <nav aria-label="Module table of contents" class="bg-primary-100/40 rounded-lg p-4">

@@ -86,9 +86,26 @@
   },
   "home": {
     "meta_title": "Hospital records, everywhere they're needed",
-    "meta_description": "A modern, AI-powered hospital information system for nonprofit clinics in low-resource settings — modular, mobile-ready, and built to international healthcare standards.",
+    "meta_description": "A modern, AI-powered hospital information system. Cloud, on-premise, or mobile — modular, multilingual, and built by a nonprofit for the clinics that need it most.",
     "hero_title": "Hospital records, everywhere they're needed.",
-    "hero_subtitle": "A modern, AI-powered hospital information system for nonprofit clinics in low-resource settings — modular, mobile-ready, and built to international healthcare standards."
+    "hero_subtitle": "A modern, AI-powered hospital information system. Run it in managed cloud, on your own server, or on mobile — modular, multilingual, ready to deploy. Built by a nonprofit, for the clinics that need it most."
+  },
+  "deployment": {
+    "eyebrow": "How you deploy",
+    "title": "Three ways to run Histiva.",
+    "subtitle": "Same product, same audit trail, same data model. You pick the operating model that fits your clinic.",
+    "cloud": {
+      "title": "Cloud",
+      "body": "Managed cloud (we operate it) or your own AWS, Azure, or GCP account (you operate it). Lowest setup, easiest to start; data residency stays in your jurisdiction when needed."
+    },
+    "onprem": {
+      "title": "On-premise",
+      "body": "Install on a server inside your clinic's local network. Patient data never leaves your walls. Works fully offline — sync is optional and configurable per-clinic."
+    },
+    "mobile": {
+      "title": "Mobile",
+      "body": "Progressive web app today — installable on any modern phone or tablet, works on flaky networks. Native iOS and Android apps on the 2026 roadmap."
+    }
   },
   "product": {
     "meta_title": "Product · Histiva",
@@ -109,26 +126,26 @@
   },
   "for_hospitals": {
     "meta_title": "For Hospitals & NGOs · Histiva",
-    "meta_description": "Bring Histiva to your clinic. Deployment timeline, hardware requirements, costs, and FAQs.",
+    "meta_description": "Bring Histiva to your clinic. Deployment timeline, hardware requirements, funding paths, and FAQs.",
     "eyebrow": "For hospitals & NGOs",
     "hero_title": "Bring Histiva to your clinic in days, not months.",
-    "hero_subtitle": "Discovery, install, training, go-live — typically 4 to 6 weeks. The software is free to nonprofit clinics; deployment cost is usually sponsor-funded.",
+    "hero_subtitle": "Discovery, install, training, go-live — typically 4 to 6 weeks. We help match clinics with donor sponsors; for clinics that prefer to fund their own deployment, Histiva operates on a strict cost-recovery basis — no profit margin.",
     "steps_title": "How deployment works",
-    "step1": { "title": "Discovery call", "body": "30-minute conversation to understand your clinic's workflow, scale, and constraints." },
-    "step2": { "title": "Site assessment + sizing", "body": "We size hardware, network, and training needs. Quoted as a sponsor-funded package." },
+    "step1": { "title": "Discovery call", "body": "30-minute conversation to understand your clinic's workflow, scale, and constraints — and whether you'd like sponsor matching or to fund deployment yourselves." },
+    "step2": { "title": "Site assessment + sizing", "body": "We size hardware, network, and training needs. Quoted as a tailored package — sponsor-funded or cost-recovery, your choice." },
     "step3": { "title": "Install + data setup", "body": "On-site or remote, typically 1–2 days. Initial users, departments, master data loaded." },
     "step4": { "title": "Training + go-live", "body": "One week of role-based workshops for clinicians, admin, and IT. Then live operations." },
     "need_title": "What you'll need",
-    "need_1": "One server-grade laptop or small server + a router",
-    "need_2": "Two or more client devices (any modern browser)",
+    "need_1": "A server (your own, ours, or a cloud account) plus a network",
+    "need_2": "Two or more client devices (any modern browser, phone, or tablet)",
     "need_3": "An on-site staff member willing to be the in-clinic admin",
     "provide_title": "What we provide",
     "provide_1": "Installation, training, and year-one support",
-    "provide_2": "Help finding a sponsor to fund the deployment",
+    "provide_2": "Donor matching for clinics that need sponsorship",
     "provide_3": "Ongoing software updates and security patches",
-    "cost_eyebrow": "Transparent cost",
-    "cost_title": "Software free. Deployment sponsor-funded.",
-    "cost_body": "Histiva software is free to nonprofit clinics under the project license. Deployment — installation, training, and year-one support — is typically covered by a donor or foundation sponsor. We help match you with one.",
+    "cost_eyebrow": "How it's funded",
+    "cost_title": "Sponsor-funded, or strict cost-recovery — your choice.",
+    "cost_body": "Histiva is built and operated by a nonprofit. Many deployments are fully funded by donors and foundations who want to expand access to modern healthcare software. For clinics that prefer to operate independently — or aren't matched with a sponsor — Histiva works on a strict cost-recovery basis: we recover only what it costs to develop, install, and support, with no profit margin. Get in touch and we'll walk through both paths with you.",
     "faq_title": "Common questions",
     "cta_title": "Start a conversation"
   },
