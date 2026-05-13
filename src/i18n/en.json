@@ -1,4 +1,7 @@
 {
+  "ribbon": {
+    "tagline": "A nonprofit hospital information system · built for low-resource clinics"
+  },
   "nav": {
     "product": "Product",
     "ai": "AI",
@@ -10,5 +13,8 @@
   "common": {
     "schedule_demo": "Schedule a demo",
     "for_donors": "For donors"
+  },
+  "banner": {
+    "translation_pending": "Translation in progress. Showing English content."
   }
 }

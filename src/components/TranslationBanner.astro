@@ -1,0 +1,13 @@
+---
+import { type Locale, t, withFallback } from '~/i18n/utils';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const show = withFallback(locale);
+---
+{show && (
+  <div class="bg-amber-50 border-y border-amber-200 text-amber-900">
+    <div class="container-page py-2 text-sm text-center">
+      {t('banner.translation_pending', locale)}
+    </div>
+  </div>
+)}

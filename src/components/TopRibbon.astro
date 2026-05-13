@@ -1,0 +1,11 @@
+---
+import { type Locale, t } from '~/i18n/utils';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+---
+<div class="bg-primary-900 text-primary-100 text-xs">
+  <div class="container-page flex items-center gap-2 py-2">
+    <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(52,211,153,0.18)]" aria-hidden="true"></span>
+    <span>{t('ribbon.tagline', locale)}</span>
+  </div>
+</div>
