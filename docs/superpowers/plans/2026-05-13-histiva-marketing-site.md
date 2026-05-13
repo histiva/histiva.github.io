@@ -1155,7 +1155,7 @@ git commit -m "feat: cookie consent banner gating GA4 load"
 **Files:**
 - Create: `src/components/Hero.astro`
 
-- [ ] **Step 1: Create `src/components/Hero.astro`**
+- [x] **Step 1: Create `src/components/Hero.astro`**
 
 ```astro
 ---
@@ -1192,12 +1192,12 @@ const { eyebrow, title, subtitle, primaryCta, secondaryCta, image } = Astro.prop
 </section>
 ```
 
-- [ ] **Step 2: Verify check**
+- [x] **Step 2: Verify check**
 
 Run: `npm run check`
 Expected: 0 errors. (`ImageMetadata` is built into Astro.)
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add src/components/Hero.astro
@@ -1212,7 +1212,7 @@ git commit -m "feat: Hero component with eyebrow/title/subtitle/dual-CTA/image"
 - Create: `src/components/PillarCard.astro`
 - Create: `src/components/PillarGrid.astro`
 
-- [ ] **Step 1: Create `src/components/PillarCard.astro`**
+- [x] **Step 1: Create `src/components/PillarCard.astro`**
 
 ```astro
 ---
@@ -1242,7 +1242,7 @@ const { index, iconName, title, body, href, learnMoreLabel } = Astro.props;
 </article>
 ```
 
-- [ ] **Step 2: Create `src/components/PillarGrid.astro`**
+- [x] **Step 2: Create `src/components/PillarGrid.astro`**
 
 ```astro
 ---
@@ -1273,7 +1273,7 @@ const pillars = [
 </section>
 ```
 
-- [ ] **Step 3: Add pillar keys to `src/i18n/en.json`**
+- [x] **Step 3: Add pillar keys to `src/i18n/en.json`**
 
 ```json
 "pillars": {
@@ -1301,12 +1301,12 @@ const pillars = [
 }
 ```
 
-- [ ] **Step 4: Verify**
+- [x] **Step 4: Verify**
 
 Run: `npm run check`
 Expected: 0 errors.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/components/PillarCard.astro src/components/PillarGrid.astro src/i18n/en.json
@@ -1322,7 +1322,7 @@ git commit -m "feat: PillarCard + PillarGrid (AI/Mobile/Standards/Security)"
 - Create: `src/components/TwoPathCTA.astro`
 - Create: `src/components/ModuleCard.astro`
 
-- [ ] **Step 1: Create `src/components/StorySection.astro`**
+- [x] **Step 1: Create `src/components/StorySection.astro`**
 
 ```astro
 ---
@@ -1347,7 +1347,7 @@ const { eyebrow, title, body, imageSrc, imageAlt } = Astro.props;
 </section>
 ```
 
-- [ ] **Step 2: Create `src/components/TwoPathCTA.astro`**
+- [x] **Step 2: Create `src/components/TwoPathCTA.astro`**
 
 ```astro
 ---
@@ -1373,7 +1373,7 @@ const { locale } = Astro.props;
 </section>
 ```
 
-- [ ] **Step 3: Create `src/components/ModuleCard.astro`**
+- [x] **Step 3: Create `src/components/ModuleCard.astro`**
 
 ```astro
 ---
@@ -1396,7 +1396,7 @@ const { iconName, title, body, status = 'shipping' } = Astro.props;
 </article>
 ```
 
-- [ ] **Step 4: Add story + paths keys to `src/i18n/en.json`**
+- [x] **Step 4: Add story + paths keys to `src/i18n/en.json`**
 
 ```json
 "story": {
@@ -1416,12 +1416,12 @@ const { iconName, title, body, status = 'shipping' } = Astro.props;
 }
 ```
 
-- [ ] **Step 5: Verify check**
+- [x] **Step 5: Verify check**
 
 Run: `npm run check`
 Expected: 0 errors.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/components/StorySection.astro src/components/TwoPathCTA.astro src/components/ModuleCard.astro src/i18n/en.json
@@ -1435,7 +1435,7 @@ git commit -m "feat: StorySection + TwoPathCTA + ModuleCard"
 **Files:**
 - Create: `src/components/ModuleGrid.astro`
 
-- [ ] **Step 1: Create `src/components/ModuleGrid.astro`**
+- [x] **Step 1: Create `src/components/ModuleGrid.astro`**
 
 ```astro
 ---
@@ -1477,7 +1477,7 @@ const modules = [
 </section>
 ```
 
-- [ ] **Step 2: Add module keys to `src/i18n/en.json`**
+- [x] **Step 2: Add module keys to `src/i18n/en.json`**
 
 ```json
 "modules": {
@@ -1499,12 +1499,12 @@ const modules = [
 }
 ```
 
-- [ ] **Step 3: Verify check**
+- [x] **Step 3: Verify check**
 
 Run: `npm run check`
 Expected: 0 errors.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add src/components/ModuleGrid.astro src/i18n/en.json
@@ -1519,7 +1519,7 @@ git commit -m "feat: ModuleGrid with 10-module tour"
 - Create: `src/components/FAQItem.astro`
 - Create: `src/components/FAQList.astro`
 
-- [ ] **Step 1: Create `src/components/FAQItem.astro`**
+- [x] **Step 1: Create `src/components/FAQItem.astro`**
 
 ```astro
 ---
@@ -1535,7 +1535,7 @@ const { question, answer } = Astro.props;
 </details>
 ```
 
-- [ ] **Step 2: Create `src/components/FAQList.astro`**
+- [x] **Step 2: Create `src/components/FAQList.astro`**
 
 ```astro
 ---
@@ -1554,12 +1554,12 @@ const { items, title } = Astro.props;
 </section>
 ```
 
-- [ ] **Step 3: Verify**
+- [x] **Step 3: Verify**
 
 Run: `npm run check`
 Expected: 0 errors.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add src/components/FAQItem.astro src/components/FAQList.astro
@@ -1573,7 +1573,7 @@ git commit -m "feat: FAQItem + FAQList using native disclosure"
 **Files:**
 - Create: `src/components/ContactForm.astro`
 
-- [ ] **Step 1: Create `src/components/ContactForm.astro`**
+- [x] **Step 1: Create `src/components/ContactForm.astro`**
 
 ```astro
 ---
@@ -1651,7 +1651,7 @@ const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PU
 )}
 ```
 
-- [ ] **Step 2: Add form keys to `src/i18n/en.json`**
+- [x] **Step 2: Add form keys to `src/i18n/en.json`**
 
 ```json
 "form": {
@@ -1673,17 +1673,19 @@ const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PU
 }
 ```
 
-- [ ] **Step 3: Verify**
+- [x] **Step 3: Verify**
 
 Run: `npm run check`
 Expected: 0 errors.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add src/components/ContactForm.astro src/i18n/en.json
 git commit -m "feat: ContactForm with Formspree + interest routing via _subject"
 ```
+
+_Note (impl 2026-05-13): the conditional `{endpoint && (<form>...</form><script>...</script>)}` requires wrapping the two sibling elements in `<Fragment>...</Fragment>` — Astro's JSX-like expressions need a single root. Plan snippet copies through unchanged otherwise._
 
 ---
 
@@ -1696,7 +1698,7 @@ git commit -m "feat: ContactForm with Formspree + interest routing via _subject"
 - (Create stubs for the other 8 modules)
 - Create: `src/content/faqs/for-hospitals.yaml`
 
-- [ ] **Step 1: Create `src/content/config.ts`**
+- [x] **Step 1: Create `src/content/config.ts`**
 
 ```ts
 import { defineCollection, z } from 'astro:content';
@@ -1724,7 +1726,7 @@ const faqs = defineCollection({
 export const collections = { modules, faqs };
 ```
 
-- [ ] **Step 2: Create `src/content/modules/patient.mdx`**
+- [x] **Step 2: Create `src/content/modules/patient.mdx`**
 
 ```mdx
 ---
@@ -1742,9 +1744,9 @@ capabilities:
 The patient module is the spine of Histiva. Every other module — admission, lab, pharmacy, billing — references back to a single canonical patient record.
 ```
 
-- [ ] **Step 3: Create stubs for remaining 9 modules** (admission, outpatient, emergency, inpatient, laboratory, radiology, pharmacy, inventory, billing) following the same template. Use 2-4 capabilities each, drawn from the `histiva-app/docs/rfp.md` §3.2-3.4 and `CLAUDE.md` module list. Each stub is ~10 lines. For billing, set `status: in-development`.
+- [x] **Step 3: Create stubs for remaining 9 modules** (admission, outpatient, emergency, inpatient, laboratory, radiology, pharmacy, inventory, billing) following the same template. Use 2-4 capabilities each, drawn from the `histiva-app/docs/rfp.md` §3.2-3.4 and `CLAUDE.md` module list. Each stub is ~10 lines. For billing, set `status: in-development`.
 
-- [ ] **Step 4: Create `src/content/faqs/for-hospitals.yaml`**
+- [x] **Step 4: Create `src/content/faqs/for-hospitals.yaml`**
 
 ```yaml
 section: for-hospitals
@@ -1761,17 +1763,21 @@ items:
     a: You do. Patient data stays on infrastructure you control. Our role is the software and support around it.
 ```
 
-- [ ] **Step 5: Verify check + build**
+- [x] **Step 5: Verify check + build**
 
 Run: `npm run check && npm run build`
 Expected: build succeeds; content collections type-validate.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/content/config.ts src/content/modules/ src/content/faqs/
 git commit -m "feat: content collections (10 modules + for-hospitals FAQ)"
 ```
+
+_Note (impl 2026-05-13): two divergences shipped with this task:_
+_1. Astro 6 deprecated the legacy `src/content/config.ts` + `type: 'content'`/`type: 'data'` pattern. Config file MUST live at `src/content.config.ts` (project root) AND each collection MUST declare an explicit `loader: glob({ pattern, base })` from `astro/loaders`. Schema bodies unchanged. Consumer API (`getEntry('modules', '<slug>')`) is preserved, so downstream Tasks 23/27/etc. need no changes — but the actual file path used by `git add` is `src/content.config.ts`, not `src/content/config.ts`._
+_2. `patient.mdx` summary in the plan had a duplicated `"allergies, allergies"` — clearly an editing typo. Shipped as `"One record per patient — history, allergies, vitals, and vitals trends."` (single allergies + connecting `and`)._
 
 ---
 
