@@ -13,7 +13,7 @@ const modules = [
   { iconName: 'lucide:scan-line', key: 'radiology' },
   { iconName: 'lucide:pill', key: 'pharmacy' },
   { iconName: 'lucide:package', key: 'inventory' },
-  { iconName: 'lucide:receipt', key: 'billing', status: 'in-development' as const },
+  { iconName: 'lucide:receipt', key: 'billing' },
 ];
 ---
 <section class="container-page py-14">
@@ -30,7 +30,6 @@ const modules = [
         iconName={m.iconName}
         title={t(`modules.items.${m.key}.title`, locale)}
         body={t(`modules.items.${m.key}.body`, locale)}
-        status={m.status}
       />
     ))}
   </div>

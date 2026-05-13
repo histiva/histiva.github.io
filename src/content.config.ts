@@ -8,7 +8,6 @@ const modules = defineCollection({
     order: z.number(),
     icon: z.string(),
     summary: z.string(),
-    status: z.enum(['shipping', 'in-development']).default('shipping'),
     capabilities: z.array(z.string()).min(2).max(6),
   }),
 });
