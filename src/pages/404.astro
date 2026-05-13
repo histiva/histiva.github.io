@@ -1,0 +1,22 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import TopRibbon from '~/components/TopRibbon.astro';
+import SiteNav from '~/components/SiteNav.astro';
+import SiteFooter from '~/components/SiteFooter.astro';
+import { DEFAULT_LOCALE, t } from '~/i18n/utils';
+const locale = DEFAULT_LOCALE;
+const pathname = Astro.url.pathname;
+---
+<Layout title="Not found" description="Page not found." locale={locale} noindex>
+  <TopRibbon slot="ribbon" locale={locale} />
+  <SiteNav slot="nav" locale={locale} pathname={pathname} />
+
+  <section class="container-page py-24 text-center">
+    <p class="text-xs uppercase tracking-[0.12em] text-primary-700 font-semibold">404</p>
+    <h1 class="text-4xl text-primary-900 mt-2">{t('not_found.title', locale)}</h1>
+    <p class="text-ink-600 mt-3">{t('not_found.body', locale)}</p>
+    <a href="/" class="mt-6 inline-block px-5 py-2.5 rounded-md bg-primary-700 text-white font-semibold">{t('not_found.home', locale)}</a>
+  </section>
+
+  <SiteFooter slot="footer" locale={locale} pathname={pathname} />
+</Layout>

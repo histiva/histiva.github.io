@@ -205,5 +205,10 @@
     "meta_description": "How Histiva handles data collected on histiva.github.io.",
     "eyebrow": "Privacy",
     "title": "Privacy policy"
+  },
+  "not_found": {
+    "title": "We couldn't find that page.",
+    "body": "The link may be old, or the page may have moved. Head back home or check the language version.",
+    "home": "Back to home"
   }
 }
