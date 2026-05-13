@@ -1,0 +1,52 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import TopRibbon from '~/components/TopRibbon.astro';
+import SiteNav from '~/components/SiteNav.astro';
+import SiteFooter from '~/components/SiteFooter.astro';
+import TranslationBanner from '~/components/TranslationBanner.astro';
+import CookieBanner from '~/components/CookieBanner.astro';
+import Analytics from '~/components/Analytics.astro';
+import Hero from '~/components/Hero.astro';
+import { getEntry, render } from 'astro:content';
+import { type Locale, t, localizedPath } from '~/i18n/utils';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const pathname = Astro.url.pathname;
+const entry = await getEntry('pages', 'abouten');
+const { Content } = await render(entry!);
+
+const principleKeys = ['opensource', 'clinician_led', 'privacy_default', 'low_resource_tested', 'nonprofit_governed', 'ai_guardrails'] as const;
+---
+<Layout title={t('about.meta_title', locale)} description={t('about.meta_description', locale)} locale={locale}>
+  <TopRibbon slot="ribbon" locale={locale} />
+  <SiteNav slot="nav" locale={locale} pathname={pathname} />
+  <TranslationBanner slot="translation-banner" locale={locale} />
+
+  <Hero
+    eyebrow={t('about.eyebrow', locale)}
+    title={t('about.hero_title', locale)}
+    subtitle={t('about.hero_subtitle', locale)}
+    primaryCta={{ label: t('common.schedule_demo', locale), href: localizedPath('/contact', locale) }}
+  />
+
+  <section class="container-page py-12">
+    <h2 class="text-2xl text-primary-900 mb-6">{t('about.principles_title', locale)}</h2>
+    <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {principleKeys.map((key) => (
+        <li class="bg-white border border-slate-200 rounded-lg p-4">
+          <h3 class="text-sm font-semibold text-primary-900">{t(`about.principle_${key}.title`, locale)}</h3>
+          <p class="text-sm text-ink-600 mt-1 leading-relaxed">{t(`about.principle_${key}.body`, locale)}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <article class="container-page py-12 prose prose-slate max-w-3xl">
+    <Content />
+  </article>
+
+  <SiteFooter slot="footer" locale={locale} pathname={pathname} />
+  <CookieBanner slot="cookie-banner" locale={locale} />
+  <Analytics slot="analytics" />
+</Layout>

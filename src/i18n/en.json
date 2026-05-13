@@ -171,5 +171,19 @@
     "transparency_title": "Where the money goes — visible.",
     "transparency_body": "Once our nonprofit legal entity is formed and the first annual financial report is published, that report will live on this page. Until then, every sponsorship engagement is documented in a private quarterly update shared with the funder.",
     "cta_title": "Sponsor a deployment"
+  },
+  "about": {
+    "meta_title": "About · Histiva",
+    "meta_description": "A nonprofit hospital information system for clinics where care happens despite the infrastructure.",
+    "eyebrow": "About",
+    "hero_title": "A hospital system for the clinics that need it most.",
+    "hero_subtitle": "Histiva is operated by a small working group of clinicians and engineers, supported by donors who believe modern hospital software shouldn't be a luxury.",
+    "principles_title": "What we hold to",
+    "principle_opensource": { "title": "Open-source first", "body": "Code is published. Trust through visibility." },
+    "principle_clinician_led": { "title": "Clinician-led", "body": "Every feature passes a real clinician's smell test." },
+    "principle_privacy_default": { "title": "Privacy by default", "body": "Patient data stays where the hospital wants it." },
+    "principle_low_resource_tested": { "title": "Low-resource tested", "body": "If it doesn't work on an old tablet over flaky wifi, it's not done." },
+    "principle_nonprofit_governed": { "title": "Nonprofit-governed", "body": "Mission outranks revenue. Always." },
+    "principle_ai_guardrails": { "title": "AI with guardrails", "body": "The clinician always decides. The audit log never lies." }
   }
 }
