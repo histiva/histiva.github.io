@@ -91,6 +91,16 @@
     "hero_title": "Hospital records, everywhere they're needed.",
     "hero_subtitle": "A modern, AI-powered hospital information system for nonprofit clinics in low-resource settings — modular, mobile-ready, and built to international healthcare standards."
   },
+  "product": {
+    "meta_title": "Product · Histiva",
+    "meta_description": "Ten modules covering patient management, admission, lab, radiology, pharmacy, inventory, and billing.",
+    "eyebrow": "Product",
+    "title": "Ten modules. One coherent system.",
+    "subtitle": "From patient intake to billing, every workflow lives in the same audit trail and the same role-based permission model.",
+    "toc": "Modules",
+    "in_dev": "In development",
+    "see_in_action": "See it in your clinic"
+  },
   "form": {
     "name": "Your name",
     "email": "Email",
