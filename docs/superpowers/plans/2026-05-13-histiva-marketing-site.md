@@ -23,13 +23,13 @@
 - Create: `.nvmrc`
 - Create: `src/env.d.ts`
 
-- [ ] **Step 1: Create `.nvmrc`**
+- [x] **Step 1: Create `.nvmrc`**
 
 ```
 22
 ```
 
-- [ ] **Step 2: Create `package.json`**
+- [x] **Step 2: Create `package.json`**
 
 ```json
 {
@@ -75,7 +75,7 @@
 
 _Note (impl 2026-05-13): version pins for `@astrojs/mdx`, `@astrojs/sitemap`, `@astrojs/check`, and `astro-icon` adjusted from the original plan to match the current npm-registry state for Astro-6 compatibility._
 
-- [ ] **Step 3: Create `tsconfig.json`**
+- [x] **Step 3: Create `tsconfig.json`**
 
 ```json
 {
@@ -93,7 +93,7 @@ _Note (impl 2026-05-13): version pins for `@astrojs/mdx`, `@astrojs/sitemap`, `@
 }
 ```
 
-- [ ] **Step 4: Create `src/env.d.ts`**
+- [x] **Step 4: Create `src/env.d.ts`**
 
 ```ts
 /// <reference path="../.astro/types.d.ts" />
@@ -108,7 +108,7 @@ interface ImportMeta {
 }
 ```
 
-- [ ] **Step 5: Create minimal `astro.config.mjs`** (i18n config comes in Task 2)
+- [x] **Step 5: Create minimal `astro.config.mjs`** (i18n config comes in Task 2)
 
 ```js
 import { defineConfig } from 'astro/config';
@@ -126,12 +126,12 @@ export default defineConfig({
 });
 ```
 
-- [ ] **Step 6: Install deps + verify build**
+- [x] **Step 6: Install deps + verify build**
 
 Run: `npm install && npm run check`
 Expected: zero errors. (Astro will warn about no pages yet — that's fine.)
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add package.json package-lock.json tsconfig.json astro.config.mjs .nvmrc src/env.d.ts
@@ -145,7 +145,7 @@ git commit -m "chore: scaffold astro 6.3 project with tailwind v4 + i18n deps"
 **Files:**
 - Modify: `astro.config.mjs`
 
-- [ ] **Step 1: Add i18n config block to `astro.config.mjs`**
+- [x] **Step 1: Add i18n config block to `astro.config.mjs`**
 
 Replace the `defineConfig({...})` call body with:
 
@@ -170,12 +170,12 @@ export default defineConfig({
 });
 ```
 
-- [ ] **Step 2: Verify config**
+- [x] **Step 2: Verify config**
 
 Run: `npm run check`
 Expected: no TS errors. (Astro may warn about no pages — still fine.)
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add astro.config.mjs
@@ -189,7 +189,7 @@ git commit -m "feat: configure built-in i18n (en default, tr/fr/ar with en fallb
 **Files:**
 - Create: `src/styles/global.css`
 
-- [ ] **Step 1: Create `src/styles/global.css`** (Tailwind v4 CSS-first config)
+- [x] **Step 1: Create `src/styles/global.css`** (Tailwind v4 CSS-first config)
 
 ```css
 @import 'tailwindcss';
@@ -239,7 +239,7 @@ git commit -m "feat: configure built-in i18n (en default, tr/fr/ar with en fallb
 }
 ```
 
-- [ ] **Step 2: Sanity-check Tailwind compiles**
+- [x] **Step 2: Sanity-check Tailwind compiles**
 
 Create a throwaway `src/pages/index.astro`:
 
@@ -253,18 +253,20 @@ import '~/styles/global.css';
 Run: `npm run build`
 Expected: build succeeds; `dist/index.html` contains the styled div.
 
-- [ ] **Step 3: Delete throwaway index.astro** (will be created properly in Task 22)
+- [x] **Step 3: Delete throwaway index.astro** (will be created properly in Task 22)
 
 ```bash
 rm src/pages/index.astro
 ```
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add src/styles/global.css
 git commit -m "feat: tailwind v4 css-first tokens (trust blue palette) + inter font"
 ```
+
+_Note (impl 2026-05-13): Task 3's `npm run build` surfaced a Vite-version conflict — `@tailwindcss/vite@4.3.0` accepts Vite 5–8 and npm hoisted Vite 8, but Astro 6.3 requires Vite 7. Build failed with `Missing field tsconfigPaths on BindingViteResolvePluginConfig.resolveOptions` (rolldown 1.0 in Vite 8). Astro's own dev server prints the exact fix: pin via `"overrides": { "vite": "^7" }` in `package.json`. Applied as a separate preceding commit (`689a55e`) before the Task 3 styling commit (`d276baa`) so the override is rollback-isolable from the design tokens._
 
 ---
 
@@ -275,7 +277,7 @@ git commit -m "feat: tailwind v4 css-first tokens (trust blue palette) + inter f
 - Create: `.prettierrc.json`
 - Create: `.prettierignore`
 
-- [ ] **Step 1: Create `eslint.config.mjs`**
+- [x] **Step 1: Create `eslint.config.mjs`**
 
 ```js
 import eslintPluginAstro from 'eslint-plugin-astro';
@@ -293,7 +295,7 @@ export default [
 ];
 ```
 
-- [ ] **Step 2: Create `.prettierrc.json`**
+- [x] **Step 2: Create `.prettierrc.json`**
 
 ```json
 {
@@ -306,7 +308,7 @@ export default [
 }
 ```
 
-- [ ] **Step 3: Create `.prettierignore`**
+- [x] **Step 3: Create `.prettierignore`**
 
 ```
 dist
@@ -316,12 +318,12 @@ package-lock.json
 public/img
 ```
 
-- [ ] **Step 4: Run lint to verify config**
+- [x] **Step 4: Run lint to verify config**
 
 Run: `npm run lint`
 Expected: passes with no errors (no source files yet).
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add eslint.config.mjs .prettierrc.json .prettierignore
@@ -336,7 +338,7 @@ git commit -m "chore: eslint + prettier for astro"
 - Create: `.github/workflows/ci.yml`
 - Create: `.github/workflows/deploy.yml`
 
-- [ ] **Step 1: Create `.github/workflows/ci.yml`**
+- [x] **Step 1: Create `.github/workflows/ci.yml`**
 
 ```yaml
 name: CI
@@ -364,7 +366,7 @@ jobs:
       - run: npm run build
 ```
 
-- [ ] **Step 2: Create `.github/workflows/deploy.yml`**
+- [x] **Step 2: Create `.github/workflows/deploy.yml`**
 
 ```yaml
 name: Deploy to GitHub Pages
@@ -410,7 +412,7 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add .github/workflows/ci.yml .github/workflows/deploy.yml
@@ -427,7 +429,7 @@ git commit -m "ci: github actions for build + pages deploy"
 - Create: `public/robots.txt`
 - Create: `public/favicon.svg`
 
-- [ ] **Step 1: Create `README.md`**
+- [x] **Step 1: Create `README.md`**
 
 ````markdown
 # Histiva Marketing Site
@@ -475,7 +477,7 @@ If either is absent, the feature degrades gracefully (GA off, form shows "config
 - Plan: `docs/superpowers/plans/2026-05-13-histiva-marketing-site.md`
 ````
 
-- [ ] **Step 2: Create `CLAUDE.md`**
+- [x] **Step 2: Create `CLAUDE.md`**
 
 ```markdown
 # CLAUDE.md — Histiva Marketing Site
@@ -523,7 +525,7 @@ Live at https://histiva.github.io/ once deployed.
 - ❌ Cross-locale page duplication beyond thin route files (one body component per page, reused)
 ```
 
-- [ ] **Step 3: Create `public/robots.txt`**
+- [x] **Step 3: Create `public/robots.txt`**
 
 ```
 User-agent: *
@@ -532,13 +534,13 @@ Allow: /
 Sitemap: https://histiva.github.io/sitemap-index.xml
 ```
 
-- [ ] **Step 4: Create placeholder `public/favicon.svg`**
+- [x] **Step 4: Create placeholder `public/favicon.svg`**
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#0c2461"/><text x="16" y="22" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#dbeafe" text-anchor="middle">h</text></svg>
 ```
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add README.md CLAUDE.md public/robots.txt public/favicon.svg
