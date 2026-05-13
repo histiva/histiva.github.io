@@ -1807,7 +1807,7 @@ Each page has two parts:
 - Create: `src/pages/fr/index.astro`
 - Create: `src/pages/ar/index.astro`
 
-- [ ] **Step 1: Create `src/components/pages/HomeBody.astro`**
+- [x] **Step 1: Create `src/components/pages/HomeBody.astro`**
 
 ```astro
 ---
@@ -1859,7 +1859,7 @@ const pathname = Astro.url.pathname;
 </Layout>
 ```
 
-- [ ] **Step 2: Add home meta keys to `src/i18n/en.json`**
+- [x] **Step 2: Add home meta keys to `src/i18n/en.json`**
 
 ```json
 "home": {
@@ -1870,7 +1870,7 @@ const pathname = Astro.url.pathname;
 }
 ```
 
-- [ ] **Step 3: Create `src/pages/index.astro`**
+- [x] **Step 3: Create `src/pages/index.astro`**
 
 ```astro
 ---
@@ -1879,7 +1879,7 @@ import HomeBody from '~/components/pages/HomeBody.astro';
 <HomeBody locale="en" />
 ```
 
-- [ ] **Step 4: Create `src/pages/tr/index.astro`**
+- [x] **Step 4: Create `src/pages/tr/index.astro`**
 
 ```astro
 ---
@@ -1888,19 +1888,21 @@ import HomeBody from '~/components/pages/HomeBody.astro';
 <HomeBody locale="tr" />
 ```
 
-- [ ] **Step 5: Create `src/pages/fr/index.astro` and `src/pages/ar/index.astro` analogously** (3-line wrappers, `locale="fr"` and `locale="ar"` respectively).
+- [x] **Step 5: Create `src/pages/fr/index.astro` and `src/pages/ar/index.astro` analogously** (3-line wrappers, `locale="fr"` and `locale="ar"` respectively).
 
-- [ ] **Step 6: Run build + verify**
+- [x] **Step 6: Run build + verify**
 
 Run: `npm run build && npm run preview &` then visit `http://localhost:4321/` and `http://localhost:4321/ar/`.
 Expected: EN homepage renders fully. AR page shows TranslationBanner, same content, `<html lang="ar" dir="rtl">` on inspect.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add src/components/pages/HomeBody.astro src/pages/index.astro src/pages/tr/ src/pages/fr/ src/pages/ar/ src/i18n/en.json
 git commit -m "feat: homepage body + 4-locale route wrappers"
 ```
+
+_Note (impl 2026-05-13): build emits per-page WARN logs of the form `Could not render /tr from route /tr/ as it conflicts with higher priority route /tr` (one per non-EN locale). These come from Astro's `fallback: { tr: 'en', fr: 'en', ar: 'en' }` config trying to auto-emit fallback routes while our explicit `src/pages/<locale>/index.astro` files win precedence. Output is correct — 4 HTML files per page, one per locale. The warnings are benign noise but will recur for every page in Tasks 23-29. To silence before Task 33 Lighthouse: remove the `fallback` block from `astro.config.mjs` (we handle fallback semantically via `<TranslationBanner />` + EN content rendering, not via route-level redirect)._
 
 ---
 
@@ -1913,7 +1915,7 @@ git commit -m "feat: homepage body + 4-locale route wrappers"
 - Create: `src/pages/fr/product.astro`
 - Create: `src/pages/ar/product.astro`
 
-- [ ] **Step 1: Create `src/components/pages/ProductBody.astro`**
+- [x] **Step 1: Create `src/components/pages/ProductBody.astro`**
 
 ```astro
 ---
@@ -1988,7 +1990,7 @@ const modules = (await getCollection('modules')).sort((a, b) => a.data.order - b
 </Layout>
 ```
 
-- [ ] **Step 2: Add product keys to `en.json`**
+- [x] **Step 2: Add product keys to `en.json`**
 
 ```json
 "product": {
@@ -2003,19 +2005,21 @@ const modules = (await getCollection('modules')).sort((a, b) => a.data.order - b
 }
 ```
 
-- [ ] **Step 3: Create 4 thin route files** at `src/pages/product.astro`, `src/pages/tr/product.astro`, `src/pages/fr/product.astro`, `src/pages/ar/product.astro` following Task 22 pattern.
+- [x] **Step 3: Create 4 thin route files** at `src/pages/product.astro`, `src/pages/tr/product.astro`, `src/pages/fr/product.astro`, `src/pages/ar/product.astro` following Task 22 pattern.
 
-- [ ] **Step 4: Build + verify**
+- [x] **Step 4: Build + verify**
 
 Run: `npm run build`
 Expected: `/product` renders 10 module sections with TOC.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/components/pages/ProductBody.astro src/pages/product.astro src/pages/tr/product.astro src/pages/fr/product.astro src/pages/ar/product.astro src/i18n/en.json
 git commit -m "feat: /product page with module TOC + MDX content"
 ```
+
+_Note (impl 2026-05-13): adapted snippet for Content Layer API (per Task 20). Replaced `await m.render()` with `await render(m)` (top-level `render` imported from `astro:content`), and `m.slug` with `m.id` for the anchor IDs and TOC hrefs. Same pattern applies to Tasks 24/27 where they use MDX rendering._
 
 ---
 
@@ -2026,7 +2030,7 @@ git commit -m "feat: /product page with module TOC + MDX content"
 - Create: `src/components/pages/AiBody.astro`
 - Create: `src/pages/ai.astro` (+ tr/fr/ar variants)
 
-- [ ] **Step 1: Create `src/content/pages/ai.en.mdx`**
+- [x] **Step 1: Create `src/content/pages/ai.en.mdx`**
 
 ```mdx
 ---
@@ -2072,7 +2076,7 @@ In limited contexts, Histiva can run multi-step workflows on the clinician's beh
 [Schedule a demo](/contact) — we'll walk you through both modes with anonymized examples.
 ```
 
-- [ ] **Step 2: Add ai collection to `src/content/config.ts`**
+- [x] **Step 2: Add ai collection to `src/content/config.ts`**
 
 Update `collections` export:
 
@@ -2085,7 +2089,7 @@ const pages = defineCollection({
 export const collections = { modules, faqs, pages };
 ```
 
-- [ ] **Step 3: Create `src/components/pages/AiBody.astro`** — uses Layout + nav + footer chrome and renders the MDX content from the `pages` collection (entry `ai.en`). Pattern mirrors Task 23 with single-content rendering.
+- [x] **Step 3: Create `src/components/pages/AiBody.astro`** — uses Layout + nav + footer chrome and renders the MDX content from the `pages` collection (entry `aien` — see impl-note below). Pattern mirrors Task 23 with single-content rendering.
 
 ```astro
 ---
@@ -2128,7 +2132,7 @@ const { Content } = await entry!.render();
 </Layout>
 ```
 
-- [ ] **Step 4: Add AI keys to `en.json`**
+- [x] **Step 4: Add AI keys to `en.json`**
 
 ```json
 "ai": {
@@ -2140,19 +2144,23 @@ const { Content } = await entry!.render();
 }
 ```
 
-- [ ] **Step 5: Create 4 thin route files** at `src/pages/ai.astro`, `src/pages/tr/ai.astro`, `src/pages/fr/ai.astro`, `src/pages/ar/ai.astro`.
+- [x] **Step 5: Create 4 thin route files** at `src/pages/ai.astro`, `src/pages/tr/ai.astro`, `src/pages/fr/ai.astro`, `src/pages/ar/ai.astro`.
 
-- [ ] **Step 6: Build + verify**
+- [x] **Step 6: Build + verify**
 
 Run: `npm run build`
 Expected: success. `/ai` renders MDX content.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add src/content/pages/ai.en.mdx src/content/config.ts src/components/pages/AiBody.astro src/pages/ai.astro src/pages/tr/ai.astro src/pages/fr/ai.astro src/pages/ar/ai.astro src/i18n/en.json
 git commit -m "feat: /ai page with MDX deep-dive content"
 ```
+
+_Note (impl 2026-05-13): TWO important findings (supersedes HANDOFF "Critical gotchas" §i18n fallback semantics line):_
+_1. Config still lives at `src/content.config.ts` (project root, per Task 20 deviation) — when this task says "add to `src/content/config.ts`", read it as "add to the project-root content.config.ts file"._
+_2. **Content Layer glob loader strips dots from filenames.** Files named `ai.en.mdx`, `about.en.mdx`, etc. produce IDs `aien`, `abouten`, etc. (NOT `ai.en`/`about.en`). All `getEntry('pages', '<id>')` calls in this task and any future page (Task 27 etc.) must use the dotless form. When TR content arrives in Phase 2 as `ai.tr.mdx`, its id will be `aitr`. The HANDOFF "Critical gotchas" line `getEntry('pages', 'ai.en')` is incorrect under Content Layer; the correct call is `getEntry('pages', 'aien')`._
 
 ---
 
@@ -2162,7 +2170,7 @@ git commit -m "feat: /ai page with MDX deep-dive content"
 - Create: `src/components/pages/ForHospitalsBody.astro`
 - Create: `src/pages/for-hospitals.astro` (+ 3 locale variants)
 
-- [ ] **Step 1: Create `src/components/pages/ForHospitalsBody.astro`**
+- [x] **Step 1: Create `src/components/pages/ForHospitalsBody.astro`**
 
 Structure: Layout → Hero → "Who this is for" section → "How deployment works" 4-step timeline (numbered cards) → "What you need / what we provide" two-column → Cost section (transparent) → FAQList (uses `for-hospitals` FAQ data collection from Task 20) → ContactForm with `defaultInterest="hospital"`.
 
@@ -2257,7 +2265,7 @@ const steps = [
 </Layout>
 ```
 
-- [ ] **Step 2: Add for_hospitals keys to `en.json`**
+- [x] **Step 2: Add for_hospitals keys to `en.json`**
 
 ```json
 "for_hospitals": {
@@ -2287,14 +2295,14 @@ const steps = [
 }
 ```
 
-- [ ] **Step 3: Create 4 thin route files** at `src/pages/for-hospitals.astro` + 3 locale variants.
+- [x] **Step 3: Create 4 thin route files** at `src/pages/for-hospitals.astro` + 3 locale variants.
 
-- [ ] **Step 4: Build + verify**
+- [x] **Step 4: Build + verify**
 
 Run: `npm run build`
 Expected: page renders with hero, 4-step grid, two-column need/provide, cost block, FAQ, form.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/components/pages/ForHospitalsBody.astro src/pages/for-hospitals.astro src/pages/tr/for-hospitals.astro src/pages/fr/for-hospitals.astro src/pages/ar/for-hospitals.astro src/i18n/en.json
@@ -2309,7 +2317,7 @@ git commit -m "feat: /for-hospitals page with deployment timeline + FAQ + form"
 - Create: `src/components/pages/ForDonorsBody.astro`
 - Create: `src/pages/for-donors.astro` (+ 3 locale variants)
 
-- [ ] **Step 1: Create `src/components/pages/ForDonorsBody.astro`**
+- [x] **Step 1: Create `src/components/pages/ForDonorsBody.astro`**
 
 Same import block + slot wiring as `ForHospitalsBody.astro` (Task 25 Step 1) — replicate the Layout/TopRibbon/SiteNav/SiteFooter/TranslationBanner/CookieBanner/Analytics scaffolding verbatim, swap the `Hero` and replace the steps + need/provide + cost + FAQ sections with the four sections below.
 
@@ -2375,7 +2383,7 @@ Hero block:
 </section>
 ```
 
-- [ ] **Step 2: Add for_donors keys to `en.json`**
+- [x] **Step 2: Add for_donors keys to `en.json`**
 
 ```json
 "for_donors": {
@@ -2402,9 +2410,9 @@ Hero block:
 }
 ```
 
-- [ ] **Step 3: Create 4 thin route files** at `src/pages/for-donors.astro` + `src/pages/{tr,fr,ar}/for-donors.astro`, each a 3-line wrapper following the Task 22 pattern.
+- [x] **Step 3: Create 4 thin route files** at `src/pages/for-donors.astro` + `src/pages/{tr,fr,ar}/for-donors.astro`, each a 3-line wrapper following the Task 22 pattern.
 
-- [ ] **Step 4: Build + verify, commit:**
+- [x] **Step 4: Build + verify, commit:**
 
 ```bash
 git add src/components/pages/ForDonorsBody.astro src/pages/for-donors.astro src/pages/tr/for-donors.astro src/pages/fr/for-donors.astro src/pages/ar/for-donors.astro src/i18n/en.json
@@ -2420,7 +2428,7 @@ git commit -m "feat: /for-donors page with funding breakdown + tiers + form"
 - Create: `src/components/pages/AboutBody.astro`
 - Create: `src/pages/about.astro` (+ 3 locale variants)
 
-- [ ] **Step 1: Create `src/content/pages/about.en.mdx`**
+- [x] **Step 1: Create `src/content/pages/about.en.mdx`**
 
 ```mdx
 ---
@@ -2455,9 +2463,9 @@ The product code is published on GitHub under the [Apache-2.0 license](https://g
 - Anything else: [/contact](/contact)
 ```
 
-- [ ] **Step 2: Create `src/components/pages/AboutBody.astro`**
+- [x] **Step 2: Create `src/components/pages/AboutBody.astro`**
 
-Same Layout/chrome scaffolding pattern as Task 24's `AiBody.astro` (replicate the import block, the Layout slots, the `getEntry('pages', 'about.en')` MDX load). Add a "Principles" grid section BETWEEN the Hero and the MDX `<Content />` block:
+Same Layout/chrome scaffolding pattern as Task 24's `AiBody.astro` (replicate the import block, the Layout slots, the `getEntry('pages', 'abouten')` MDX load — note the dotless entry id per Task 24 impl-note). Add a "Principles" grid section BETWEEN the Hero and the MDX `<Content />` block:
 
 ```astro
 <section class="container-page py-12">
@@ -2473,7 +2481,7 @@ Same Layout/chrome scaffolding pattern as Task 24's `AiBody.astro` (replicate th
 </section>
 ```
 
-- [ ] **Step 3: Add about keys to `en.json`**
+- [x] **Step 3: Add about keys to `en.json`**
 
 ```json
 "about": {
@@ -2492,7 +2500,7 @@ Same Layout/chrome scaffolding pattern as Task 24's `AiBody.astro` (replicate th
 }
 ```
 
-- [ ] **Step 4: Create 4 route files** (`/about.astro` + 3 locale variants). Build, verify, commit:
+- [x] **Step 4: Create 4 route files** (`/about.astro` + 3 locale variants). Build, verify, commit:
 
 ```bash
 git add src/content/pages/about.en.mdx src/components/pages/AboutBody.astro src/pages/about.astro src/pages/tr/about.astro src/pages/fr/about.astro src/pages/ar/about.astro src/i18n/en.json
@@ -2509,7 +2517,7 @@ git commit -m "feat: /about page with mission + principles + MDX narrative"
 - Create: `src/pages/contact.astro` (+ 3 locale variants)
 - Create: `src/pages/thank-you.astro` (+ 3 locale variants)
 
-- [ ] **Step 1: Create `src/components/pages/ContactBody.astro`**
+- [x] **Step 1: Create `src/components/pages/ContactBody.astro`**
 
 ```astro
 ---
@@ -2544,7 +2552,7 @@ const pathname = Astro.url.pathname;
 </Layout>
 ```
 
-- [ ] **Step 2: Create `src/components/pages/ThankYouBody.astro`**
+- [x] **Step 2: Create `src/components/pages/ThankYouBody.astro`**
 
 ```astro
 ---
@@ -2581,7 +2589,7 @@ const pathname = Astro.url.pathname;
 </Layout>
 ```
 
-- [ ] **Step 3: Add contact + thank_you keys to `en.json`**
+- [x] **Step 3: Add contact + thank_you keys to `en.json`**
 
 ```json
 "contact": {
@@ -2600,9 +2608,9 @@ const pathname = Astro.url.pathname;
 }
 ```
 
-- [ ] **Step 4: Create 8 route files** (`/contact.astro`, `/thank-you.astro`, + 3 locale variants of each).
+- [x] **Step 4: Create 8 route files** (`/contact.astro`, `/thank-you.astro`, + 3 locale variants of each).
 
-- [ ] **Step 5: Build + verify, commit:**
+- [x] **Step 5: Build + verify, commit:**
 
 ```bash
 git add src/components/pages/ContactBody.astro src/components/pages/ThankYouBody.astro src/pages/contact.astro src/pages/thank-you.astro src/pages/tr/contact.astro src/pages/tr/thank-you.astro src/pages/fr/contact.astro src/pages/fr/thank-you.astro src/pages/ar/contact.astro src/pages/ar/thank-you.astro src/i18n/en.json
@@ -2618,7 +2626,7 @@ git commit -m "feat: /contact + /thank-you (noindex)"
 - Create: `src/components/pages/PrivacyBody.astro`
 - Create: `src/pages/privacy.astro` (+ 3 locale variants)
 
-- [ ] **Step 1: Create `src/content/pages/privacy.en.mdx`**
+- [x] **Step 1: Create `src/content/pages/privacy.en.mdx`**
 
 ```mdx
 ---
@@ -2659,11 +2667,11 @@ Histiva is in the process of forming a nonprofit legal entity. Until that is fin
 Material changes to this policy will be noted at the top of this page and announced in the GitHub repository.
 ```
 
-- [ ] **Step 2: Create `src/components/pages/PrivacyBody.astro`**
+- [x] **Step 2: Create `src/components/pages/PrivacyBody.astro`**
 
 Same Layout/chrome scaffolding pattern as Task 24's `AiBody.astro`, but with:
 - No `<Hero>` (replace with a small section that renders `<h1>{t('privacy.title', locale)}</h1>` + sub).
-- MDX loaded via `await getEntry('pages', 'privacy.en')`.
+- MDX loaded via `await getEntry('pages', 'privacyen')` (dotless id per Task 24 impl-note).
 - Prose container `max-w-3xl`.
 
 ```astro
@@ -2704,7 +2712,7 @@ const { Content } = await entry!.render();
 </Layout>
 ```
 
-- [ ] **Step 3: Add privacy keys to `en.json`**
+- [x] **Step 3: Add privacy keys to `en.json`**
 
 ```json
 "privacy": {
@@ -2715,7 +2723,7 @@ const { Content } = await entry!.render();
 }
 ```
 
-- [ ] **Step 4: Create 4 route files** (`/privacy.astro` + 3 locale variants). Build, verify, commit:
+- [x] **Step 4: Create 4 route files** (`/privacy.astro` + 3 locale variants). Build, verify, commit:
 
 ```bash
 git add src/content/pages/privacy.en.mdx src/components/pages/PrivacyBody.astro src/pages/privacy.astro src/pages/tr/privacy.astro src/pages/fr/privacy.astro src/pages/ar/privacy.astro src/i18n/en.json
@@ -2729,7 +2737,7 @@ git commit -m "feat: /privacy page with MDX policy content"
 **Files:**
 - Create: `src/pages/404.astro`
 
-- [ ] **Step 1: Create `src/pages/404.astro`** (single file; Astro auto-routes locale-aware 404s via the `i18n.fallback` behavior for missing localized pages; for hard 404s this file is the shared one.)
+- [x] **Step 1: Create `src/pages/404.astro`** (single file; Astro auto-routes locale-aware 404s via the `i18n.fallback` behavior for missing localized pages; for hard 404s this file is the shared one.)
 
 ```astro
 ---
@@ -2756,7 +2764,7 @@ const pathname = Astro.url.pathname;
 </Layout>
 ```
 
-- [ ] **Step 2: Add not_found keys to `en.json`**
+- [x] **Step 2: Add not_found keys to `en.json`**
 
 ```json
 "not_found": {
@@ -2766,7 +2774,7 @@ const pathname = Astro.url.pathname;
 }
 ```
 
-- [ ] **Step 3: Build + verify, commit:**
+- [x] **Step 3: Build + verify, commit:**
 
 ```bash
 git add src/pages/404.astro src/i18n/en.json
@@ -2807,6 +2815,39 @@ Fill one row per image actually committed. Track here so credits stay accurate.
 git add public/img/ public/og/ src/content/photo-credits.json src/components/pages/HomeBody.astro
 git commit -m "feat: curated photos + unDraw illustrations + default OG image"
 ```
+
+---
+
+> **Impl-note (Task 31 partial — stubs landed, human curation outstanding):**
+>
+> Steps 1, 2, and 5 of Task 31 are blocked on human work and were **not**
+> completed in the stub commit. What is on disk after the stub commit:
+>
+> - `public/og/default.png` — programmatically generated 1200x630 placeholder
+>   (Trust Blue + white "Histiva" wordmark + subtitle). Generator lives at
+>   `scripts/gen-og-default.mjs`; re-run with `node scripts/gen-og-default.mjs`.
+>   A human can overwrite this PNG with a designed export (Figma/PowerPoint)
+>   without changing any wiring — `Layout.astro` references the path directly.
+> - `public/img/photos/.gitkeep`, `public/img/illustrations/.gitkeep` — empty
+>   placeholders so git tracks the directory structure.
+> - `src/content/photo-credits.json` — empty JSONC array (`[]`) with a
+>   header comment describing the future entry shape. No code imports it
+>   today; it is a human-curated registry only.
+>
+> Deferred to a human (NOT done by the AI agent):
+>
+> 1. **Curate 6 Unsplash photos** per Step 1's shot list, optimize to
+>    ~200kB each, save under `public/img/photos/`.
+> 2. **Download 4 unDraw illustrations** per Step 2, recolor `#6c63ff` →
+>    `#1e40af`, save under `public/img/illustrations/`.
+> 3. **Fill `src/content/photo-credits.json`** with one entry per committed
+>    image; strip the header comment block once entries are added so the
+>    file becomes strict valid JSON.
+> 4. **Replace `public/og/default.png`** with a designed export if more
+>    polish is desired beyond the SVG-rendered placeholder.
+> 5. **Wire the hero image into `HomeBody.astro`** (Step 5) — only after
+>    `clinician-tablet.jpg` actually exists. Until then, `HomeBody.astro`
+>    intentionally remains image-less (matches Task 22's shipped version).
 
 ---
 

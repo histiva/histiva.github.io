@@ -1,0 +1,11 @@
+// Stub for future photo attribution entries.
+// Each entry should match the shape:
+//   { "file": "<filename>.jpg",
+//     "source": "Unsplash" | "unDraw" | "<other>",
+//     "photographer": "<name>",
+//     "url": "<canonical attribution URL>",
+//     "license": "<e.g. Unsplash License | CC0 1.0>" }
+// When entries are added, convert this file to strict JSON (drop these
+// comments) or rename to .jsonc if the loader supports it. As of Task 31
+// no code imports this file — it is a human-curated registry only.
+[]
