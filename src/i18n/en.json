@@ -89,7 +89,30 @@
     "meta_title": "Hospital records, everywhere they're needed",
     "meta_description": "A modern, AI-powered hospital information system. Cloud, on-premise, or mobile — modular, multilingual, and built by a nonprofit for the clinics that need it most.",
     "hero_title": "Hospital records, everywhere they're needed.",
-    "hero_subtitle": "A modern, AI-powered hospital information system. Run it in managed cloud, on your own server, or on mobile — modular, multilingual, ready to deploy. Built by a nonprofit, for the clinics that need it most."
+    "hero_subtitle": "A modern, AI-powered hospital information system. Run it in managed cloud, on your own server, or on mobile — modular, multilingual, ready to deploy. Built by a nonprofit, for the clinics that need it most.",
+    "kinetic_prefix": "Hospital records,",
+    "kinetic_1": "everywhere they're needed.",
+    "kinetic_2": "in Chad. In Somalia. In Türkiye.",
+    "kinetic_3": "in five languages.",
+    "kinetic_4": "even when the internet isn't.",
+    "kinetic_5": "audited, every action."
+  },
+  "clinic_day": {
+    "eyebrow": "A day in the clinic",
+    "title": "Eight hours, one platform.",
+    "subtitle": "Scroll to walk through a single clinic day with Histiva.",
+    "scene1_time": "08:00",
+    "scene1_title": "Patient arrives. Triaged in 30 seconds.",
+    "scene1_body": "CoPilot Triage captures vitals from a Bluetooth thermometer, a photo, and three spoken questions. AI applies the Manchester Triage Scale, weighted for the local disease burden — malaria, dengue, cholera. The most urgent patient surfaces to position one.",
+    "scene2_time": "10:30",
+    "scene2_title": "Doctor speaks; the note structures itself.",
+    "scene2_body": "Whisper Notes runs on-device in five languages. The clinician keeps eye contact with the patient. A structured SOAP note — chief complaint, history, exam, assessment, plan — appears in the record, ready for the doctor's signature.",
+    "scene3_time": "12:00",
+    "scene3_title": "Lab printout in, parasites counted.",
+    "scene3_body": "A photo of the lab printout extracts structured values into the record. A photo of a microscope slide, taken through a five-dollar phone adapter, counts malaria parasites. AI is the second pair of eyes — never the last word.",
+    "scene4_time": "17:00",
+    "scene4_title": "Tomorrow's patients already know.",
+    "scene4_body": "Telegram, WhatsApp, and SMS reminders went out to 142 patients across five communities. Replies came back as structured updates the clinic team will act on at 08:00 tomorrow. The clinic closes — the platform keeps working."
   },
   "impact": {
     "eyebrow": "By the numbers",

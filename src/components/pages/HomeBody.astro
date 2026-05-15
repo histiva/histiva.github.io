@@ -12,6 +12,7 @@ import PillarGrid from '~/components/PillarGrid.astro';
 import DeploymentOptions from '~/components/DeploymentOptions.astro';
 import StorySection from '~/components/StorySection.astro';
 import ModuleGrid from '~/components/ModuleGrid.astro';
+import ClinicDay from '~/components/ClinicDay.astro';
 import TwoPathCTA from '~/components/TwoPathCTA.astro';
 import { type Locale, t, localizedPath } from '~/i18n/utils';
 
@@ -31,6 +32,14 @@ const pathname = Astro.url.pathname;
     secondaryCta={{ label: t('common.for_donors', locale), href: localizedPath('/for-donors', locale) }}
     mockupSrc="/img/mockups/hero-dashboard.svg"
     mockupAlt="Design preview — Histiva dashboard"
+    kineticPrefix={t('home.kinetic_prefix', locale)}
+    kineticPhrases={[
+      t('home.kinetic_1', locale),
+      t('home.kinetic_2', locale),
+      t('home.kinetic_3', locale),
+      t('home.kinetic_4', locale),
+      t('home.kinetic_5', locale),
+    ]}
   />
 
   <ImpactStats locale={locale} />
@@ -46,6 +55,8 @@ const pathname = Astro.url.pathname;
   />
 
   <ModuleGrid locale={locale} />
+
+  <ClinicDay locale={locale} />
 
   <TwoPathCTA locale={locale} />
 

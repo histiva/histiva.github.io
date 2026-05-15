@@ -9,8 +9,12 @@ interface Props {
   image?: { src: ImageMetadata; alt: string };
   mockupSrc?: string;
   mockupAlt?: string;
+  /** If provided, the title becomes kinetic: `kineticPrefix` + a rotating phrase from `kineticPhrases`. */
+  kineticPrefix?: string;
+  kineticPhrases?: string[];
 }
-const { eyebrow, title, subtitle, primaryCta, secondaryCta, image, mockupSrc, mockupAlt = 'Design preview' } = Astro.props;
+const { eyebrow, title, subtitle, primaryCta, secondaryCta, image, mockupSrc, mockupAlt = 'Design preview', kineticPrefix, kineticPhrases } = Astro.props;
+const useKinetic = kineticPrefix && kineticPhrases && kineticPhrases.length > 1;
 ---
 <section class="relative overflow-hidden bg-gradient-to-b from-primary-100/40 to-transparent">
   <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
@@ -19,7 +23,18 @@ const { eyebrow, title, subtitle, primaryCta, secondaryCta, image, mockupSrc, mo
   <div class="relative z-10 container-page py-16 md:py-20 grid md:grid-cols-[1.2fr_1fr] gap-10 items-center">
     <div class="reveal-on-scroll">
       {eyebrow && <p class="text-xs uppercase tracking-[0.12em] text-primary-700 font-semibold mb-3">{eyebrow}</p>}
-      <h1 class="text-4xl md:text-5xl text-primary-900 leading-tight">{title}</h1>
+      {useKinetic ? (
+        <h1 class="text-4xl md:text-5xl text-primary-900 leading-tight">
+          <span>{kineticPrefix}</span>
+          <br />
+          <span
+            class="kinetic-rotate text-primary-700"
+            data-phrases={JSON.stringify(kineticPhrases)}
+          >{kineticPhrases![0]}</span>
+        </h1>
+      ) : (
+        <h1 class="text-4xl md:text-5xl text-primary-900 leading-tight">{title}</h1>
+      )}
       <p class="mt-5 text-lg text-ink-600 max-w-xl leading-relaxed">{subtitle}</p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a href={primaryCta.href} class="inline-flex items-center px-5 py-2.5 rounded-md bg-primary-700 text-white font-semibold hover:bg-primary-900 transition-colors">{primaryCta.label}</a>
@@ -40,3 +55,102 @@ const { eyebrow, title, subtitle, primaryCta, secondaryCta, image, mockupSrc, mo
     )}
   </div>
 </section>
+
+<script>
+  // Text-scramble effect for [data-phrases] elements (uses textContent only — no XSS surface).
+  class TextScramble {
+    el: HTMLElement;
+    chars = '!<>-_\\/[]{}—=+*^?#';
+    queue: Array<{ from: string; to: string; start: number; end: number; char?: string }> = [];
+    frame = 0;
+    frameRequest = 0;
+    resolve: () => void = () => {};
+    constructor(el: HTMLElement) {
+      this.el = el;
+      this.update = this.update.bind(this);
+    }
+    setText(newText: string): Promise<void> {
+      const oldText = this.el.textContent ?? '';
+      const length = Math.max(oldText.length, newText.length);
+      const promise = new Promise<void>((resolve) => { this.resolve = resolve; });
+      this.queue = [];
+      for (let i = 0; i < length; i++) {
+        const from = oldText[i] || '';
+        const to = newText[i] || '';
+        const start = Math.floor(Math.random() * 28);
+        const end = start + Math.floor(Math.random() * 28);
+        this.queue.push({ from, to, start, end });
+      }
+      cancelAnimationFrame(this.frameRequest);
+      this.frame = 0;
+      this.update();
+      return promise;
+    }
+    update() {
+      let output = '';
+      let complete = 0;
+      for (let i = 0; i < this.queue.length; i++) {
+        const item = this.queue[i];
+        if (!item) continue;
+        if (this.frame >= item.end) {
+          complete++;
+          output += item.to;
+        } else if (this.frame >= item.start) {
+          if (!item.char || Math.random() < 0.28) {
+            item.char = this.chars[Math.floor(Math.random() * this.chars.length)];
+          }
+          output += item.char;
+        } else {
+          output += item.from;
+        }
+      }
+      this.el.textContent = output;
+      if (complete === this.queue.length) {
+        this.resolve();
+      } else {
+        this.frameRequest = requestAnimationFrame(this.update);
+        this.frame++;
+      }
+    }
+  }
+
+  const initKinetic = () => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll<HTMLElement>('.kinetic-rotate').forEach((el) => {
+      if (el.dataset.kineticInit === '1') return;
+      el.dataset.kineticInit = '1';
+      let phrases: string[];
+      try { phrases = JSON.parse(el.dataset.phrases ?? '[]'); } catch { return; }
+      if (!phrases.length) return;
+      if (reducedMotion) {
+        el.textContent = phrases[0] ?? '';
+        return;
+      }
+      const fx = new TextScramble(el);
+      let i = 0;
+      let timeoutId = 0;
+      const next = () => {
+        // Bail out if View Transitions removed the element from the DOM.
+        if (!el.isConnected) {
+          cancelAnimationFrame(fx.frameRequest);
+          return;
+        }
+        i = (i + 1) % phrases.length;
+        fx.setText(phrases[i] ?? '').then(() => {
+          if (el.isConnected) {
+            timeoutId = window.setTimeout(next, 3500);
+          }
+        });
+      };
+      timeoutId = window.setTimeout(next, 2500);
+    });
+  };
+
+  // Bind page-load listener exactly once per page lifetime to avoid accumulating
+  // listeners across View Transitions navigations.
+  if (!(window as { __heroKineticPageLoadBound?: boolean }).__heroKineticPageLoadBound) {
+    (window as { __heroKineticPageLoadBound?: boolean }).__heroKineticPageLoadBound = true;
+    document.addEventListener('astro:page-load', initKinetic);
+  }
+  initKinetic();
+</script>
