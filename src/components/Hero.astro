@@ -12,9 +12,12 @@ interface Props {
 }
 const { eyebrow, title, subtitle, primaryCta, secondaryCta, image, mockupSrc, mockupAlt = 'Design preview' } = Astro.props;
 ---
-<section class="bg-gradient-to-b from-primary-100/40 to-transparent">
-  <div class="container-page py-16 md:py-20 grid md:grid-cols-[1.2fr_1fr] gap-10 items-center">
-    <div>
+<section class="relative overflow-hidden bg-gradient-to-b from-primary-100/40 to-transparent">
+  <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob-3" aria-hidden="true"></div>
+  <div class="relative z-10 container-page py-16 md:py-20 grid md:grid-cols-[1.2fr_1fr] gap-10 items-center">
+    <div class="reveal-on-scroll">
       {eyebrow && <p class="text-xs uppercase tracking-[0.12em] text-primary-700 font-semibold mb-3">{eyebrow}</p>}
       <h1 class="text-4xl md:text-5xl text-primary-900 leading-tight">{title}</h1>
       <p class="mt-5 text-lg text-ink-600 max-w-xl leading-relaxed">{subtitle}</p>
@@ -26,12 +29,12 @@ const { eyebrow, title, subtitle, primaryCta, secondaryCta, image, mockupSrc, mo
       </div>
     </div>
     {image && (
-      <div class="rounded-xl overflow-hidden shadow-xl bg-slate-100 aspect-[4/3]">
+      <div class="reveal-on-scroll rounded-xl overflow-hidden shadow-xl bg-slate-100 aspect-[4/3]" style="--reveal-delay: 150ms">
         <Image src={image.src} alt={image.alt} class="w-full h-full object-cover" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 50vw" />
       </div>
     )}
     {!image && mockupSrc && (
-      <div class="rounded-xl overflow-hidden shadow-2xl bg-slate-50 aspect-[16/10]">
+      <div class="reveal-on-scroll rounded-xl overflow-hidden shadow-2xl bg-slate-50 aspect-[16/10]" style="--reveal-delay: 150ms">
         <img src={mockupSrc} alt={mockupAlt} class="w-full h-full object-cover" loading="eager" decoding="async" />
       </div>
     )}

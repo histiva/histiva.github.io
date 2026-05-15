@@ -10,8 +10,8 @@ const { eyebrow, title, body, imageSrc, imageAlt } = Astro.props;
 ---
 <section class="bg-warning-50 border-y border-amber-200">
   <div class="container-page py-14 grid md:grid-cols-[1fr_1.2fr] gap-10 items-center">
-    {imageSrc && imageAlt && <img src={imageSrc} alt={imageAlt} class="rounded-xl shadow-lg w-full" loading="lazy" />}
-    <div>
+    {imageSrc && imageAlt && <img src={imageSrc} alt={imageAlt} class="reveal-on-scroll rounded-xl shadow-lg w-full" loading="lazy" />}
+    <div class="reveal-on-scroll" style="--reveal-delay: 120ms">
       <p class="text-xs uppercase tracking-[0.12em] text-warning-700 font-semibold mb-2">{eyebrow}</p>
       <h2 class="text-3xl text-warning-700 leading-tight">{title}</h2>
       <p class="mt-4 text-ink-900 leading-relaxed whitespace-pre-line">{body}</p>

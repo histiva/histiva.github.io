@@ -1,0 +1,68 @@
+---
+import { type Locale, t } from '~/i18n/utils';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+
+const stats = [
+  { target: 10, suffix: '', label: t('impact.modules_label', locale) },
+  { target: 5, suffix: '', label: t('impact.languages_label', locale) },
+  { target: 3, suffix: '', label: t('impact.deployment_label', locale) },
+] as const;
+---
+<section class="container-page py-10">
+  <p class="text-xs uppercase tracking-[0.12em] text-primary-700 font-semibold mb-5 reveal-on-scroll">{t('impact.eyebrow', locale)}</p>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {stats.map((s, i) => (
+      <div class="reveal-on-scroll bg-white border border-slate-200 rounded-xl p-5" style={`--reveal-delay: ${i * 80}ms`}>
+        <div class="flex items-baseline gap-1">
+          <span
+            class="text-4xl md:text-5xl font-bold text-primary-900 tabular-nums"
+            data-counter
+            data-target={s.target}
+          >0</span>
+          <span class="text-2xl md:text-3xl font-bold text-primary-700">{s.suffix}</span>
+        </div>
+        <p class="text-xs uppercase tracking-wider text-ink-600 mt-2">{s.label}</p>
+      </div>
+    ))}
+    <div class="reveal-on-scroll bg-primary-900 text-white rounded-xl p-5" style={`--reveal-delay: ${stats.length * 80}ms`}>
+      <div class="flex items-baseline gap-1">
+        <span class="text-4xl md:text-5xl font-bold tabular-nums">0</span>
+        <span class="text-2xl md:text-3xl font-bold text-primary-100">%</span>
+      </div>
+      <p class="text-xs uppercase tracking-wider text-primary-100/80 mt-2">{t('impact.margin_label', locale)}</p>
+      <p class="text-[10px] text-primary-100/70 mt-1 leading-snug">{t('impact.margin_caption', locale)}</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Counter animation: when [data-counter] enters viewport, animate from 0 to data-target.
+  const counters = document.querySelectorAll<HTMLElement>('[data-counter]');
+  if (counters.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const animateCounter = (el: HTMLElement) => {
+      const target = parseInt(el.dataset.target ?? '0', 10);
+      const duration = 1200;
+      const start = performance.now();
+      const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
+      const step = (now: number) => {
+        const progress = Math.min((now - start) / duration, 1);
+        el.textContent = Math.round(target * easeOut(progress)).toString();
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          animateCounter(e.target as HTMLElement);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach((c) => obs.observe(c));
+  } else if (counters.length > 0) {
+    // Reduced motion: render final value immediately
+    counters.forEach((c) => { c.textContent = c.dataset.target ?? '0'; });
+  }
+</script>

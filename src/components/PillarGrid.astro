@@ -12,7 +12,7 @@ const pillars = [
 ---
 <section class="container-page py-12">
   <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-    {pillars.map((p) => (
+    {pillars.map((p, i) => (
       <PillarCard
         index={p.index}
         iconName={p.iconName}
@@ -20,6 +20,7 @@ const pillars = [
         body={t(p.bodyKey, locale)}
         href={localizedPath(p.href, locale)}
         learnMoreLabel={t('common.learn_more', locale)}
+        revealDelay={i * 90}
       />
     ))}
   </div>

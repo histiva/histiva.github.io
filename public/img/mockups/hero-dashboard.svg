@@ -132,22 +132,64 @@
     <text x="20" y="30" font-size="13" font-weight="600" fill="#0c2461">Visits — last 14 days</text>
     <text x="20" y="48" font-size="10" fill="#475569">Outpatient + Emergency + Inpatient</text>
 
-    <!-- bar chart -->
+    <!-- bar chart (cascaded grow animation) -->
     <g transform="translate(20, 80)">
-      <rect x="0" y="60" width="22" height="40" rx="2" fill="#1e40af"/>
-      <rect x="36" y="48" width="22" height="52" rx="2" fill="#1e40af"/>
-      <rect x="72" y="40" width="22" height="60" rx="2" fill="#1e40af"/>
-      <rect x="108" y="56" width="22" height="44" rx="2" fill="#1e40af"/>
-      <rect x="144" y="32" width="22" height="68" rx="2" fill="#1e40af"/>
-      <rect x="180" y="36" width="22" height="64" rx="2" fill="#1e40af"/>
-      <rect x="216" y="44" width="22" height="56" rx="2" fill="#1e40af"/>
-      <rect x="252" y="24" width="22" height="76" rx="2" fill="#3b82f6"/>
-      <rect x="288" y="36" width="22" height="64" rx="2" fill="#3b82f6"/>
-      <rect x="324" y="16" width="22" height="84" rx="2" fill="#3b82f6"/>
-      <rect x="360" y="28" width="22" height="72" rx="2" fill="#3b82f6"/>
-      <rect x="396" y="40" width="22" height="60" rx="2" fill="#3b82f6"/>
-      <rect x="432" y="20" width="22" height="80" rx="2" fill="#3b82f6"/>
-      <rect x="468" y="12" width="22" height="88" rx="2" fill="#3b82f6"/>
+      <rect x="0" y="100" width="22" height="0" rx="2" fill="#1e40af">
+        <animate attributeName="height" from="0" to="40" dur="0.5s" begin="0.2s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="60" dur="0.5s" begin="0.2s" fill="freeze"/>
+      </rect>
+      <rect x="36" y="100" width="22" height="0" rx="2" fill="#1e40af">
+        <animate attributeName="height" from="0" to="52" dur="0.5s" begin="0.25s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="48" dur="0.5s" begin="0.25s" fill="freeze"/>
+      </rect>
+      <rect x="72" y="100" width="22" height="0" rx="2" fill="#1e40af">
+        <animate attributeName="height" from="0" to="60" dur="0.5s" begin="0.3s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="40" dur="0.5s" begin="0.3s" fill="freeze"/>
+      </rect>
+      <rect x="108" y="100" width="22" height="0" rx="2" fill="#1e40af">
+        <animate attributeName="height" from="0" to="44" dur="0.5s" begin="0.35s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="56" dur="0.5s" begin="0.35s" fill="freeze"/>
+      </rect>
+      <rect x="144" y="100" width="22" height="0" rx="2" fill="#1e40af">
+        <animate attributeName="height" from="0" to="68" dur="0.5s" begin="0.4s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="32" dur="0.5s" begin="0.4s" fill="freeze"/>
+      </rect>
+      <rect x="180" y="100" width="22" height="0" rx="2" fill="#1e40af">
+        <animate attributeName="height" from="0" to="64" dur="0.5s" begin="0.45s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="36" dur="0.5s" begin="0.45s" fill="freeze"/>
+      </rect>
+      <rect x="216" y="100" width="22" height="0" rx="2" fill="#1e40af">
+        <animate attributeName="height" from="0" to="56" dur="0.5s" begin="0.5s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="44" dur="0.5s" begin="0.5s" fill="freeze"/>
+      </rect>
+      <rect x="252" y="100" width="22" height="0" rx="2" fill="#3b82f6">
+        <animate attributeName="height" from="0" to="76" dur="0.5s" begin="0.55s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="24" dur="0.5s" begin="0.55s" fill="freeze"/>
+      </rect>
+      <rect x="288" y="100" width="22" height="0" rx="2" fill="#3b82f6">
+        <animate attributeName="height" from="0" to="64" dur="0.5s" begin="0.6s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="36" dur="0.5s" begin="0.6s" fill="freeze"/>
+      </rect>
+      <rect x="324" y="100" width="22" height="0" rx="2" fill="#3b82f6">
+        <animate attributeName="height" from="0" to="84" dur="0.5s" begin="0.65s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="16" dur="0.5s" begin="0.65s" fill="freeze"/>
+      </rect>
+      <rect x="360" y="100" width="22" height="0" rx="2" fill="#3b82f6">
+        <animate attributeName="height" from="0" to="72" dur="0.5s" begin="0.7s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="28" dur="0.5s" begin="0.7s" fill="freeze"/>
+      </rect>
+      <rect x="396" y="100" width="22" height="0" rx="2" fill="#3b82f6">
+        <animate attributeName="height" from="0" to="60" dur="0.5s" begin="0.75s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="40" dur="0.5s" begin="0.75s" fill="freeze"/>
+      </rect>
+      <rect x="432" y="100" width="22" height="0" rx="2" fill="#3b82f6">
+        <animate attributeName="height" from="0" to="80" dur="0.5s" begin="0.8s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="20" dur="0.5s" begin="0.8s" fill="freeze"/>
+      </rect>
+      <rect x="468" y="100" width="22" height="0" rx="2" fill="#3b82f6">
+        <animate attributeName="height" from="0" to="88" dur="0.5s" begin="0.85s" fill="freeze"/>
+        <animate attributeName="y" from="100" to="12" dur="0.5s" begin="0.85s" fill="freeze"/>
+      </rect>
     </g>
     <line x1="20" y1="180" x2="510" y2="180" stroke="#cbd5e1" stroke-width="1"/>
   </g>
@@ -157,19 +199,24 @@
     <rect width="304" height="200" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
     <text x="20" y="30" font-size="13" font-weight="600" fill="#0c2461">Recent activity</text>
 
-    <g transform="translate(20, 56)">
-      <circle cx="6" cy="6" r="4" fill="#16a34a"/>
+    <g transform="translate(20, 56)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.4s" fill="freeze"/>
+      <circle cx="6" cy="6" r="4" fill="#16a34a">
+        <animate attributeName="r" values="4;5;4" dur="2.4s" begin="2s" repeatCount="indefinite"/>
+      </circle>
       <text x="22" y="10" font-size="11" fill="#0f172a">Lab result confirmed</text>
-      <text x="22" y="24" font-size="10" fill="#475569">Patient #2941 · 2 min ago</text>
+      <text x="22" y="24" font-size="10" fill="#475569">Patient #2941 · just now</text>
     </g>
 
-    <g transform="translate(20, 96)">
+    <g transform="translate(20, 96)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.7s" fill="freeze"/>
       <circle cx="6" cy="6" r="4" fill="#3b82f6"/>
       <text x="22" y="10" font-size="11" fill="#0f172a">New admission</text>
       <text x="22" y="24" font-size="10" fill="#475569">Ward 3 · Bed 12 · 8 min ago</text>
     </g>
 
-    <g transform="translate(20, 136)">
+    <g transform="translate(20, 136)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="2.0s" fill="freeze"/>
       <circle cx="6" cy="6" r="4" fill="#f59e0b"/>
       <text x="22" y="10" font-size="11" fill="#0f172a">Low stock alert</text>
       <text x="22" y="24" font-size="10" fill="#475569">Paracetamol 500mg · 14 min ago</text>
@@ -204,7 +251,9 @@
       <text x="120" y="138">Mohamed I.</text>
       <text x="320" y="138">Chest pain — urgent</text>
       <text x="540" y="138">Dr. Adamu</text>
-      <rect x="720" y="126" width="64" height="18" rx="9" fill="#fef3c7"/>
+      <rect x="720" y="126" width="64" height="18" rx="9" fill="#fef3c7">
+        <animate attributeName="fill" values="#fef3c7;#fde68a;#fef3c7" dur="2.6s" repeatCount="indefinite"/>
+      </rect>
       <text x="752" y="138" font-size="9" fill="#b45309" font-weight="600" text-anchor="middle">WAITING</text>
 
       <line x1="0" y1="150" x2="848" y2="150" stroke="#f1f5f9"/>

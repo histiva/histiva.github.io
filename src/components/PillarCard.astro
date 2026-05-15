@@ -7,10 +7,11 @@ interface Props {
   body: string;
   href?: string;
   learnMoreLabel?: string;
+  revealDelay?: number;
 }
-const { index, iconName, title, body, href, learnMoreLabel } = Astro.props;
+const { index, iconName, title, body, href, learnMoreLabel, revealDelay = 0 } = Astro.props;
 ---
-<article class="bg-white border border-slate-200 rounded-xl p-6 hover:border-primary-500 transition-colors flex flex-col">
+<article class="reveal-on-scroll bg-white border border-slate-200 rounded-xl p-6 hover:border-primary-500 transition-colors flex flex-col" style={`--reveal-delay: ${revealDelay}ms`}>
   <div class="flex items-center gap-3 mb-4">
     <span class="text-xs font-bold tracking-[0.12em] text-ink-600">{index}</span>
     <Icon name={iconName} size={22} class="text-primary-700" />

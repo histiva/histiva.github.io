@@ -7,6 +7,7 @@ import TranslationBanner from '~/components/TranslationBanner.astro';
 import CookieBanner from '~/components/CookieBanner.astro';
 import Analytics from '~/components/Analytics.astro';
 import Hero from '~/components/Hero.astro';
+import ImpactStats from '~/components/ImpactStats.astro';
 import PillarGrid from '~/components/PillarGrid.astro';
 import DeploymentOptions from '~/components/DeploymentOptions.astro';
 import StorySection from '~/components/StorySection.astro';
@@ -31,6 +32,8 @@ const pathname = Astro.url.pathname;
     mockupSrc="/img/mockups/hero-dashboard.svg"
     mockupAlt="Design preview — Histiva dashboard"
   />
+
+  <ImpactStats locale={locale} />
 
   <PillarGrid locale={locale} />
 

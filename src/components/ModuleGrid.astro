@@ -25,11 +25,12 @@ const modules = [
     <a href={localizedPath('/product', locale)} class="text-sm font-semibold text-primary-700 hover:underline hidden md:inline">{t('modules.see_all', locale)} →</a>
   </div>
   <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
-    {modules.map((m) => (
+    {modules.map((m, i) => (
       <ModuleCard
         iconName={m.iconName}
         title={t(`modules.items.${m.key}.title`, locale)}
         body={t(`modules.items.${m.key}.body`, locale)}
+        revealDelay={i * 60}
       />
     ))}
   </div>
