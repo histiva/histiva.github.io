@@ -188,8 +188,15 @@
     transition: none !important;
   }
   .hero-blob { animation: none !important; }
-  .clinic-day-scene { opacity: 1 !important; transform: none !important; }
-  .clinic-day-mockup-stage img { opacity: 1 !important; transform: none !important; }
+  /* For ClinicDay, do NOT force opacity:1 — scenes are absolutely positioned
+     and would stack on top of each other. Only disable transitions so the
+     [data-active] visibility logic continues to drive which scene is shown. */
+  .clinic-day-scene,
+  .clinic-day-mockup-stage img,
+  .clinic-day-time,
+  .clinic-day-progress .dot {
+    transition: none !important;
+  }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

@@ -27,7 +27,12 @@ const scenes = [
 
         <div class="clinic-day-stage">
           {scenes.map((s, i) => (
-            <div class="clinic-day-scene" data-scene-content={i} {...(i === 0 ? { 'data-active': '' } : {})}>
+            <div
+              class="clinic-day-scene"
+              data-scene-content={i}
+              aria-hidden={i === 0 ? 'false' : 'true'}
+              {...(i === 0 ? { 'data-active': '' } : {})}
+            >
               <span class="clinic-day-time tabular-nums">{t(`clinic_day.${s.key}_time`, locale)}</span>
               <h3 class="text-2xl md:text-3xl text-primary-900 leading-snug mb-3 font-bold">{t(`clinic_day.${s.key}_title`, locale)}</h3>
               <p class="text-ink-600 leading-relaxed max-w-md">{t(`clinic_day.${s.key}_body`, locale)}</p>
@@ -43,6 +48,7 @@ const scenes = [
             src={s.mockup}
             alt={`Scene ${i + 1} — ${t(`clinic_day.${s.key}_title`, locale)}`}
             data-scene-mockup={i}
+            aria-hidden={i === 0 ? 'false' : 'true'}
             {...(i === 0 ? { 'data-active': '' } : {})}
             loading="lazy"
             decoding="async"
@@ -54,11 +60,17 @@ const scenes = [
 </section>
 
 <script>
-  // Scroll-driven scene switcher. Section is 380vh tall; map scroll progress
+  // Scroll-driven scene switcher. Section is 320vh tall; map scroll progress
   // through its bounds to a discrete scene index (0..N-1).
+  // Toggles data-active + aria-hidden so screen readers only see the active scene.
+  // Per-section init guard + AbortController prevent duplicate scroll listeners
+  // when Astro View Transitions re-fire this script on page-load.
   const initClinicDay = () => {
     const section = document.querySelector<HTMLElement>('.clinic-day-section');
     if (!section) return;
+    if (section.dataset.clinicInit === '1') return;
+    section.dataset.clinicInit = '1';
+
     const sticky = section.querySelector<HTMLElement>('[data-clinic-day]');
     if (!sticky) return;
     const sceneContents = section.querySelectorAll<HTMLElement>('[data-scene-content]');
@@ -67,7 +79,11 @@ const scenes = [
     const sceneCount = sceneContents.length;
     if (!sceneCount) return;
 
-    let lastIndex = -1;
+    // Reduced motion: leave scene 0 active, skip scroll binding entirely.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const controller = new AbortController();
+    let lastIndex = 0;
     let ticking = false;
     const onScroll = () => {
       if (ticking) return;
@@ -81,14 +97,17 @@ const scenes = [
         if (idx !== lastIndex) {
           lastIndex = idx;
           sticky.setAttribute('data-scene', String(idx));
-          sceneContents.forEach((el, i) => {
-            if (i === idx) el.setAttribute('data-active', '');
-            else el.removeAttribute('data-active');
-          });
-          sceneMockups.forEach((el, i) => {
-            if (i === idx) el.setAttribute('data-active', '');
-            else el.removeAttribute('data-active');
-          });
+          const setActive = (el: HTMLElement, active: boolean) => {
+            if (active) {
+              el.setAttribute('data-active', '');
+              el.setAttribute('aria-hidden', 'false');
+            } else {
+              el.removeAttribute('data-active');
+              el.setAttribute('aria-hidden', 'true');
+            }
+          };
+          sceneContents.forEach((el, i) => setActive(el, i === idx));
+          sceneMockups.forEach((el, i) => setActive(el, i === idx));
           sceneDots.forEach((el, i) => {
             if (i === idx) el.setAttribute('data-active', '');
             else el.removeAttribute('data-active');
@@ -97,9 +116,17 @@ const scenes = [
         ticking = false;
       });
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
+
+    window.addEventListener('scroll', onScroll, { passive: true, signal: controller.signal });
+    // Cleanup on Astro view transition away (section will be replaced).
+    document.addEventListener('astro:before-swap', () => controller.abort(), { once: true, signal: controller.signal });
     onScroll();
   };
+
+  // Bind page-load listener exactly once per page lifetime (not per script run).
+  if (!(window as { __clinicDayPageLoadBound?: boolean }).__clinicDayPageLoadBound) {
+    (window as { __clinicDayPageLoadBound?: boolean }).__clinicDayPageLoadBound = true;
+    document.addEventListener('astro:page-load', initClinicDay);
+  }
   initClinicDay();
-  document.addEventListener('astro:page-load', initClinicDay);
 </script>

@@ -79,8 +79,15 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
         }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
         document.querySelectorAll('.reveal-on-scroll:not(.is-visible)').forEach((el) => obs.observe(el));
       };
+      // Bind page-load listener once per page lifetime (avoids stacking across
+      // View Transitions). The IntersectionObserver itself is recreated each
+      // call so it picks up freshly-rendered elements after navigation.
+      const w = window as { __revealPageLoadBound?: boolean };
+      if (!w.__revealPageLoadBound) {
+        w.__revealPageLoadBound = true;
+        document.addEventListener('astro:page-load', initReveal);
+      }
       initReveal();
-      document.addEventListener('astro:page-load', initReveal);
     </script>
   </body>
 </html>
