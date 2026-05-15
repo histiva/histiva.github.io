@@ -19,39 +19,68 @@
     <text x="60" y="80" font-size="11" font-weight="700" fill="#ffffff">Patient communication</text>
     <text x="384" y="80" font-size="9" fill="#dbeafe" text-anchor="end">Clinic console</text>
 
+    <!-- channels row -->
+    <text x="60" y="120" font-size="8" font-weight="700" fill="#0c2461" letter-spacing="0.6">ACTIVE CHANNELS · PRIORITY ORDER</text>
+
+    <g transform="translate(60, 128)">
+      <!-- Telegram chip -->
+      <rect width="98" height="22" rx="11" fill="#e0f2fe" stroke="#38bdf8"/>
+      <circle cx="14" cy="11" r="6" fill="#0088cc"/>
+      <path d="M 11 11 L 17 11 L 14 14 Z" fill="#ffffff"/>
+      <text x="28" y="15" font-size="9" font-weight="600" fill="#075985">Telegram</text>
+      <rect x="76" y="6" width="18" height="11" rx="5" fill="#0088cc"/>
+      <text x="85" y="14" font-size="7" font-weight="700" fill="#ffffff" text-anchor="middle">1st</text>
+
+      <!-- WhatsApp chip -->
+      <rect x="108" width="98" height="22" rx="11" fill="#dcfce7" stroke="#86efac"/>
+      <circle cx="122" cy="11" r="6" fill="#25d366"/>
+      <text x="122" y="14" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">w</text>
+      <text x="136" y="15" font-size="9" font-weight="600" fill="#14532d">WhatsApp</text>
+      <rect x="184" y="6" width="18" height="11" rx="5" fill="#16a34a"/>
+      <text x="193" y="14" font-size="7" font-weight="700" fill="#ffffff" text-anchor="middle">2nd</text>
+
+      <!-- SMS chip -->
+      <rect x="216" width="98" height="22" rx="11" fill="#f1f5f9" stroke="#cbd5e1"/>
+      <circle cx="230" cy="11" r="6" fill="#64748b"/>
+      <text x="230" y="14" font-size="8" font-weight="700" fill="#ffffff" text-anchor="middle">···</text>
+      <text x="244" y="15" font-size="9" font-weight="600" fill="#334155">SMS</text>
+      <rect x="278" y="6" width="32" height="11" rx="5" fill="#64748b"/>
+      <text x="294" y="14" font-size="7" font-weight="700" fill="#ffffff" text-anchor="middle">fallback</text>
+    </g>
+
     <!-- automation rules -->
-    <text x="60" y="124" font-size="9" font-weight="700" fill="#0c2461" letter-spacing="0.6">AUTOMATED MESSAGES · 4 ACTIVE</text>
+    <text x="60" y="174" font-size="9" font-weight="700" fill="#0c2461" letter-spacing="0.6">AUTOMATED MESSAGES · 4 ACTIVE</text>
 
-    <g transform="translate(60, 140)">
-      <rect width="320" height="44" rx="6" fill="#f0fdf4" stroke="#86efac"/>
-      <circle cx="14" cy="22" r="6" fill="#16a34a"/>
-      <text x="32" y="20" font-size="10" font-weight="600" fill="#0f172a">Appointment reminders</text>
-      <text x="32" y="34" font-size="8" fill="#475569">24h before · WhatsApp first, SMS fallback</text>
-      <text x="306" y="22" font-size="10" font-weight="700" fill="#16a34a" text-anchor="end">ON</text>
+    <g transform="translate(60, 184)">
+      <rect width="320" height="34" rx="6" fill="#f0fdf4" stroke="#86efac"/>
+      <circle cx="14" cy="17" r="5" fill="#16a34a"/>
+      <text x="28" y="16" font-size="10" font-weight="600" fill="#0f172a">Appointment reminders</text>
+      <text x="28" y="28" font-size="8" fill="#475569">24h before · auto-routes via active channel order</text>
+      <text x="306" y="20" font-size="10" font-weight="700" fill="#16a34a" text-anchor="end">ON</text>
     </g>
 
-    <g transform="translate(60, 192)">
-      <rect width="320" height="44" rx="6" fill="#f0fdf4" stroke="#86efac"/>
-      <circle cx="14" cy="22" r="6" fill="#16a34a"/>
-      <text x="32" y="20" font-size="10" font-weight="600" fill="#0f172a">Lab ready notifications</text>
-      <text x="32" y="34" font-size="8" fill="#475569">No PII over open channels</text>
-      <text x="306" y="22" font-size="10" font-weight="700" fill="#16a34a" text-anchor="end">ON</text>
+    <g transform="translate(60, 222)">
+      <rect width="320" height="34" rx="6" fill="#f0fdf4" stroke="#86efac"/>
+      <circle cx="14" cy="17" r="5" fill="#16a34a"/>
+      <text x="28" y="16" font-size="10" font-weight="600" fill="#0f172a">Lab ready notifications</text>
+      <text x="28" y="28" font-size="8" fill="#475569">No PII over open channels</text>
+      <text x="306" y="20" font-size="10" font-weight="700" fill="#16a34a" text-anchor="end">ON</text>
     </g>
 
-    <g transform="translate(60, 244)">
-      <rect width="320" height="44" rx="6" fill="#f0fdf4" stroke="#86efac"/>
-      <circle cx="14" cy="22" r="6" fill="#16a34a"/>
-      <text x="32" y="20" font-size="10" font-weight="600" fill="#0f172a">Vaccine schedule reminders</text>
-      <text x="32" y="34" font-size="8" fill="#475569">Per WHO EPI schedule · child &amp; antenatal</text>
-      <text x="306" y="22" font-size="10" font-weight="700" fill="#16a34a" text-anchor="end">ON</text>
+    <g transform="translate(60, 260)">
+      <rect width="320" height="34" rx="6" fill="#f0fdf4" stroke="#86efac"/>
+      <circle cx="14" cy="17" r="5" fill="#16a34a"/>
+      <text x="28" y="16" font-size="10" font-weight="600" fill="#0f172a">Vaccine schedule reminders</text>
+      <text x="28" y="28" font-size="8" fill="#475569">Per WHO EPI schedule · child &amp; antenatal</text>
+      <text x="306" y="20" font-size="10" font-weight="700" fill="#16a34a" text-anchor="end">ON</text>
     </g>
 
-    <g transform="translate(60, 296)">
-      <rect width="320" height="44" rx="6" fill="#f0fdf4" stroke="#86efac"/>
-      <circle cx="14" cy="22" r="6" fill="#16a34a"/>
-      <text x="32" y="20" font-size="10" font-weight="600" fill="#0f172a">Post-op check-in</text>
-      <text x="32" y="34" font-size="8" fill="#475569">Day 1, 3, 7 — pain score 0-10</text>
-      <text x="306" y="22" font-size="10" font-weight="700" fill="#16a34a" text-anchor="end">ON</text>
+    <g transform="translate(60, 298)">
+      <rect width="320" height="34" rx="6" fill="#f0fdf4" stroke="#86efac"/>
+      <circle cx="14" cy="17" r="5" fill="#16a34a"/>
+      <text x="28" y="16" font-size="10" font-weight="600" fill="#0f172a">Post-op check-in</text>
+      <text x="28" y="28" font-size="8" fill="#475569">Day 1, 3, 7 — pain score 0-10</text>
+      <text x="306" y="20" font-size="10" font-weight="700" fill="#16a34a" text-anchor="end">ON</text>
     </g>
 
     <!-- stats -->

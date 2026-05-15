@@ -263,11 +263,11 @@
     },
     "f4": {
       "tag": "04",
-      "title": "WhatsApp & SMS",
-      "subtitle": "Reach patients on the channel they already use. No app to install, ever.",
+      "title": "Telegram, WhatsApp & SMS",
+      "subtitle": "Reach patients on the channels they already use. No app to install, ever.",
       "problem": "Patient apps go uninstalled. Appointment reminders are phone calls one nurse makes between visits. Lab-ready notifications mean another bus ride to the clinic just to ask.",
-      "solution": "WhatsApp Business API with SMS fallback. Automated, two-way: 24-hour appointment reminders that patients confirm with a single reply, lab-ready notifications carrying no PII over open channels, prescription pickup reminders, vaccine schedules, post-operative check-ins (\"How is the pain on a scale of 0 to 10?\"). Replies appear in the patient record as structured updates the clinician can act on.",
-      "diff": "Epic MyChart and Cerner HealtheLife require app downloads and run English-only by default. We're building patient communication on the channels patients are already on — in the languages they already speak."
+      "solution": "Telegram Bot API, WhatsApp Business API, and SMS fallback — the clinic picks the channel order per patient or per region. Automated, two-way: 24-hour appointment reminders that patients confirm with a single reply, lab-ready notifications carrying no PII over open channels, prescription pickup reminders, vaccine schedules, post-operative check-ins (\"How is the pain on a scale of 0 to 10?\"). Replies appear in the patient record as structured updates the clinician can act on.",
+      "diff": "Epic MyChart and Cerner HealtheLife require app downloads and run English-only by default. We're building patient communication on the channels patients are already on — Telegram, WhatsApp, or plain SMS — in the languages they already speak."
     },
     "f5": {
       "tag": "05",
@@ -282,7 +282,7 @@
     "layer1_label": "In the moment",
     "layer1_body": "CoPilot Triage, Whisper Notes, and Photo-In compound to give a single clinician the leverage of a small team. The visit gets faster, safer, and better-documented at the same time — without adding a single hour of training.",
     "layer2_label": "Across the patient journey",
-    "layer2_body": "WhatsApp & SMS turn the clinic from \"come back next week\" to \"we'll let you know when your lab is ready.\" Continuity stops being a phone call a tired nurse forgets to make.",
+    "layer2_body": "Telegram, WhatsApp, and SMS turn the clinic from \"come back next week\" to \"we'll let you know when your lab is ready.\" Continuity stops being a phone call a tired nurse forgets to make.",
     "layer3_label": "Beyond the clinic",
     "layer3_body": "Outbreak Watch turns every Histiva-equipped clinic into a sentinel for the region. A disease pattern emerges in the network days before national surveillance picks it up — and the alert reaches the ministry pre-formatted, not pre-buried.",
     "cta_eyebrow": "Want to shape this?",
