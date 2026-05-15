@@ -33,7 +33,7 @@
     <text x="70" y="196" font-size="12" font-weight="700" fill="#0c2461">Temp 39.4°C</text>
     <text x="70" y="210" font-size="9" fill="#475569">HR 118 · SpO2 96% · RR 24</text>
 
-    <!-- spoken Q&A -->
+    <!-- spoken Q and A -->
     <rect x="60" y="230" width="160" height="56" rx="6" fill="#f1f5f9"/>
     <circle cx="74" cy="247" r="5" fill="#3b82f6"/>
     <text x="86" y="251" font-size="8" fill="#475569">Onset?</text>
