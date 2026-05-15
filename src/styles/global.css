@@ -97,6 +97,73 @@
   }
 }
 
+@layer utilities {
+  /* Clinic Day cinematic — sticky scroll-driven 4-scene story */
+  .clinic-day-section { position: relative; height: 380vh; }
+  .clinic-day-sticky {
+    position: sticky; top: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    overflow: hidden;
+    transition: background 1.2s ease-in-out;
+    background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%);
+  }
+  @media (min-width: 768px) {
+    .clinic-day-sticky { grid-template-columns: 1fr 1.4fr; }
+  }
+  .clinic-day-sticky[data-scene="0"] { background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%); }
+  .clinic-day-sticky[data-scene="1"] { background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%); }
+  .clinic-day-sticky[data-scene="2"] { background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%); }
+  .clinic-day-sticky[data-scene="3"] { background: linear-gradient(135deg, #fee2e2 0%, #fef3c7 100%); }
+
+  .clinic-day-stage { position: relative; min-height: 16rem; }
+  .clinic-day-scene {
+    position: absolute; inset: 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    pointer-events: none;
+  }
+  .clinic-day-scene[data-active] {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .clinic-day-mockup-stage { position: relative; aspect-ratio: 16 / 10; }
+  .clinic-day-mockup-stage img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(12, 36, 97, 0.25);
+  }
+  .clinic-day-mockup-stage img[data-active] {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .clinic-day-progress {
+    display: flex; gap: 0.5rem;
+    margin-block: 1.5rem;
+  }
+  .clinic-day-progress .dot {
+    width: 2.5rem; height: 3px;
+    background: rgba(12, 36, 97, 0.15);
+    border-radius: 9999px;
+    transition: background 0.4s, width 0.4s;
+  }
+  .clinic-day-progress .dot[data-active] {
+    background: #1e40af;
+    width: 4rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll {
     opacity: 1 !important;
@@ -104,6 +171,8 @@
     transition: none !important;
   }
   .hero-blob { animation: none !important; }
+  .clinic-day-scene { opacity: 1 !important; transform: none !important; }
+  .clinic-day-mockup-stage img { opacity: 1 !important; transform: none !important; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

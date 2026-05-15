@@ -1,0 +1,105 @@
+---
+import { type Locale, t } from '~/i18n/utils';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+
+const scenes = [
+  { key: 'scene1', mockup: '/img/mockups/vision-triage.svg' },
+  { key: 'scene2', mockup: '/img/mockups/vision-notes.svg' },
+  { key: 'scene3', mockup: '/img/mockups/vision-photo.svg' },
+  { key: 'scene4', mockup: '/img/mockups/vision-whatsapp.svg' },
+] as const;
+---
+<section class="clinic-day-section" aria-label={t('clinic_day.title', locale)}>
+  <div class="clinic-day-sticky" data-clinic-day data-scene="0">
+    <div class="container-page grid md:grid-cols-[1fr_1.4fr] gap-10 items-center w-full">
+      <!-- Left: scene narrative -->
+      <div class="relative">
+        <p class="text-xs uppercase tracking-[0.12em] text-primary-700 font-semibold mb-2">{t('clinic_day.eyebrow', locale)}</p>
+        <h2 class="text-3xl md:text-4xl text-primary-900 leading-tight mb-2">{t('clinic_day.title', locale)}</h2>
+        <p class="text-sm text-ink-600 mb-6">{t('clinic_day.subtitle', locale)}</p>
+
+        <div class="clinic-day-progress" aria-hidden="true">
+          {scenes.map((_, i) => (
+            <span class="dot" data-scene-dot={i} {...(i === 0 ? { 'data-active': '' } : {})}></span>
+          ))}
+        </div>
+
+        <div class="clinic-day-stage">
+          {scenes.map((s, i) => (
+            <div class="clinic-day-scene" data-scene-content={i} {...(i === 0 ? { 'data-active': '' } : {})}>
+              <span class="inline-block px-3 py-1 rounded-full bg-primary-900 text-primary-100 text-xs font-mono tabular-nums tracking-wider mb-3">{t(`clinic_day.${s.key}_time`, locale)}</span>
+              <h3 class="text-2xl text-primary-900 leading-snug mb-3 font-bold">{t(`clinic_day.${s.key}_title`, locale)}</h3>
+              <p class="text-ink-600 leading-relaxed max-w-md">{t(`clinic_day.${s.key}_body`, locale)}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: mockup stage -->
+      <div class="clinic-day-mockup-stage">
+        {scenes.map((s, i) => (
+          <img
+            src={s.mockup}
+            alt={`Scene ${i + 1} — ${t(`clinic_day.${s.key}_title`, locale)}`}
+            data-scene-mockup={i}
+            {...(i === 0 ? { 'data-active': '' } : {})}
+            loading="lazy"
+            decoding="async"
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Scroll-driven scene switcher. Section is 380vh tall; map scroll progress
+  // through its bounds to a discrete scene index (0..N-1).
+  const initClinicDay = () => {
+    const section = document.querySelector<HTMLElement>('.clinic-day-section');
+    if (!section) return;
+    const sticky = section.querySelector<HTMLElement>('[data-clinic-day]');
+    if (!sticky) return;
+    const sceneContents = section.querySelectorAll<HTMLElement>('[data-scene-content]');
+    const sceneMockups = section.querySelectorAll<HTMLElement>('[data-scene-mockup]');
+    const sceneDots = section.querySelectorAll<HTMLElement>('[data-scene-dot]');
+    const sceneCount = sceneContents.length;
+    if (!sceneCount) return;
+
+    let lastIndex = -1;
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const rect = section.getBoundingClientRect();
+        const total = section.offsetHeight - window.innerHeight;
+        if (total <= 0) { ticking = false; return; }
+        const progress = Math.max(0, Math.min(1, -rect.top / total));
+        const idx = Math.min(sceneCount - 1, Math.floor(progress * sceneCount * 0.98));
+        if (idx !== lastIndex) {
+          lastIndex = idx;
+          sticky.setAttribute('data-scene', String(idx));
+          sceneContents.forEach((el, i) => {
+            if (i === idx) el.setAttribute('data-active', '');
+            else el.removeAttribute('data-active');
+          });
+          sceneMockups.forEach((el, i) => {
+            if (i === idx) el.setAttribute('data-active', '');
+            else el.removeAttribute('data-active');
+          });
+          sceneDots.forEach((el, i) => {
+            if (i === idx) el.setAttribute('data-active', '');
+            else el.removeAttribute('data-active');
+          });
+        }
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  };
+  initClinicDay();
+  document.addEventListener('astro:page-load', initClinicDay);
+</script>
