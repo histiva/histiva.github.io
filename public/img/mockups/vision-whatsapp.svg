@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Design preview of WhatsApp and SMS patient communication channel">
+  <defs>
+    <filter id="vw-shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0c2461" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="#f8fafc"/>
+
+  <!-- Admin console on left (clinic side) -->
+  <g filter="url(#vw-shadow)" transform="translate(40, 50)">
+    <rect width="360" height="400" rx="14" fill="#ffffff"/>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif">
+    <!-- header -->
+    <rect x="40" y="50" width="360" height="48" rx="14" fill="#0c2461"/>
+    <rect x="40" y="84" width="360" height="14" fill="#0c2461"/>
+    <text x="60" y="80" font-size="11" font-weight="700" fill="#ffffff">Patient communication</text>
+    <text x="384" y="80" font-size="9" fill="#dbeafe" text-anchor="end">Clinic console</text>
+
+    <!-- automation rules -->
+    <text x="60" y="124" font-size="9" font-weight="700" fill="#0c2461" letter-spacing="0.6">AUTOMATED MESSAGES · 4 ACTIVE</text>
+
+    <g transform="translate(60, 140)">
+      <rect width="320" height="44" rx="6" fill="#f0fdf4" stroke="#86efac"/>
+      <circle cx="14" cy="22" r="6" fill="#16a34a"/>
+      <text x="32" y="20" font-size="10" font-weight="600" fill="#0f172a">Appointment reminders</text>
+      <text x="32" y="34" font-size="8" fill="#475569">24h before · WhatsApp first, SMS fallback</text>
+      <text x="306" y="22" font-size="10" font-weight="700" fill="#16a34a" text-anchor="end">ON</text>
+    </g>
+
+    <g transform="translate(60, 192)">
+      <rect width="320" height="44" rx="6" fill="#f0fdf4" stroke="#86efac"/>
+      <circle cx="14" cy="22" r="6" fill="#16a34a"/>
+      <text x="32" y="20" font-size="10" font-weight="600" fill="#0f172a">Lab ready notifications</text>
+      <text x="32" y="34" font-size="8" fill="#475569">No PII over open channels</text>
+      <text x="306" y="22" font-size="10" font-weight="700" fill="#16a34a" text-anchor="end">ON</text>
+    </g>
+
+    <g transform="translate(60, 244)">
+      <rect width="320" height="44" rx="6" fill="#f0fdf4" stroke="#86efac"/>
+      <circle cx="14" cy="22" r="6" fill="#16a34a"/>
+      <text x="32" y="20" font-size="10" font-weight="600" fill="#0f172a">Vaccine schedule reminders</text>
+      <text x="32" y="34" font-size="8" fill="#475569">Per WHO EPI schedule · child &amp; antenatal</text>
+      <text x="306" y="22" font-size="10" font-weight="700" fill="#16a34a" text-anchor="end">ON</text>
+    </g>
+
+    <g transform="translate(60, 296)">
+      <rect width="320" height="44" rx="6" fill="#f0fdf4" stroke="#86efac"/>
+      <circle cx="14" cy="22" r="6" fill="#16a34a"/>
+      <text x="32" y="20" font-size="10" font-weight="600" fill="#0f172a">Post-op check-in</text>
+      <text x="32" y="34" font-size="8" fill="#475569">Day 1, 3, 7 — pain score 0-10</text>
+      <text x="306" y="22" font-size="10" font-weight="700" fill="#16a34a" text-anchor="end">ON</text>
+    </g>
+
+    <!-- stats -->
+    <line x1="60" y1="360" x2="380" y2="360" stroke="#e2e8f0"/>
+    <text x="60" y="382" font-size="9" fill="#475569">Today</text>
+    <text x="60" y="402" font-size="13" font-weight="700" fill="#0c2461">186 messages sent · 142 acknowledged</text>
+    <text x="60" y="418" font-size="8" fill="#16a34a">76% response rate · ↑ 8% vs last week</text>
+  </g>
+
+  <!-- Phone (patient side) on right -->
+  <g filter="url(#vw-shadow)" transform="translate(540, 30)">
+    <rect width="220" height="440" rx="28" fill="#0f172a"/>
+    <rect x="6" y="6" width="208" height="428" rx="24" fill="#ece5dd"/>
+  </g>
+  <rect x="626" y="36" width="48" height="14" rx="7" fill="#0f172a"/>
+  <rect x="626" y="456" width="48" height="3" rx="1.5" fill="#0f172a"/>
+
+  <!-- WhatsApp UI -->
+  <g font-family="ui-sans-serif, system-ui, sans-serif">
+    <!-- WhatsApp header bar -->
+    <rect x="546" y="36" width="208" height="40" fill="#075e54"/>
+    <circle cx="566" cy="56" r="11" fill="#dbeafe"/>
+    <text x="566" y="60" font-size="9" font-weight="700" fill="#1e40af" text-anchor="middle">HC</text>
+    <text x="586" y="54" font-size="9" font-weight="600" fill="#ffffff">Histiva Clinic</text>
+    <text x="586" y="66" font-size="7" fill="#a7d3cc">online</text>
+
+    <!-- message 1: appointment reminder -->
+    <g transform="translate(556, 92)">
+      <rect width="160" height="56" rx="6" fill="#ffffff"/>
+      <rect x="0" y="0" width="6" height="56" fill="#ffffff"/>
+      <text x="10" y="14" font-size="7" font-weight="700" fill="#075e54">Histiva Clinic</text>
+      <text x="10" y="28" font-size="8" fill="#0f172a">Reminder: appointment</text>
+      <text x="10" y="40" font-size="8" fill="#0f172a">tomorrow 09:30 with Dr.</text>
+      <text x="10" y="52" font-size="8" fill="#0f172a">Adamu. Reply YES to confirm.</text>
+    </g>
+    <text x="558" y="158" font-size="6" fill="#666666">10:14</text>
+
+    <!-- message 2: patient reply -->
+    <g transform="translate(596, 168)">
+      <rect width="120" height="32" rx="6" fill="#dcf8c6"/>
+      <text x="10" y="14" font-size="8" fill="#0f172a">YES</text>
+      <text x="10" y="26" font-size="7" fill="#475569">teşekkürler</text>
+    </g>
+    <text x="700" y="208" font-size="6" fill="#666666" text-anchor="end">10:16 ✓✓</text>
+
+    <!-- message 3: lab ready -->
+    <g transform="translate(556, 224)">
+      <rect width="170" height="68" rx="6" fill="#ffffff"/>
+      <rect x="0" y="0" width="6" height="68" fill="#ffffff"/>
+      <text x="10" y="14" font-size="7" font-weight="700" fill="#075e54">Histiva Clinic</text>
+      <text x="10" y="28" font-size="8" fill="#0f172a">Your lab results are ready.</text>
+      <text x="10" y="40" font-size="8" fill="#0f172a">Please visit the clinic to</text>
+      <text x="10" y="52" font-size="8" fill="#0f172a">collect them at your</text>
+      <text x="10" y="64" font-size="8" fill="#0f172a">convenience this week.</text>
+    </g>
+    <text x="558" y="302" font-size="6" fill="#666666">11:08</text>
+
+    <!-- message 4: post-op -->
+    <g transform="translate(556, 316)">
+      <rect width="170" height="56" rx="6" fill="#ffffff"/>
+      <rect x="0" y="0" width="6" height="56" fill="#ffffff"/>
+      <text x="10" y="14" font-size="7" font-weight="700" fill="#075e54">Histiva Clinic</text>
+      <text x="10" y="28" font-size="8" fill="#0f172a">Day 3 post-op check-in.</text>
+      <text x="10" y="40" font-size="8" fill="#0f172a">Pain right now? Reply with</text>
+      <text x="10" y="52" font-size="8" fill="#0f172a">a number 0-10.</text>
+    </g>
+    <text x="558" y="382" font-size="6" fill="#666666">14:30</text>
+
+    <!-- message 5: patient reply -->
+    <g transform="translate(636, 392)">
+      <rect width="84" height="24" rx="6" fill="#dcf8c6"/>
+      <text x="10" y="16" font-size="9" font-weight="700" fill="#0f172a">3</text>
+      <text x="28" y="16" font-size="7" fill="#475569">— much better</text>
+    </g>
+    <text x="710" y="426" font-size="6" fill="#666666" text-anchor="end">14:34 ✓✓</text>
+  </g>
+
+  <!-- preview badge -->
+  <g transform="translate(640, 16)">
+    <rect width="120" height="22" rx="11" fill="#1e40af"/>
+    <text x="60" y="15" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.8">DESIGN PREVIEW</text>
+  </g>
+</svg>

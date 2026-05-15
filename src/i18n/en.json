@@ -5,6 +5,7 @@
   "nav": {
     "product": "Product",
     "ai": "AI",
+    "vision": "Vision",
     "for_hospitals": "For Hospitals",
     "for_donors": "For Donors",
     "about": "About",
@@ -224,5 +225,68 @@
     "title": "We couldn't find that page.",
     "body": "The link may be old, or the page may have moved. Head back home or check the language version.",
     "home": "Back to home"
+  },
+  "vision": {
+    "meta_title": "Vision · Histiva",
+    "meta_description": "Five platform capabilities Histiva is building — AI triage, multilingual voice notes, diagnostic photo-in, WhatsApp/SMS patient channel, and a federated outbreak watch.",
+    "eyebrow": "What's next",
+    "hero_title": "Beyond a record system. A clinical platform.",
+    "hero_subtitle": "Five capabilities that move the clinic from \"data entry\" to \"data action\" — built for the places where care happens despite the infrastructure.",
+    "primary_cta": "Talk to us",
+    "secondary_cta": "Sponsor a feature",
+    "problem_label": "The problem",
+    "solution_label": "How it works",
+    "diff_label": "What makes it different",
+    "f1": {
+      "tag": "01",
+      "title": "CoPilot Triage",
+      "subtitle": "From a 50-deep waiting room to a safe queue — in 30 seconds per patient.",
+      "problem": "Fifty patients waiting. Two nurses, one doctor. First-come, first-served is unsafe — the sickest patient might be the one stuck in hour two of the line.",
+      "solution": "A nurse walks the queue with a phone. A Bluetooth thermometer captures vitals, the camera captures one photo, and three spoken questions go to a small on-device model. AI applies the Manchester Triage Scale, weighted for the local disease burden — malaria, dengue, cholera. The waiting list reorders in real time, and the most urgent patient surfaces to the top within seconds, not hours.",
+      "diff": "Existing HBYS products require a manual triage form — minutes per patient, error-prone under load. We're building a voice + photo + AI triage flow that runs on the same phone the nurse already carries."
+    },
+    "f2": {
+      "tag": "02",
+      "title": "Whisper Notes",
+      "subtitle": "Speak. We write. Five languages, on-device — no patient data leaves the clinic.",
+      "problem": "Clinicians lose half of every visit to typing. Eye contact is broken, examination is rushed, and notes stay shallow because there's simply no time to write more.",
+      "solution": "The clinician talks to the patient as they always have. The phone listens. Whisper.cpp on-device speech recognition plus a small local LLM transcribe and reshape the conversation into a structured SOAP note — chief complaint, history, examination, assessment, plan. The clinician reviews and signs. Works in Turkish, Arabic, Swahili, French, and English. No cloud round-trip, no PII leaving the building.",
+      "diff": "Nuance DAX and Suki cost $300 per clinician per month, run in the cloud, and ship English-only. We're building local-first, multilingual ambient documentation that runs on commodity hardware."
+    },
+    "f3": {
+      "tag": "03",
+      "title": "Photo-In, Diagnosis-Out",
+      "subtitle": "Phone camera + AI = a portable laboratory and a second pair of eyes.",
+      "problem": "Lab printouts on paper. X-ray films held up to a window. Skin lesion referrals two hundred kilometres away. Microscope slides without an experienced microscopist on staff.",
+      "solution": "Snap a photo of a lab printout — OCR plus an LLM normaliser turn it into structured values in the patient record. Snap an X-ray — a CheXNet-derived screening model flags pneumonia risk and pleural effusion. Snap a skin lesion — a dermatology second-opinion model returns a benign/atypical score. Snap a microscope slide through a five-dollar phone adapter — a vision model counts parasites for malaria, TB, and helminths. Every AI output is the second pair of eyes, never the last word.",
+      "diff": "Google ARDA and AKi exist as separate services that don't connect to the patient record. We're folding four diagnostic AI assists into one clinical workflow — and all of them can run on-device when the clinic has no internet."
+    },
+    "f4": {
+      "tag": "04",
+      "title": "WhatsApp & SMS",
+      "subtitle": "Reach patients on the channel they already use. No app to install, ever.",
+      "problem": "Patient apps go uninstalled. Appointment reminders are phone calls one nurse makes between visits. Lab-ready notifications mean another bus ride to the clinic just to ask.",
+      "solution": "WhatsApp Business API with SMS fallback. Automated, two-way: 24-hour appointment reminders that patients confirm with a single reply, lab-ready notifications carrying no PII over open channels, prescription pickup reminders, vaccine schedules, post-operative check-ins (\"How is the pain on a scale of 0 to 10?\"). Replies appear in the patient record as structured updates the clinician can act on.",
+      "diff": "Epic MyChart and Cerner HealtheLife require app downloads and run English-only by default. We're building patient communication on the channels patients are already on — in the languages they already speak."
+    },
+    "f5": {
+      "tag": "05",
+      "title": "Outbreak Watch",
+      "subtitle": "Your clinic, on the public-health radar. The federated sentinel network.",
+      "problem": "A single clinic alone can't see a regional outbreak — only national surveillance can, and by then a week or more has passed. Bridging that lag has historically required either expensive central systems or open data sharing that violates patient privacy.",
+      "solution": "Inside the clinic, Bayesian anomaly detection on diagnosis and symptom counts surfaces alerts in plain English — \"watery diarrhea spike: +340% over baseline in the last 7 days.\" Across opt-in Histiva clinics in a region, federated learning shares privacy-preserving statistical signals — never patient data. WHO and national ministry of health reports are pre-formatted for one-click filing. A red badge appears on the admin dashboard days before the rest of the world knows.",
+      "diff": "HealthMap and EpiNow exist as standalone surveillance tools that don't talk to the HBYS where the data is born. We're building the first clinic-level sentinel network where outbreak detection is a built-in feature, not a separate service."
+    },
+    "layers_eyebrow": "Three layers",
+    "layers_title": "Five capabilities, three layers of impact.",
+    "layer1_label": "In the moment",
+    "layer1_body": "CoPilot Triage, Whisper Notes, and Photo-In compound to give a single clinician the leverage of a small team. The visit gets faster, safer, and better-documented at the same time — without adding a single hour of training.",
+    "layer2_label": "Across the patient journey",
+    "layer2_body": "WhatsApp & SMS turn the clinic from \"come back next week\" to \"we'll let you know when your lab is ready.\" Continuity stops being a phone call a tired nurse forgets to make.",
+    "layer3_label": "Beyond the clinic",
+    "layer3_body": "Outbreak Watch turns every Histiva-equipped clinic into a sentinel for the region. A disease pattern emerges in the network days before national surveillance picks it up — and the alert reaches the ministry pre-formatted, not pre-buried.",
+    "cta_eyebrow": "Want to shape this?",
+    "cta_title": "Sponsor a capability. Or pilot one.",
+    "cta_body": "Each of these five is a real engineering investment that can be funded as its own program. Hospital partners can pilot a single capability before committing to the full platform. Donors and foundations can sponsor the build of one capability for a specific region or use case. Talk to us — we'll walk through the engineering plan, the pilot path, and the impact metrics."
   }
 }

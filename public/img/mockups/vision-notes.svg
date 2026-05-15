@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Design preview of Whisper Notes voice-to-structured-note">
+  <defs>
+    <filter id="vn-shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0c2461" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="vn-wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="#f8fafc"/>
+
+  <!-- recording panel on left -->
+  <g filter="url(#vn-shadow)" transform="translate(40, 50)">
+    <rect width="320" height="400" rx="14" fill="#ffffff"/>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif">
+    <!-- header -->
+    <rect x="40" y="50" width="320" height="56" rx="14" fill="#0c2461"/>
+    <rect x="40" y="92" width="320" height="14" fill="#0c2461"/>
+    <text x="60" y="84" font-size="13" font-weight="700" fill="#ffffff">Recording — Visit #2944</text>
+    <circle cx="340" cy="78" r="6" fill="#ef4444">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="328" y="82" font-size="9" fill="#fecaca" text-anchor="end">REC</text>
+
+    <!-- language pill -->
+    <rect x="60" y="120" width="84" height="22" rx="11" fill="#dbeafe"/>
+    <text x="102" y="135" font-size="10" font-weight="600" fill="#1e40af" text-anchor="middle">🌐 Türkçe</text>
+
+    <!-- mic level + waveform -->
+    <g transform="translate(60, 162)">
+      <rect width="280" height="80" rx="8" fill="#f1f5f9"/>
+      <text x="14" y="18" font-size="8" fill="#475569" letter-spacing="0.6">LIVE AUDIO</text>
+
+      <!-- waveform bars -->
+      <g transform="translate(14, 36)">
+        <rect x="0" y="14" width="3" height="14" rx="1" fill="url(#vn-wave)"/>
+        <rect x="6" y="10" width="3" height="22" rx="1" fill="url(#vn-wave)"/>
+        <rect x="12" y="4" width="3" height="34" rx="1" fill="url(#vn-wave)"/>
+        <rect x="18" y="12" width="3" height="18" rx="1" fill="url(#vn-wave)"/>
+        <rect x="24" y="6" width="3" height="30" rx="1" fill="url(#vn-wave)"/>
+        <rect x="30" y="14" width="3" height="14" rx="1" fill="url(#vn-wave)"/>
+        <rect x="36" y="2" width="3" height="38" rx="1" fill="url(#vn-wave)"/>
+        <rect x="42" y="8" width="3" height="26" rx="1" fill="url(#vn-wave)"/>
+        <rect x="48" y="14" width="3" height="14" rx="1" fill="url(#vn-wave)"/>
+        <rect x="54" y="6" width="3" height="30" rx="1" fill="url(#vn-wave)"/>
+        <rect x="60" y="0" width="3" height="42" rx="1" fill="url(#vn-wave)"/>
+        <rect x="66" y="12" width="3" height="18" rx="1" fill="url(#vn-wave)"/>
+        <rect x="72" y="4" width="3" height="34" rx="1" fill="url(#vn-wave)"/>
+        <rect x="78" y="14" width="3" height="14" rx="1" fill="url(#vn-wave)"/>
+        <rect x="84" y="2" width="3" height="38" rx="1" fill="url(#vn-wave)"/>
+        <rect x="90" y="10" width="3" height="22" rx="1" fill="url(#vn-wave)"/>
+        <rect x="96" y="6" width="3" height="30" rx="1" fill="url(#vn-wave)"/>
+        <rect x="102" y="14" width="3" height="14" rx="1" fill="url(#vn-wave)"/>
+        <rect x="108" y="12" width="3" height="18" rx="1" fill="url(#vn-wave)"/>
+        <rect x="114" y="4" width="3" height="34" rx="1" fill="url(#vn-wave)"/>
+        <rect x="120" y="14" width="3" height="14" rx="1" fill="url(#vn-wave)"/>
+        <rect x="126" y="6" width="3" height="30" rx="1" fill="url(#vn-wave)"/>
+        <rect x="132" y="2" width="3" height="38" rx="1" fill="url(#vn-wave)" opacity="0.6"/>
+        <rect x="138" y="10" width="3" height="22" rx="1" fill="url(#vn-wave)" opacity="0.5"/>
+        <rect x="144" y="14" width="3" height="14" rx="1" fill="url(#vn-wave)" opacity="0.4"/>
+        <rect x="150" y="12" width="3" height="18" rx="1" fill="url(#vn-wave)" opacity="0.3"/>
+        <rect x="156" y="14" width="3" height="14" rx="1" fill="url(#vn-wave)" opacity="0.25"/>
+        <rect x="162" y="15" width="3" height="12" rx="1" fill="url(#vn-wave)" opacity="0.2"/>
+        <rect x="168" y="16" width="3" height="10" rx="1" fill="url(#vn-wave)" opacity="0.15"/>
+        <rect x="174" y="17" width="3" height="8" rx="1" fill="url(#vn-wave)" opacity="0.1"/>
+        <rect x="180" y="18" width="3" height="6" rx="1" fill="url(#vn-wave)" opacity="0.08"/>
+      </g>
+    </g>
+
+    <!-- live transcript -->
+    <text x="60" y="266" font-size="9" fill="#475569" letter-spacing="0.6">LIVE TRANSCRIPT · TR</text>
+    <rect x="60" y="276" width="280" height="68" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="74" y="294" font-size="9" fill="#475569">"Üç gündür ateş ve titreme var,</text>
+    <text x="74" y="308" font-size="9" fill="#475569">son iki gündür de baş ağrısı...</text>
+    <text x="74" y="322" font-size="9" fill="#475569">vücut sıcaklığı 39.4 derece..."</text>
+    <text x="74" y="336" font-size="9" fill="#3b82f6" font-style="italic">[continuing]</text>
+
+    <!-- on-device indicator -->
+    <g transform="translate(60, 360)">
+      <circle cx="6" cy="6" r="5" fill="#16a34a"/>
+      <text x="20" y="10" font-size="9" fill="#0f172a" font-weight="600">On-device · No data leaves clinic</text>
+    </g>
+
+    <!-- stop button -->
+    <rect x="60" y="396" width="280" height="32" rx="6" fill="#0c2461"/>
+    <text x="200" y="416" font-size="10" font-weight="600" fill="#ffffff" text-anchor="middle">Stop & generate note</text>
+  </g>
+
+  <!-- structured output on right -->
+  <g filter="url(#vn-shadow)" transform="translate(400, 50)">
+    <rect width="360" height="400" rx="14" fill="#ffffff"/>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif">
+    <text x="420" y="86" font-size="9" fill="#475569" letter-spacing="0.6">STRUCTURED SOAP NOTE</text>
+    <text x="420" y="106" font-size="14" font-weight="700" fill="#0c2461">Jane N. · F · 34</text>
+    <text x="420" y="120" font-size="9" fill="#475569">Visit #2944 · 2026-05-15 09:18</text>
+
+    <!-- chief complaint -->
+    <text x="420" y="146" font-size="9" font-weight="700" fill="#1e40af" letter-spacing="0.4">CHIEF COMPLAINT</text>
+    <text x="420" y="162" font-size="11" fill="#0f172a">Fever and chills × 3 days</text>
+
+    <!-- HPI -->
+    <text x="420" y="186" font-size="9" font-weight="700" fill="#1e40af" letter-spacing="0.4">HISTORY OF PRESENT ILLNESS</text>
+    <text x="420" y="202" font-size="10" fill="#0f172a">3 days of fever, chills, headache.</text>
+    <text x="420" y="216" font-size="10" fill="#0f172a">Started insidiously, worsening.</text>
+    <text x="420" y="230" font-size="10" fill="#0f172a">No cough, no dysuria, no rash.</text>
+
+    <!-- vitals (linked from Bluetooth thermometer) -->
+    <text x="420" y="254" font-size="9" font-weight="700" fill="#1e40af" letter-spacing="0.4">VITALS</text>
+    <text x="420" y="270" font-size="10" fill="#0f172a">Temp <tspan font-weight="700" fill="#b91c1c">39.4°C</tspan> · HR 118 · BP 110/68</text>
+    <text x="420" y="284" font-size="10" fill="#0f172a">SpO₂ 96% · RR 24</text>
+
+    <!-- assessment -->
+    <text x="420" y="308" font-size="9" font-weight="700" fill="#1e40af" letter-spacing="0.4">ASSESSMENT</text>
+    <rect x="420" y="316" width="60" height="14" rx="3" fill="#fef3c7"/>
+    <text x="450" y="326" font-size="8" font-weight="700" fill="#b45309" text-anchor="middle">DDx</text>
+    <text x="486" y="326" font-size="10" fill="#0f172a">Malaria · Dengue · Sepsis</text>
+
+    <!-- plan -->
+    <text x="420" y="350" font-size="9" font-weight="700" fill="#1e40af" letter-spacing="0.4">PLAN</text>
+    <text x="420" y="366" font-size="10" fill="#0f172a">• Malaria RDT + thick smear</text>
+    <text x="420" y="380" font-size="10" fill="#0f172a">• CBC, blood culture</text>
+    <text x="420" y="394" font-size="10" fill="#0f172a">• IV fluids, paracetamol PRN</text>
+
+    <!-- footer actions -->
+    <line x1="420" y1="410" x2="740" y2="410" stroke="#e2e8f0"/>
+    <text x="420" y="430" font-size="9" fill="#16a34a" font-weight="600">✓ Auto-saved · Awaiting MD signature</text>
+  </g>
+
+  <!-- preview badge -->
+  <g transform="translate(640, 16)">
+    <rect width="120" height="22" rx="11" fill="#1e40af"/>
+    <text x="60" y="15" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.8">DESIGN PREVIEW</text>
+  </g>
+</svg>

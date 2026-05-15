@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Design preview of Photo-In Diagnosis-Out lab parsing">
+  <defs>
+    <filter id="vp-shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0c2461" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="#f8fafc"/>
+
+  <!-- phone with camera viewfinder on left -->
+  <g filter="url(#vp-shadow)" transform="translate(60, 30)">
+    <rect width="240" height="440" rx="28" fill="#0f172a"/>
+    <rect x="8" y="8" width="224" height="424" rx="22" fill="#000000"/>
+  </g>
+  <rect x="156" y="36" width="48" height="14" rx="7" fill="#0f172a"/>
+  <rect x="156" y="456" width="48" height="3" rx="1.5" fill="#0f172a"/>
+
+  <!-- camera viewfinder content (lab printout image) -->
+  <g transform="translate(68, 38)">
+    <!-- "captured" lab paper -->
+    <rect x="0" y="20" width="224" height="380" fill="#1a1a1a"/>
+    <g transform="translate(20, 60) rotate(-3 102 150)">
+      <rect width="200" height="280" fill="#fdfaf6" stroke="#94a3b8"/>
+      <text x="100" y="24" font-family="ui-monospace, monospace" font-size="9" font-weight="700" fill="#0f172a" text-anchor="middle">CLINIC LAB</text>
+      <line x1="20" y1="32" x2="180" y2="32" stroke="#94a3b8"/>
+      <text x="14" y="50" font-family="ui-monospace, monospace" font-size="7" fill="#475569">Pt: Jane N. #2944</text>
+      <text x="14" y="64" font-family="ui-monospace, monospace" font-size="7" fill="#475569">Date: 2026-05-15</text>
+
+      <text x="14" y="86" font-family="ui-monospace, monospace" font-size="8" font-weight="700" fill="#0f172a">COMPLETE BLOOD COUNT</text>
+      <text x="14" y="104" font-family="ui-monospace, monospace" font-size="7" fill="#0f172a">Hemoglobin   8.2 g/dL  L</text>
+      <text x="14" y="118" font-family="ui-monospace, monospace" font-size="7" fill="#0f172a">Hematocrit  25.4 %    L</text>
+      <text x="14" y="132" font-family="ui-monospace, monospace" font-size="7" fill="#0f172a">WBC         12.4 k/uL H</text>
+      <text x="14" y="146" font-family="ui-monospace, monospace" font-size="7" fill="#0f172a">Platelets   142  k/uL L</text>
+
+      <text x="14" y="172" font-family="ui-monospace, monospace" font-size="8" font-weight="700" fill="#0f172a">MALARIA RDT</text>
+      <text x="14" y="190" font-family="ui-monospace, monospace" font-size="7" fill="#0f172a">P. falciparum:  POS</text>
+      <text x="14" y="204" font-family="ui-monospace, monospace" font-size="7" fill="#0f172a">P. vivax:       NEG</text>
+
+      <text x="14" y="230" font-family="ui-monospace, monospace" font-size="8" font-weight="700" fill="#0f172a">CHEMISTRY</text>
+      <text x="14" y="248" font-family="ui-monospace, monospace" font-size="7" fill="#0f172a">Creatinine  1.1 mg/dL</text>
+      <text x="14" y="262" font-family="ui-monospace, monospace" font-size="7" fill="#0f172a">Glucose    104 mg/dL</text>
+    </g>
+
+    <!-- AI detection overlay corners -->
+    <g stroke="#3b82f6" stroke-width="2" fill="none">
+      <path d="M 22 78 L 22 70 L 30 70"/>
+      <path d="M 218 78 L 218 70 L 210 70"/>
+      <path d="M 22 386 L 22 394 L 30 394"/>
+      <path d="M 218 386 L 218 394 L 210 394"/>
+    </g>
+
+    <!-- top status bar overlay -->
+    <text x="14" y="14" font-family="ui-sans-serif, system-ui, sans-serif" font-size="8" font-weight="700" fill="#ffffff">📷 Scanning</text>
+    <text x="210" y="14" font-family="ui-sans-serif, system-ui, sans-serif" font-size="8" fill="#3b82f6" text-anchor="end">AI · OCR</text>
+
+    <!-- bottom action -->
+    <rect x="50" y="416" width="124" height="32" rx="16" fill="#3b82f6"/>
+    <text x="112" y="436" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Capture</text>
+  </g>
+
+  <!-- arrow -->
+  <g transform="translate(310, 240)">
+    <path d="M 0 0 L 30 0 M 26 -6 L 30 0 L 26 6" stroke="#475569" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- extracted structured data card on right -->
+  <g filter="url(#vp-shadow)" transform="translate(360, 50)">
+    <rect width="400" height="400" rx="14" fill="#ffffff"/>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif">
+    <text x="380" y="86" font-size="9" fill="#475569" letter-spacing="0.6">EXTRACTED · STRUCTURED · LINKED TO PATIENT</text>
+    <text x="380" y="108" font-size="14" font-weight="700" fill="#0c2461">Lab results — Jane N. #2944</text>
+
+    <!-- CBC -->
+    <text x="380" y="138" font-size="9" font-weight="700" fill="#1e40af" letter-spacing="0.4">COMPLETE BLOOD COUNT</text>
+
+    <g transform="translate(380, 148)">
+      <rect width="360" height="22" rx="4" fill="#fee2e2"/>
+      <text x="12" y="15" font-size="9" font-weight="600" fill="#0f172a">Hemoglobin</text>
+      <text x="200" y="15" font-size="10" font-weight="700" fill="#b91c1c">8.2 g/dL</text>
+      <rect x="270" y="6" width="34" height="11" rx="5" fill="#b91c1c"/>
+      <text x="287" y="14" font-size="7" font-weight="700" fill="#ffffff" text-anchor="middle">LOW</text>
+      <text x="328" y="15" font-size="8" fill="#475569">ref 12-16</text>
+    </g>
+
+    <g transform="translate(380, 174)">
+      <rect width="360" height="22" rx="4" fill="#fff7ed"/>
+      <text x="12" y="15" font-size="9" font-weight="600" fill="#0f172a">WBC</text>
+      <text x="200" y="15" font-size="10" font-weight="700" fill="#b45309">12.4 k/uL</text>
+      <rect x="270" y="6" width="34" height="11" rx="5" fill="#b45309"/>
+      <text x="287" y="14" font-size="7" font-weight="700" fill="#ffffff" text-anchor="middle">HIGH</text>
+      <text x="328" y="15" font-size="8" fill="#475569">ref 4-11</text>
+    </g>
+
+    <g transform="translate(380, 200)">
+      <rect width="360" height="22" rx="4" fill="#fee2e2"/>
+      <text x="12" y="15" font-size="9" font-weight="600" fill="#0f172a">Platelets</text>
+      <text x="200" y="15" font-size="10" font-weight="700" fill="#b91c1c">142 k/uL</text>
+      <rect x="270" y="6" width="34" height="11" rx="5" fill="#b91c1c"/>
+      <text x="287" y="14" font-size="7" font-weight="700" fill="#ffffff" text-anchor="middle">LOW</text>
+      <text x="328" y="15" font-size="8" fill="#475569">ref 150-400</text>
+    </g>
+
+    <!-- Malaria result -->
+    <text x="380" y="246" font-size="9" font-weight="700" fill="#1e40af" letter-spacing="0.4">MALARIA RDT</text>
+    <g transform="translate(380, 256)">
+      <rect width="360" height="32" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.5"/>
+      <text x="12" y="14" font-size="9" font-weight="600" fill="#0f172a">P. falciparum</text>
+      <rect x="12" y="18" width="46" height="11" rx="5" fill="#b91c1c"/>
+      <text x="35" y="26" font-size="7" font-weight="700" fill="#ffffff" text-anchor="middle">POSITIVE</text>
+      <text x="220" y="20" font-size="9" fill="#7f1d1d">Confirms clinical suspicion</text>
+    </g>
+
+    <!-- AI annotation -->
+    <g transform="translate(380, 308)">
+      <rect width="360" height="56" rx="6" fill="#dbeafe" stroke="#93c5fd"/>
+      <text x="12" y="18" font-size="8" font-weight="700" fill="#1e40af" letter-spacing="0.4">⚡ AI SUGGESTION</text>
+      <text x="12" y="34" font-size="10" fill="#0f172a">Pattern matches severe malaria.</text>
+      <text x="12" y="48" font-size="9" fill="#475569">Consider WHO severity criteria + IV artesunate.</text>
+    </g>
+
+    <!-- footer -->
+    <text x="380" y="386" font-size="8" fill="#16a34a" font-weight="600">✓ Linked to record · Awaiting clinician review</text>
+  </g>
+
+  <!-- preview badge -->
+  <g transform="translate(640, 16)">
+    <rect width="120" height="22" rx="11" fill="#1e40af"/>
+    <text x="60" y="15" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.8">DESIGN PREVIEW</text>
+  </g>
+</svg>

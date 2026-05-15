@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Design preview of Outbreak Watch federated sentinel dashboard">
+  <defs>
+    <filter id="vo-shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0c2461" flood-opacity="0.12"/>
+    </filter>
+    <radialGradient id="vo-pulse" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#ef4444" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="#f8fafc"/>
+
+  <!-- big console -->
+  <g filter="url(#vo-shadow)" transform="translate(40, 40)">
+    <rect width="720" height="420" rx="14" fill="#ffffff"/>
+  </g>
+
+  <!-- top bar -->
+  <rect x="40" y="40" width="720" height="48" rx="14" fill="#0c2461"/>
+  <rect x="40" y="74" width="720" height="14" fill="#0c2461"/>
+  <text x="60" y="70" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Outbreak Watch</text>
+  <text x="60" y="84" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#93c5fd">Federated sentinel · 38 Histiva clinics in network</text>
+
+  <text x="744" y="70" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#dbeafe" text-anchor="end">Region: East Africa</text>
+  <text x="744" y="84" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#dbeafe" text-anchor="end">Updated 2 min ago</text>
+
+  <!-- left panel: red alert -->
+  <g font-family="ui-sans-serif, system-ui, sans-serif" transform="translate(60, 108)">
+    <rect width="320" height="74" rx="8" fill="#fee2e2" stroke="#fca5a5" stroke-width="2"/>
+    <g transform="translate(14, 12)">
+      <circle cx="6" cy="6" r="6" fill="#b91c1c">
+        <animate attributeName="r" values="6;8;6" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="12" font-size="9" font-weight="800" fill="#b91c1c" letter-spacing="0.6">ANOMALY DETECTED</text>
+    </g>
+    <text x="14" y="46" font-size="14" font-weight="700" fill="#0f172a">Watery diarrhea spike</text>
+    <text x="14" y="62" font-size="10" fill="#475569">+340% vs 7-day baseline · 12 clinics affected</text>
+  </g>
+
+  <!-- middle: spike chart -->
+  <g font-family="ui-sans-serif, system-ui, sans-serif" transform="translate(60, 200)">
+    <text x="0" y="0" font-size="9" font-weight="700" fill="#0c2461" letter-spacing="0.4">CASE COUNT · LAST 21 DAYS</text>
+
+    <line x1="0" y1="120" x2="320" y2="120" stroke="#e2e8f0"/>
+    <text x="0" y="134" font-size="7" fill="#94a3b8">-21d</text>
+    <text x="316" y="134" font-size="7" fill="#94a3b8" text-anchor="end">today</text>
+
+    <!-- baseline (low blue bars) then spike (red) -->
+    <g transform="translate(0, 16)">
+      <rect x="0" y="96" width="12" height="6" rx="1" fill="#94a3b8"/>
+      <rect x="16" y="98" width="12" height="4" rx="1" fill="#94a3b8"/>
+      <rect x="32" y="92" width="12" height="10" rx="1" fill="#94a3b8"/>
+      <rect x="48" y="94" width="12" height="8" rx="1" fill="#94a3b8"/>
+      <rect x="64" y="96" width="12" height="6" rx="1" fill="#94a3b8"/>
+      <rect x="80" y="90" width="12" height="12" rx="1" fill="#94a3b8"/>
+      <rect x="96" y="92" width="12" height="10" rx="1" fill="#94a3b8"/>
+      <rect x="112" y="94" width="12" height="8" rx="1" fill="#94a3b8"/>
+      <rect x="128" y="88" width="12" height="14" rx="1" fill="#94a3b8"/>
+      <rect x="144" y="90" width="12" height="12" rx="1" fill="#94a3b8"/>
+      <rect x="160" y="86" width="12" height="16" rx="1" fill="#94a3b8"/>
+      <rect x="176" y="86" width="12" height="16" rx="1" fill="#94a3b8"/>
+      <rect x="192" y="84" width="12" height="18" rx="1" fill="#94a3b8"/>
+      <rect x="208" y="80" width="12" height="22" rx="1" fill="#94a3b8"/>
+      <!-- spike begins -->
+      <rect x="224" y="64" width="12" height="38" rx="1" fill="#f59e0b"/>
+      <rect x="240" y="50" width="12" height="52" rx="1" fill="#f59e0b"/>
+      <rect x="256" y="30" width="12" height="72" rx="1" fill="#ef4444"/>
+      <rect x="272" y="14" width="12" height="88" rx="1" fill="#ef4444"/>
+      <rect x="288" y="6" width="12" height="96" rx="1" fill="#b91c1c"/>
+      <rect x="304" y="0" width="12" height="102" rx="1" fill="#b91c1c"/>
+    </g>
+
+    <!-- legend -->
+    <g transform="translate(0, 152)">
+      <rect width="6" height="6" fill="#94a3b8"/>
+      <text x="14" y="6" font-size="7" fill="#475569">Baseline</text>
+      <rect x="64" width="6" height="6" fill="#f59e0b"/>
+      <text x="78" y="6" font-size="7" fill="#475569">Elevated</text>
+      <rect x="128" width="6" height="6" fill="#b91c1c"/>
+      <text x="142" y="6" font-size="7" fill="#475569">Critical</text>
+    </g>
+  </g>
+
+  <!-- right: map -->
+  <g font-family="ui-sans-serif, system-ui, sans-serif" transform="translate(420, 108)">
+    <text x="0" y="0" font-size="9" font-weight="700" fill="#0c2461" letter-spacing="0.4">FEDERATED NETWORK · 38 CLINICS</text>
+
+    <!-- map area -->
+    <rect width="320" height="240" rx="8" fill="#eff6ff" stroke="#dbeafe"/>
+
+    <!-- simplified region outline (abstract East Africa-ish blob) -->
+    <path d="M 60 50 Q 90 30 130 40 Q 170 35 200 60 Q 230 80 240 130 Q 235 170 210 200 Q 170 220 130 215 Q 90 210 70 180 Q 50 140 60 100 Z"
+          fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+
+    <!-- normal clinic pins -->
+    <circle cx="80" cy="100" r="3" fill="#16a34a"/>
+    <circle cx="100" cy="80" r="3" fill="#16a34a"/>
+    <circle cx="120" cy="160" r="3" fill="#16a34a"/>
+    <circle cx="170" cy="100" r="3" fill="#16a34a"/>
+    <circle cx="200" cy="170" r="3" fill="#16a34a"/>
+    <circle cx="220" cy="120" r="3" fill="#16a34a"/>
+    <circle cx="90" cy="180" r="3" fill="#16a34a"/>
+    <circle cx="180" cy="180" r="3" fill="#16a34a"/>
+    <circle cx="150" cy="80" r="3" fill="#16a34a"/>
+
+    <!-- elevated pins -->
+    <circle cx="120" cy="110" r="4" fill="#f59e0b"/>
+    <circle cx="140" cy="130" r="4" fill="#f59e0b"/>
+    <circle cx="160" cy="140" r="4" fill="#f59e0b"/>
+
+    <!-- spike cluster — pulsing red -->
+    <circle cx="145" cy="125" r="28" fill="url(#vo-pulse)">
+      <animate attributeName="r" values="22;32;22" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="145" cy="125" r="5" fill="#b91c1c"/>
+    <circle cx="135" cy="115" r="4" fill="#b91c1c"/>
+    <circle cx="155" cy="135" r="4" fill="#b91c1c"/>
+    <circle cx="160" cy="115" r="4" fill="#b91c1c"/>
+    <circle cx="135" cy="135" r="4" fill="#b91c1c"/>
+
+    <!-- legend -->
+    <g transform="translate(12, 218)">
+      <circle cx="4" cy="4" r="3" fill="#16a34a"/>
+      <text x="14" y="7" font-size="7" fill="#475569">Normal · 23</text>
+      <circle cx="74" cy="4" r="3" fill="#f59e0b"/>
+      <text x="84" y="7" font-size="7" fill="#475569">Elevated · 3</text>
+      <circle cx="158" cy="4" r="3" fill="#b91c1c"/>
+      <text x="168" y="7" font-size="7" fill="#475569">Critical · 12</text>
+    </g>
+  </g>
+
+  <!-- bottom actions -->
+  <g font-family="ui-sans-serif, system-ui, sans-serif" transform="translate(60, 386)">
+    <text x="0" y="0" font-size="9" font-weight="700" fill="#0c2461" letter-spacing="0.4">RECOMMENDED ACTIONS</text>
+
+    <g transform="translate(0, 16)">
+      <rect width="220" height="36" rx="6" fill="#1e40af"/>
+      <text x="110" y="16" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">File WHO IHR-2005 report</text>
+      <text x="110" y="28" font-size="7" fill="#bfdbfe" text-anchor="middle">Pre-filled · 1 click</text>
+    </g>
+
+    <g transform="translate(232, 16)">
+      <rect width="220" height="36" rx="6" fill="#ffffff" stroke="#1e40af" stroke-width="1.5"/>
+      <text x="110" y="16" font-size="9" font-weight="700" fill="#1e40af" text-anchor="middle">Notify Ministry of Health</text>
+      <text x="110" y="28" font-size="7" fill="#475569" text-anchor="middle">Auto-formatted email + CSV</text>
+    </g>
+
+    <g transform="translate(464, 16)">
+      <rect width="220" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="110" y="16" font-size="9" font-weight="700" fill="#0c2461" text-anchor="middle">View case-level details</text>
+      <text x="110" y="28" font-size="7" fill="#475569" text-anchor="middle">Anonymized · per-clinic</text>
+    </g>
+  </g>
+
+  <!-- preview badge -->
+  <g transform="translate(640, 16)">
+    <rect width="120" height="22" rx="11" fill="#1e40af"/>
+    <text x="60" y="15" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.8">DESIGN PREVIEW</text>
+  </g>
+</svg>
