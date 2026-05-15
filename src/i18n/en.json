@@ -91,6 +91,14 @@
     "hero_title": "Hospital records, everywhere they're needed.",
     "hero_subtitle": "A modern, AI-powered hospital information system. Run it in managed cloud, on your own server, or on mobile — modular, multilingual, ready to deploy. Built by a nonprofit, for the clinics that need it most."
   },
+  "impact": {
+    "eyebrow": "By the numbers",
+    "modules_label": "Modules ready",
+    "languages_label": "Languages supported",
+    "deployment_label": "Deployment models",
+    "margin_label": "Profit margin",
+    "margin_caption": "Nonprofit governed · strict cost-recovery"
+  },
   "deployment": {
     "eyebrow": "How you deploy",
     "title": "Three ways to run Histiva.",
