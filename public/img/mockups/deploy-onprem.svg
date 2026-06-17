@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-label="Design preview of Histiva on-premise server console">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-label="Design preview of MediSina on-premise server console">
   <defs>
     <filter id="os" x="-5%" y="-5%" width="110%" height="115%">
       <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0c2461" flood-opacity="0.10"/>
@@ -21,7 +21,7 @@
   <g font-family="ui-sans-serif, system-ui, sans-serif">
     <!-- header -->
     <rect x="28" y="22" width="344" height="22" fill="#0c2461"/>
-    <text x="38" y="36" font-size="9" font-weight="700" fill="#ffffff">Histiva · Local Admin</text>
+    <text x="38" y="36" font-size="9" font-weight="700" fill="#ffffff">MediSina · Local Admin</text>
     <circle cx="350" cy="33" r="3" fill="#10b981"/>
     <text x="334" y="36" font-size="7" fill="#dbeafe" text-anchor="end">root@clinic-server</text>
 

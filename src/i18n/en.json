@@ -30,7 +30,7 @@
   },
   "cookie": {
     "title": "We use cookies for analytics",
-    "body": "Histiva uses Google Analytics to understand how the site is used. Nothing personal is shared.",
+    "body": "MediSina uses Google Analytics to understand how the site is used. Nothing personal is shared.",
     "learn_more": "Read our privacy policy",
     "accept": "Accept",
     "decline": "Decline"
@@ -56,12 +56,12 @@
   "story": {
     "eyebrow": "Why we built this",
     "title": "Built for the clinics that need it most.",
-    "body": "Most hospital software is built for wealthy hospitals in stable economies. Histiva exists because the clinics that need it most — in Chad, Somalia, and beyond — deserve software that works for them, not against them.\n\nNonprofit. Built by clinicians and engineers. Funded by people who care."
+    "body": "Most hospital software is built for wealthy hospitals in stable economies. MediSina exists because the clinics that need it most — in Chad, Somalia, and beyond — deserve software that works for them, not against them.\n\nNonprofit. Built by clinicians and engineers. Funded by people who care."
   },
   "paths": {
     "hospital_eyebrow": "For hospitals & NGOs",
-    "hospital_title": "Bring Histiva to your clinic",
-    "hospital_body": "See how Histiva fits your operation. Walk through deployment with our team.",
+    "hospital_title": "Bring MediSina to your clinic",
+    "hospital_body": "See how MediSina fits your operation. Walk through deployment with our team.",
     "hospital_cta": "Schedule a demo",
     "donor_eyebrow": "For donors & funders",
     "donor_title": "Fund a deployment",
@@ -100,7 +100,7 @@
   "clinic_day": {
     "eyebrow": "A day in the clinic",
     "title": "Eight hours, one platform.",
-    "subtitle": "Scroll to walk through a single clinic day with Histiva.",
+    "subtitle": "Scroll to walk through a single clinic day with MediSina.",
     "scene1_time": "08:00",
     "scene1_title": "Patient arrives. Triaged in 30 seconds.",
     "scene1_body": "CoPilot Triage captures vitals from a Bluetooth thermometer, a photo, and three spoken questions. AI applies the Manchester Triage Scale, weighted for the local disease burden — malaria, dengue, cholera. The most urgent patient surfaces to position one.",
@@ -124,7 +124,7 @@
   },
   "deployment": {
     "eyebrow": "How you deploy",
-    "title": "Three ways to run Histiva.",
+    "title": "Three ways to run MediSina.",
     "subtitle": "Same product, same audit trail, same data model. You pick the operating model that fits your clinic.",
     "cloud": {
       "title": "Cloud",
@@ -140,7 +140,7 @@
     }
   },
   "product": {
-    "meta_title": "Product · Histiva",
+    "meta_title": "Product · MediSina",
     "meta_description": "Ten modules covering patient management, admission, lab, radiology, pharmacy, inventory, and billing.",
     "eyebrow": "Product",
     "title": "Ten modules. One coherent system.",
@@ -149,18 +149,18 @@
     "see_in_action": "See it in your clinic"
   },
   "ai": {
-    "meta_title": "AI & Local LLM · Histiva",
+    "meta_title": "AI & Local LLM · MediSina",
     "meta_description": "AI that works where the internet doesn't — cloud or local, clinician-supervised.",
     "eyebrow": "AI & Local LLM",
     "hero_title": "AI that works where the internet doesn't.",
-    "hero_subtitle": "Histiva runs on cloud or on-premise local LLMs. The clinic chooses. The clinician decides. Every AI call is auditable."
+    "hero_subtitle": "MediSina runs on cloud or on-premise local LLMs. The clinic chooses. The clinician decides. Every AI call is auditable."
   },
   "for_hospitals": {
-    "meta_title": "For Hospitals & NGOs · Histiva",
-    "meta_description": "Bring Histiva to your clinic. Deployment timeline, hardware requirements, funding paths, and FAQs.",
+    "meta_title": "For Hospitals & NGOs · MediSina",
+    "meta_description": "Bring MediSina to your clinic. Deployment timeline, hardware requirements, funding paths, and FAQs.",
     "eyebrow": "For hospitals & NGOs",
-    "hero_title": "Bring Histiva to your clinic in days, not months.",
-    "hero_subtitle": "Discovery, install, training, go-live — typically 4 to 6 weeks. We help match clinics with donor sponsors; for clinics that prefer to fund their own deployment, Histiva operates on a strict cost-recovery basis — no profit margin.",
+    "hero_title": "Bring MediSina to your clinic in days, not months.",
+    "hero_subtitle": "Discovery, install, training, go-live — typically 4 to 6 weeks. We help match clinics with donor sponsors; for clinics that prefer to fund their own deployment, MediSina operates on a strict cost-recovery basis — no profit margin.",
     "steps_title": "How deployment works",
     "step1": { "title": "Discovery call", "body": "30-minute conversation to understand your clinic's workflow, scale, and constraints — and whether you'd like sponsor matching or to fund deployment yourselves." },
     "step2": { "title": "Site assessment + sizing", "body": "We size hardware, network, and training needs. Quoted as a tailored package — sponsor-funded or cost-recovery, your choice." },
@@ -176,7 +176,7 @@
     "provide_3": "Ongoing software updates and security patches",
     "cost_eyebrow": "How it's funded",
     "cost_title": "Sponsor-funded, or strict cost-recovery — your choice.",
-    "cost_body": "Histiva is built and operated by a nonprofit. Many deployments are fully funded by donors and foundations who want to expand access to modern healthcare software. For clinics that prefer to operate independently — or aren't matched with a sponsor — Histiva works on a strict cost-recovery basis: we recover only what it costs to develop, install, and support, with no profit margin. Get in touch and we'll walk through both paths with you.",
+    "cost_body": "MediSina is built and operated by a nonprofit. Many deployments are fully funded by donors and foundations who want to expand access to modern healthcare software. For clinics that prefer to operate independently — or aren't matched with a sponsor — MediSina works on a strict cost-recovery basis: we recover only what it costs to develop, install, and support, with no profit margin. Get in touch and we'll walk through both paths with you.",
     "faq_title": "Common questions",
     "cta_title": "Start a conversation"
   },
@@ -186,22 +186,22 @@
     "organization": "Organization",
     "country": "Country",
     "interest": "I'd like to",
-    "interest_hospital": "Bring Histiva to our clinic",
+    "interest_hospital": "Bring MediSina to our clinic",
     "interest_donor": "Sponsor a deployment",
     "interest_press": "Press inquiry",
     "interest_other": "Other",
     "message": "Message",
-    "consent": "I consent to Histiva storing my submission to respond.",
+    "consent": "I consent to MediSina storing my submission to respond.",
     "privacy_link": "Privacy notice",
     "submit": "Send message",
-    "endpoint_missing": "Contact form not configured yet. Please email contact@histiva.org directly."
+    "endpoint_missing": "Contact form not configured yet. Please email contact@medisina.health directly."
   },
   "for_donors": {
-    "meta_title": "For Donors & Funders · Histiva",
+    "meta_title": "For Donors & Funders · MediSina",
     "meta_description": "Fund a hospital deployment. Transparent cost breakdown, sponsorship tiers, and how to start.",
     "eyebrow": "For donors & funders",
     "hero_title": "Fund a hospital. Not a feature.",
-    "hero_subtitle": "Your support brings Histiva to one clinic — installation, training, and a year of support. Concrete impact, transparent numbers.",
+    "hero_subtitle": "Your support brings MediSina to one clinic — installation, training, and a year of support. Concrete impact, transparent numbers.",
     "cta": "Start a conversation",
     "funds_title": "What your support funds",
     "fund_install": { "title": "Installation", "body": "Hardware sizing, on-site install, initial data load." },
@@ -219,11 +219,11 @@
     "cta_title": "Sponsor a deployment"
   },
   "about": {
-    "meta_title": "About · Histiva",
+    "meta_title": "About · MediSina",
     "meta_description": "A nonprofit hospital information system for clinics where care happens despite the infrastructure.",
     "eyebrow": "About",
     "hero_title": "A hospital system for the clinics that need it most.",
-    "hero_subtitle": "Histiva is operated by a small working group of clinicians and engineers, supported by donors who believe modern hospital software shouldn't be a luxury.",
+    "hero_subtitle": "MediSina is operated by a small working group of clinicians and engineers, supported by donors who believe modern hospital software shouldn't be a luxury.",
     "principles_title": "What we hold to",
     "principle_auditable": { "title": "Auditable by design", "body": "Every patient-record action logged. Every clinical decision traceable." },
     "principle_clinician_led": { "title": "Clinician-led", "body": "Every feature passes a real clinician's smell test." },
@@ -233,7 +233,7 @@
     "principle_ai_guardrails": { "title": "AI with guardrails", "body": "The clinician always decides. The audit log never lies." }
   },
   "contact": {
-    "meta_title": "Contact · Histiva",
+    "meta_title": "Contact · MediSina",
     "meta_description": "Get in touch — clinic admin, donor, press, or contributor. We respond within 3 business days.",
     "title": "Get in touch",
     "subtitle": "Tell us a bit about you and we'll route your message to the right person. We respond within 3 business days."
@@ -247,8 +247,8 @@
     "learn_more": "How deployment works"
   },
   "privacy": {
-    "meta_title": "Privacy · Histiva",
-    "meta_description": "How Histiva handles data collected on histiva.github.io.",
+    "meta_title": "Privacy · MediSina",
+    "meta_description": "How MediSina handles data collected on medisina-health.github.io.",
     "eyebrow": "Privacy",
     "title": "Privacy policy"
   },
@@ -258,8 +258,8 @@
     "home": "Back to home"
   },
   "vision": {
-    "meta_title": "Vision · Histiva",
-    "meta_description": "Five platform capabilities Histiva is building — AI triage, multilingual voice notes, diagnostic photo-in, WhatsApp/SMS patient channel, and a federated outbreak watch.",
+    "meta_title": "Vision · MediSina",
+    "meta_description": "Five platform capabilities MediSina is building — AI triage, multilingual voice notes, diagnostic photo-in, WhatsApp/SMS patient channel, and a federated outbreak watch.",
     "eyebrow": "What's next",
     "hero_title": "Beyond a record system. A clinical platform.",
     "hero_subtitle": "Five capabilities that move the clinic from \"data entry\" to \"data action\" — built for the places where care happens despite the infrastructure.",
@@ -305,7 +305,7 @@
       "title": "Outbreak Watch",
       "subtitle": "Your clinic, on the public-health radar. The federated sentinel network.",
       "problem": "A single clinic alone can't see a regional outbreak — only national surveillance can, and by then a week or more has passed. Bridging that lag has historically required either expensive central systems or open data sharing that violates patient privacy.",
-      "solution": "Inside the clinic, Bayesian anomaly detection on diagnosis and symptom counts surfaces alerts in plain English — \"watery diarrhea spike: +340% over baseline in the last 7 days.\" Across opt-in Histiva clinics in a region, federated learning shares privacy-preserving statistical signals — never patient data. WHO and national ministry of health reports are pre-formatted for one-click filing. A red badge appears on the admin dashboard days before the rest of the world knows.",
+      "solution": "Inside the clinic, Bayesian anomaly detection on diagnosis and symptom counts surfaces alerts in plain English — \"watery diarrhea spike: +340% over baseline in the last 7 days.\" Across opt-in MediSina clinics in a region, federated learning shares privacy-preserving statistical signals — never patient data. WHO and national ministry of health reports are pre-formatted for one-click filing. A red badge appears on the admin dashboard days before the rest of the world knows.",
       "diff": "HealthMap and EpiNow exist as standalone surveillance tools that don't talk to the HBYS where the data is born. We're building the first clinic-level sentinel network where outbreak detection is a built-in feature, not a separate service."
     },
     "layers_eyebrow": "Three layers",
@@ -315,7 +315,7 @@
     "layer2_label": "Across the patient journey",
     "layer2_body": "Telegram, WhatsApp, and SMS turn the clinic from \"come back next week\" to \"we'll let you know when your lab is ready.\" Continuity stops being a phone call a tired nurse forgets to make.",
     "layer3_label": "Beyond the clinic",
-    "layer3_body": "Outbreak Watch turns every Histiva-equipped clinic into a sentinel for the region. A disease pattern emerges in the network days before national surveillance picks it up — and the alert reaches the ministry pre-formatted, not pre-buried.",
+    "layer3_body": "Outbreak Watch turns every MediSina-equipped clinic into a sentinel for the region. A disease pattern emerges in the network days before national surveillance picks it up — and the alert reaches the ministry pre-formatted, not pre-buried.",
     "cta_eyebrow": "Want to shape this?",
     "cta_title": "Sponsor a capability. Or pilot one.",
     "cta_body": "Each of these five is a real engineering investment that can be funded as its own program. Hospital partners can pilot a single capability before committing to the full platform. Donors and foundations can sponsor the build of one capability for a specific region or use case. Talk to us — we'll walk through the engineering plan, the pilot path, and the impact metrics."

@@ -1,17 +1,17 @@
-# CLAUDE.md — Histiva Marketing Site
+# CLAUDE.md — MediSina Marketing Site
 
 Read first. Trust code over this file; update if they diverge.
 
 ## What this repo is
 
-The public marketing website for **Histiva**, the nonprofit hospital information system. **Not** the product code — that lives at `/home/cevheri/projects/hbys/histiva-app/` (sibling repo, separate project).
+The public marketing website for **MediSina**, the nonprofit hospital information system. **Not** the product code — that lives at `/home/cevheri/projects/hbys/medisina-app/` (sibling repo, separate project).
 
-Live at https://histiva.github.io/ once deployed.
+Live at https://medisina-health.github.io/ once deployed.
 
 ## Authoritative docs
 
-1. `docs/superpowers/specs/2026-05-13-histiva-marketing-site-design.md` — design spec, brand, IA, content outlines
-2. `docs/superpowers/plans/2026-05-13-histiva-marketing-site.md` — implementation plan
+1. `docs/superpowers/specs/2026-05-13-medisina-marketing-site-design.md` — design spec, brand, IA, content outlines
+2. `docs/superpowers/plans/2026-05-13-medisina-marketing-site.md` — implementation plan
 3. Reference design: https://www.healthytogether.co/
 
 ## Tech (pinned in package.json)

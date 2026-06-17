@@ -1,14 +1,14 @@
-# Histiva Marketing Site Implementation Plan
+# MediSina Marketing Site Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Ship a static 8-page marketing site for Histiva (nonprofit HBYS) at `https://histiva.github.io/`, dual-funnel (operators + donors), clinical-authority tone, Trust Blue brand, Astro 6.3 + Tailwind v4 + built-in i18n, deployed via GitHub Actions to GitHub Pages.
+**Goal:** Ship a static 8-page marketing site for MediSina (nonprofit HBYS) at `https://medisina-health.github.io/`, dual-funnel (operators + donors), clinical-authority tone, Trust Blue brand, Astro 6.3 + Tailwind v4 + built-in i18n, deployed via GitHub Actions to GitHub Pages.
 
 **Architecture:** Static Astro site. EN at `/`, localized at `/tr/`, `/fr/`, `/ar/` with shell + EN-fallback content for v1. One body component per page reused by 4 thin route files per locale. Forms via Formspree (no backend), GA4 with custom consent banner, View Transitions for nav, Astro Content Layer for module/FAQ content.
 
 **Tech Stack:** Astro 6.3 · TypeScript strict · Tailwind CSS v4 (CSS-first) · `astro-icon` (Lucide) · `@astrojs/sitemap` · `@astrojs/mdx` · `@fontsource-variable/inter` · Vitest (i18n util tests) · Playwright (smoke E2E) · GitHub Actions → Pages.
 
-**Source-of-truth spec:** `docs/superpowers/specs/2026-05-13-histiva-marketing-site-design.md`. When the plan and spec diverge, the spec wins — open a question, don't drift silently.
+**Source-of-truth spec:** `docs/superpowers/specs/2026-05-13-medisina-marketing-site-design.md`. When the plan and spec diverge, the spec wins — open a question, don't drift silently.
 
 ---
 
@@ -33,7 +33,7 @@
 
 ```json
 {
-  "name": "histiva-marketing-site",
+  "name": "medisina-marketing-site",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -118,7 +118,7 @@ import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://histiva.github.io',
+  site: 'https://medisina-health.github.io',
   output: 'static',
   trailingSlash: 'ignore',
   integrations: [mdx(), sitemap(), icon({ iconDir: 'src/icons' })],
@@ -151,7 +151,7 @@ Replace the `defineConfig({...})` call body with:
 
 ```js
 export default defineConfig({
-  site: 'https://histiva.github.io',
+  site: 'https://medisina-health.github.io',
   output: 'static',
   trailingSlash: 'ignore',
   i18n: {
@@ -397,7 +397,7 @@ jobs:
         env:
           PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
           PUBLIC_FORMSPREE_ENDPOINT: ${{ vars.PUBLIC_FORMSPREE_ENDPOINT }}
-          PUBLIC_SITE_URL: https://histiva.github.io
+          PUBLIC_SITE_URL: https://medisina-health.github.io
       - uses: actions/upload-pages-artifact@v3
         with: { path: dist }
 
@@ -432,11 +432,11 @@ git commit -m "ci: github actions for build + pages deploy"
 - [x] **Step 1: Create `README.md`**
 
 ````markdown
-# Histiva Marketing Site
+# MediSina Marketing Site
 
-Static marketing site for Histiva — a nonprofit hospital information system for low-resource clinics.
+Static marketing site for MediSina — a nonprofit hospital information system for low-resource clinics.
 
-**Production:** https://histiva.github.io/
+**Production:** https://medisina-health.github.io/
 
 ## Tech
 
@@ -473,27 +473,27 @@ If either is absent, the feature degrades gracefully (GA off, form shows "config
 
 ## Documentation
 
-- Spec: `docs/superpowers/specs/2026-05-13-histiva-marketing-site-design.md`
-- Plan: `docs/superpowers/plans/2026-05-13-histiva-marketing-site.md`
+- Spec: `docs/superpowers/specs/2026-05-13-medisina-marketing-site-design.md`
+- Plan: `docs/superpowers/plans/2026-05-13-medisina-marketing-site.md`
 ````
 
 - [x] **Step 2: Create `CLAUDE.md`**
 
 ```markdown
-# CLAUDE.md — Histiva Marketing Site
+# CLAUDE.md — MediSina Marketing Site
 
 Read first. Trust code over this file; update if they diverge.
 
 ## What this repo is
 
-The public marketing website for **Histiva**, the nonprofit hospital information system. **Not** the product code — that lives at `/home/cevheri/projects/hbys/histiva-app/` (sibling repo, separate project).
+The public marketing website for **MediSina**, the nonprofit hospital information system. **Not** the product code — that lives at `/home/cevheri/projects/hbys/medisina-app/` (sibling repo, separate project).
 
-Live at https://histiva.github.io/ once deployed.
+Live at https://medisina-health.github.io/ once deployed.
 
 ## Authoritative docs
 
-1. `docs/superpowers/specs/2026-05-13-histiva-marketing-site-design.md` — design spec, brand, IA, content outlines
-2. `docs/superpowers/plans/2026-05-13-histiva-marketing-site.md` — implementation plan
+1. `docs/superpowers/specs/2026-05-13-medisina-marketing-site-design.md` — design spec, brand, IA, content outlines
+2. `docs/superpowers/plans/2026-05-13-medisina-marketing-site.md` — implementation plan
 3. Reference design: https://www.healthytogether.co/
 
 ## Tech (pinned in package.json)
@@ -531,7 +531,7 @@ Live at https://histiva.github.io/ once deployed.
 User-agent: *
 Allow: /
 
-Sitemap: https://histiva.github.io/sitemap-index.xml
+Sitemap: https://medisina-health.github.io/sitemap-index.xml
 ```
 
 - [x] **Step 4: Create placeholder `public/favicon.svg`**
@@ -744,7 +744,7 @@ const {
 
 const safeLocale: Locale = isValidLocale(locale) ? locale : DEFAULT_LOCALE;
 const dir = getLocaleDir(safeLocale);
-const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://histiva.github.io';
+const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://medisina-health.github.io';
 const canonical = new URL(Astro.url.pathname, siteUrl).toString();
 ---
 <!doctype html>
@@ -753,13 +753,13 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title} · Histiva</title>
+    <title>{title} · MediSina</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex,nofollow" />}
     <link rel="canonical" href={canonical} />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={`${title} · Histiva`} />
+    <meta property="og:title" content={`${title} · MediSina`} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={new URL(ogImage, siteUrl).toString()} />
@@ -935,7 +935,7 @@ const navItems = [
 ---
 <header class="sticky top-0 z-20 bg-white/85 backdrop-blur border-b border-slate-200">
   <nav class="container-page flex items-center justify-between py-3 gap-4">
-    <a href={localizedPath('/', locale)} class="text-xl font-bold text-primary-900 tracking-tight">Histiva</a>
+    <a href={localizedPath('/', locale)} class="text-xl font-bold text-primary-900 tracking-tight">MediSina</a>
     <ul class="hidden md:flex items-center gap-1">
       {navItems.map((item) => (
         <li><a href={localizedPath(item.href, locale)} class="px-3 py-1.5 rounded-md text-sm text-ink-900 hover:bg-primary-100">{t(item.key, locale)}</a></li>
@@ -943,7 +943,7 @@ const navItems = [
     </ul>
     <div class="flex items-center gap-2">
       <LanguageSwitcher current={locale} pathname={pathname} />
-      <a href="https://github.com/histiva" rel="noopener" class="p-2 rounded-md hover:bg-primary-100" aria-label="GitHub">
+      <a href="https://github.com/medisina" rel="noopener" class="p-2 rounded-md hover:bg-primary-100" aria-label="GitHub">
         <Icon name="lucide:github" size={18} />
       </a>
     </div>
@@ -983,7 +983,7 @@ const year = new Date().getFullYear();
 <footer class="mt-16 bg-primary-900 text-primary-100">
   <div class="container-page py-12 grid gap-8 md:grid-cols-4">
     <div>
-      <p class="text-xl font-bold text-white">Histiva</p>
+      <p class="text-xl font-bold text-white">MediSina</p>
       <p class="text-sm mt-2 opacity-80">{t('footer.tagline', locale)}</p>
     </div>
     <div>
@@ -998,7 +998,7 @@ const year = new Date().getFullYear();
       <p class="text-xs uppercase tracking-wider opacity-60 mb-3">{t('footer.connect', locale)}</p>
       <ul class="space-y-2 text-sm">
         <li><a href={localizedPath('/contact', locale)} class="hover:underline">{t('nav.contact', locale)}</a></li>
-        <li><a href="https://github.com/histiva" rel="noopener" class="hover:underline">GitHub</a></li>
+        <li><a href="https://github.com/medisina" rel="noopener" class="hover:underline">GitHub</a></li>
       </ul>
     </div>
     <div>
@@ -1012,7 +1012,7 @@ const year = new Date().getFullYear();
   </div>
   <div class="border-t border-primary-700/40">
     <div class="container-page py-4 text-xs opacity-70 flex flex-wrap items-center justify-between gap-2">
-      <span>© {year} Histiva · {t('footer.builtwith', locale)}</span>
+      <span>© {year} MediSina · {t('footer.builtwith', locale)}</span>
       <span>{t('footer.proprietary', locale)}</span>
     </div>
   </div>
@@ -1076,7 +1076,7 @@ const { locale } = Astro.props;
   </div>
 </div>
 <script>
-  const KEY = 'histiva.consent';
+  const KEY = 'medisina.consent';
   const banner = document.getElementById('cookie-banner');
   const stored = localStorage.getItem(KEY);
   if (banner && stored === null) banner.classList.remove('hidden');
@@ -1085,7 +1085,7 @@ const { locale } = Astro.props;
     localStorage.setItem(KEY, value);
     banner?.classList.add('hidden');
     if (value === 'accept') {
-      document.dispatchEvent(new CustomEvent('histiva:consent-accepted'));
+      document.dispatchEvent(new CustomEvent('medisina:consent-accepted'));
     }
   }
 
@@ -1102,10 +1102,10 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 ---
 {GA_ID && (
   <script is:inline define:vars={{ GA_ID }}>
-    const KEY = 'histiva.consent';
+    const KEY = 'medisina.consent';
     function load() {
-      if (window.__histivaGaLoaded) return;
-      window.__histivaGaLoaded = true;
+      if (window.__medisinaGaLoaded) return;
+      window.__medisinaGaLoaded = true;
       const s = document.createElement('script');
       s.async = true;
       s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
@@ -1116,7 +1116,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
       window.gtag('config', GA_ID, { anonymize_ip: true });
     }
     if (localStorage.getItem(KEY) === 'accept') load();
-    document.addEventListener('histiva:consent-accepted', load);
+    document.addEventListener('medisina:consent-accepted', load);
   </script>
 )}
 ```
@@ -1126,7 +1126,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 ```json
 "cookie": {
   "title": "We use cookies for analytics",
-  "body": "Histiva uses Google Analytics to understand how the site is used. Nothing personal is shared.",
+  "body": "MediSina uses Google Analytics to understand how the site is used. Nothing personal is shared.",
   "learn_more": "Learn more",
   "accept": "Accept",
   "decline": "Decline"
@@ -1401,12 +1401,12 @@ const { iconName, title, body, status = 'shipping' } = Astro.props;
 "story": {
   "eyebrow": "Why we built this",
   "title": "Built for the clinics that need it most.",
-  "body": "Most hospital software is built for wealthy hospitals in stable economies. Histiva exists because the clinics that need it most — in Chad, Somalia, and beyond — deserve software that works for them, not against them.\n\nNonprofit. Built by clinicians and engineers. Funded by people who care."
+  "body": "Most hospital software is built for wealthy hospitals in stable economies. MediSina exists because the clinics that need it most — in Chad, Somalia, and beyond — deserve software that works for them, not against them.\n\nNonprofit. Built by clinicians and engineers. Funded by people who care."
 },
 "paths": {
   "hospital_eyebrow": "For hospitals & NGOs",
-  "hospital_title": "Bring Histiva to your clinic",
-  "hospital_body": "See how Histiva fits your operation. Walk through deployment with our team.",
+  "hospital_title": "Bring MediSina to your clinic",
+  "hospital_body": "See how MediSina fits your operation. Walk through deployment with our team.",
   "hospital_cta": "Schedule a demo",
   "donor_eyebrow": "For donors & funders",
   "donor_title": "Fund a deployment",
@@ -1580,7 +1580,7 @@ import { type Locale, t, localizedPath } from '~/i18n/utils';
 interface Props { locale: Locale; defaultInterest?: 'hospital' | 'donor' | 'press' | 'other'; }
 const { locale, defaultInterest = 'hospital' } = Astro.props;
 const endpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
-const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PUBLIC_SITE_URL ?? 'https://histiva.github.io').toString();
+const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PUBLIC_SITE_URL ?? 'https://medisina-health.github.io').toString();
 ---
 {!endpoint && (
   <div class="bg-warning-50 border border-amber-300 rounded-lg p-4 text-warning-700 text-sm">
@@ -1591,7 +1591,7 @@ const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PU
 {endpoint && (
   <form action={endpoint} method="POST" class="grid gap-4 max-w-2xl" id="contact-form">
     <input type="hidden" name="_redirect" value={thankYou} />
-    <input type="hidden" name="_subject" id="form-subject" value="Histiva contact — hospital" />
+    <input type="hidden" name="_subject" id="form-subject" value="MediSina contact — hospital" />
     <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
 
     <label class="grid gap-1">
@@ -1641,7 +1641,7 @@ const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PU
     const interest = document.getElementById('form-interest') as HTMLSelectElement | null;
     const subject = document.getElementById('form-subject') as HTMLInputElement | null;
     if (interest && subject) {
-      const update = () => { subject.value = `Histiva contact — ${interest.value}`; };
+      const update = () => { subject.value = `MediSina contact — ${interest.value}`; };
       interest.addEventListener('change', update);
       update();
     }
@@ -1658,15 +1658,15 @@ const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PU
   "organization": "Organization",
   "country": "Country",
   "interest": "I'd like to",
-  "interest_hospital": "Bring Histiva to our clinic",
+  "interest_hospital": "Bring MediSina to our clinic",
   "interest_donor": "Sponsor a deployment",
   "interest_press": "Press inquiry",
   "interest_other": "Other",
   "message": "Message",
-  "consent": "I consent to Histiva storing my submission to respond.",
+  "consent": "I consent to MediSina storing my submission to respond.",
   "privacy_link": "Privacy notice",
   "submit": "Send message",
-  "endpoint_missing": "Contact form not configured yet. Please email contact@histiva.org directly."
+  "endpoint_missing": "Contact form not configured yet. Please email contact@medisina.health directly."
 }
 ```
 
@@ -1738,10 +1738,10 @@ capabilities:
   - Audit trail on every read and write
 ---
 
-The patient module is the spine of Histiva. Every other module — admission, lab, pharmacy, billing — references back to a single canonical patient record.
+The patient module is the spine of MediSina. Every other module — admission, lab, pharmacy, billing — references back to a single canonical patient record.
 ```
 
-- [x] **Step 3: Create stubs for remaining 9 modules** (admission, outpatient, emergency, inpatient, laboratory, radiology, pharmacy, inventory, billing) following the same template. Use 2-4 capabilities each, drawn from the `histiva-app/docs/rfp.md` §3.2-3.4 and `CLAUDE.md` module list. Each stub is ~10 lines. For billing, set `status: in-development`.
+- [x] **Step 3: Create stubs for remaining 9 modules** (admission, outpatient, emergency, inpatient, laboratory, radiology, pharmacy, inventory, billing) following the same template. Use 2-4 capabilities each, drawn from the `medisina-app/docs/rfp.md` §3.2-3.4 and `CLAUDE.md` module list. Each stub is ~10 lines. For billing, set `status: in-development`.
 
 - [x] **Step 4: Create `src/content/faqs/for-hospitals.yaml`**
 
@@ -1752,9 +1752,9 @@ items:
     a: From discovery call to go-live, typical pilots take 4–6 weeks. The on-site install itself is 1–2 days; training is roughly a week of part-time workshops.
   - q: What hardware do we need?
     a: At minimum one server-grade laptop or small server, a router, and two client devices (any modern browser). For larger clinics we size up.
-  - q: Does Histiva work without internet?
-    a: Yes. Histiva can run fully on-premise on the clinic's local network. Cloud sync and AI features are optional and configurable per-clinic.
-  - q: What does Histiva cost?
+  - q: Does MediSina work without internet?
+    a: Yes. MediSina can run fully on-premise on the clinic's local network. Cloud sync and AI features are optional and configurable per-clinic.
+  - q: What does MediSina cost?
     a: The software is free to nonprofit clinics. Deployment cost — installation, training, year-one support — is typically funded by a sponsor; we can help match you with one.
   - q: Who owns our data?
     a: You do. Patient data stays on infrastructure you control. Our role is the software and support around it.
@@ -1991,7 +1991,7 @@ const modules = (await getCollection('modules')).sort((a, b) => a.data.order - b
 
 ```json
 "product": {
-  "meta_title": "Product · Histiva",
+  "meta_title": "Product · MediSina",
   "meta_description": "Ten modules covering patient management, admission, lab, radiology, pharmacy, inventory, and billing.",
   "eyebrow": "Product",
   "title": "Ten modules. One coherent system.",
@@ -2032,12 +2032,12 @@ _Note (impl 2026-05-13): adapted snippet for Content Layer API (per Task 20). Re
 ```mdx
 ---
 title: AI & Local LLM
-description: How Histiva uses AI — cloud or local — and what it explicitly does not do.
+description: How MediSina uses AI — cloud or local — and what it explicitly does not do.
 ---
 
 ## The two modes
 
-Histiva supports **cloud AI** (OpenAI, Anthropic, others) for clinics with reliable internet, and **local LLM** (Ollama, llama.cpp) for clinics where data must stay on-premise or where bandwidth is unreliable. Each clinic chooses at install time and can switch later.
+MediSina supports **cloud AI** (OpenAI, Anthropic, others) for clinics with reliable internet, and **local LLM** (Ollama, llama.cpp) for clinics where data must stay on-premise or where bandwidth is unreliable. Each clinic chooses at install time and can switch later.
 
 ### Cloud mode
 
@@ -2066,7 +2066,7 @@ Histiva supports **cloud AI** (OpenAI, Anthropic, others) for clinics with relia
 
 ## Agentic workflows (preview)
 
-In limited contexts, Histiva can run multi-step workflows on the clinician's behalf — e.g., "if a critical lab value comes back, draft the patient notification and route to the on-call doctor for approval." All steps are visible, reversible, and audited.
+In limited contexts, MediSina can run multi-step workflows on the clinician's behalf — e.g., "if a critical lab value comes back, draft the patient notification and route to the on-call doctor for approval." All steps are visible, reversible, and audited.
 
 ## Want to see it?
 
@@ -2133,11 +2133,11 @@ const { Content } = await entry!.render();
 
 ```json
 "ai": {
-  "meta_title": "AI & Local LLM · Histiva",
+  "meta_title": "AI & Local LLM · MediSina",
   "meta_description": "AI that works where the internet doesn't — cloud or local, clinician-supervised.",
   "eyebrow": "AI & Local LLM",
   "hero_title": "AI that works where the internet doesn't.",
-  "hero_subtitle": "Histiva runs on cloud or on-premise local LLMs. The clinic chooses. The clinician decides. Every AI call is auditable."
+  "hero_subtitle": "MediSina runs on cloud or on-premise local LLMs. The clinic chooses. The clinician decides. Every AI call is auditable."
 }
 ```
 
@@ -2266,10 +2266,10 @@ const steps = [
 
 ```json
 "for_hospitals": {
-  "meta_title": "For Hospitals & NGOs · Histiva",
-  "meta_description": "Bring Histiva to your clinic. Deployment timeline, hardware requirements, costs, and FAQs.",
+  "meta_title": "For Hospitals & NGOs · MediSina",
+  "meta_description": "Bring MediSina to your clinic. Deployment timeline, hardware requirements, costs, and FAQs.",
   "eyebrow": "For hospitals & NGOs",
-  "hero_title": "Bring Histiva to your clinic in days, not months.",
+  "hero_title": "Bring MediSina to your clinic in days, not months.",
   "hero_subtitle": "Discovery, install, training, go-live — typically 4 to 6 weeks. The software is free to nonprofit clinics; deployment cost is usually sponsor-funded.",
   "steps_title": "How deployment works",
   "step1": { "title": "Discovery call", "body": "30-minute conversation to understand your clinic's workflow, scale, and constraints." },
@@ -2286,7 +2286,7 @@ const steps = [
   "provide_3": "Ongoing software updates and security patches",
   "cost_eyebrow": "Transparent cost",
   "cost_title": "Software free. Deployment sponsor-funded.",
-  "cost_body": "Histiva software is free to nonprofit clinics under the project license. Deployment — installation, training, and year-one support — is typically covered by a donor or foundation sponsor. We help match you with one.",
+  "cost_body": "MediSina software is free to nonprofit clinics under the project license. Deployment — installation, training, and year-one support — is typically covered by a donor or foundation sponsor. We help match you with one.",
   "faq_title": "Common questions",
   "cta_title": "Start a conversation"
 }
@@ -2384,11 +2384,11 @@ Hero block:
 
 ```json
 "for_donors": {
-  "meta_title": "For Donors & Funders · Histiva",
+  "meta_title": "For Donors & Funders · MediSina",
   "meta_description": "Fund a hospital deployment. Transparent cost breakdown, sponsorship tiers, and how to start.",
   "eyebrow": "For donors & funders",
   "hero_title": "Fund a hospital. Not a feature.",
-  "hero_subtitle": "Your support brings Histiva to one clinic — installation, training, and a year of support. Concrete impact, transparent numbers.",
+  "hero_subtitle": "Your support brings MediSina to one clinic — installation, training, and a year of support. Concrete impact, transparent numbers.",
   "cta": "Start a conversation",
   "funds_title": "What your support funds",
   "fund_install": { "title": "Installation", "body": "Hardware sizing, on-site install, initial data load." },
@@ -2429,29 +2429,29 @@ git commit -m "feat: /for-donors page with funding breakdown + tiers + form"
 
 ```mdx
 ---
-title: About Histiva
+title: About MediSina
 description: A nonprofit hospital information system for clinics where care happens despite the infrastructure.
 ---
 
 ## Mission
 
-Histiva exists for one reason: most hospital software is built for wealthy hospitals in stable economies, and that's exactly where it isn't needed most. The clinics that carry the heaviest care load — the small mission hospital in a rural district, the NGO outpost in a refugee settlement, the church-run maternity ward — are running on paper, on Excel, or on inherited systems abandoned by their original vendors a decade ago.
+MediSina exists for one reason: most hospital software is built for wealthy hospitals in stable economies, and that's exactly where it isn't needed most. The clinics that carry the heaviest care load — the small mission hospital in a rural district, the NGO outpost in a refugee settlement, the church-run maternity ward — are running on paper, on Excel, or on inherited systems abandoned by their original vendors a decade ago.
 
 We are building a modern, modular hospital information system for those clinics. It is mobile-ready because that's what doctors and nurses there actually use. It works offline because the internet doesn't, sometimes for days. It speaks multiple languages because the teams do. And it is free to nonprofit clinics — the deployment cost is borne by sponsors who care about the outcome.
 
 ## Team
 
-Histiva is operated by a small, multidisciplinary working group of clinicians, software engineers, and program managers. The team is intentionally small for v1 to keep decisions fast and aligned with the first clinic's lived reality.
+MediSina is operated by a small, multidisciplinary working group of clinicians, software engineers, and program managers. The team is intentionally small for v1 to keep decisions fast and aligned with the first clinic's lived reality.
 
 We will publish full team biographies once our nonprofit legal entity is registered and team membership is locked. Until then, we're a working group — and the work is what matters.
 
 ## Governance
 
-Operated by the Histiva working group, in the process of forming a nonprofit legal entity. The specific framework (Türkiye dernek, US 501(c)(3), UK CIC, or equivalent) is being decided with legal counsel based on where the first major funding originates and which jurisdiction is most efficient for the clinics we serve. We expect to finalize structure by Q3 2026.
+Operated by the MediSina working group, in the process of forming a nonprofit legal entity. The specific framework (Türkiye dernek, US 501(c)(3), UK CIC, or equivalent) is being decided with legal counsel based on where the first major funding originates and which jurisdiction is most efficient for the clinics we serve. We expect to finalize structure by Q3 2026.
 
 ## Get in touch
 
-- Bring Histiva to your clinic: [/for-hospitals](/for-hospitals)
+- Bring MediSina to your clinic: [/for-hospitals](/for-hospitals)
 - Sponsor a deployment: [/for-donors](/for-donors)
 - Anything else: [/contact](/contact)
 ```
@@ -2478,11 +2478,11 @@ Same Layout/chrome scaffolding pattern as Task 24's `AiBody.astro` (replicate th
 
 ```json
 "about": {
-  "meta_title": "About · Histiva",
+  "meta_title": "About · MediSina",
   "meta_description": "A nonprofit hospital information system for clinics where care happens despite the infrastructure.",
   "eyebrow": "About",
   "hero_title": "A hospital system for the clinics that need it most.",
-  "hero_subtitle": "Histiva is operated by a small working group of clinicians and engineers, supported by donors who believe modern hospital software shouldn't be a luxury.",
+  "hero_subtitle": "MediSina is operated by a small working group of clinicians and engineers, supported by donors who believe modern hospital software shouldn't be a luxury.",
   "principles_title": "What we hold to",
   "principle_auditable": { "title": "Auditable by design", "body": "Every patient-record action logged. Every clinical decision traceable." },
   "principle_clinician_led": { "title": "Clinician-led", "body": "Every feature passes a real clinician's smell test." },
@@ -2572,7 +2572,7 @@ const pathname = Astro.url.pathname;
     <p class="text-lg text-ink-600 mb-8">{t('thank_you.body', locale)}</p>
     <div class="flex justify-center gap-3">
       <a href={localizedPath('/', locale)} class="px-5 py-2.5 rounded-md bg-primary-700 text-white font-semibold">{t('thank_you.home', locale)}</a>
-      <a href="https://github.com/histiva" rel="noopener" class="px-5 py-2.5 rounded-md border border-primary-700 text-primary-700 font-semibold">{t('thank_you.github', locale)}</a>
+      <a href="https://github.com/medisina" rel="noopener" class="px-5 py-2.5 rounded-md border border-primary-700 text-primary-700 font-semibold">{t('thank_you.github', locale)}</a>
     </div>
   </section>
 
@@ -2586,7 +2586,7 @@ const pathname = Astro.url.pathname;
 
 ```json
 "contact": {
-  "meta_title": "Contact · Histiva",
+  "meta_title": "Contact · MediSina",
   "meta_description": "Get in touch — clinic admin, donor, press, or contributor. We respond within 3 business days.",
   "title": "Get in touch",
   "subtitle": "Tell us a bit about you and we'll route your message to the right person. We respond within 3 business days."
@@ -2597,7 +2597,7 @@ const pathname = Astro.url.pathname;
   "title": "Thanks for reaching out.",
   "body": "We received your message and will respond within 3 business days. In the meantime, feel free to explore the project on GitHub or read the AI deep-dive.",
   "home": "Back to home",
-  "github": "Histiva on GitHub"
+  "github": "MediSina on GitHub"
 }
 ```
 
@@ -2624,10 +2624,10 @@ git commit -m "feat: /contact + /thank-you (noindex)"
 ```mdx
 ---
 title: Privacy
-description: How Histiva handles the data we collect on this website.
+description: How MediSina handles the data we collect on this website.
 ---
 
-_Last updated: 2026-05-13. This policy covers only **histiva.github.io** — the marketing site. The Histiva HBYS product, deployed inside hospitals, has its own data governance and is not in scope here._
+_Last updated: 2026-05-13. This policy covers only **medisina-health.github.io** — the marketing site. The MediSina HBYS product, deployed inside hospitals, has its own data governance and is not in scope here._
 
 ## What we collect
 
@@ -2636,7 +2636,7 @@ _Last updated: 2026-05-13. This policy covers only **histiva.github.io** — the
 
 ## Cookies
 
-The site uses one essential cookie/localStorage value (`histiva.consent`) to remember your cookie preference. No analytics cookies are set unless you click "Accept" on the banner. You can change your preference by clearing your browser storage for this site; the banner will reappear.
+The site uses one essential cookie/localStorage value (`medisina.consent`) to remember your cookie preference. No analytics cookies are set unless you click "Accept" on the banner. You can change your preference by clearing your browser storage for this site; the banner will reappear.
 
 ## How long we keep things
 
@@ -2649,11 +2649,11 @@ This site is not directed at children under 18 and we do not knowingly collect d
 
 ## Your rights
 
-You can request access to, correction of, or deletion of any data we hold about you by emailing **privacy@histiva.org** (placeholder — see legal entity note below). We will respond within 30 days.
+You can request access to, correction of, or deletion of any data we hold about you by emailing **privacy@medisina.health** (placeholder — see legal entity note below). We will respond within 30 days.
 
 ## Legal entity
 
-Histiva is in the process of forming a nonprofit legal entity. Until that is finalized, this policy is operated by the Histiva working group. The final legal entity name and jurisdiction will appear here once registered.
+MediSina is in the process of forming a nonprofit legal entity. Until that is finalized, this policy is operated by the MediSina working group. The final legal entity name and jurisdiction will appear here once registered.
 
 ## Changes
 
@@ -2709,8 +2709,8 @@ const { Content } = await entry!.render();
 
 ```json
 "privacy": {
-  "meta_title": "Privacy · Histiva",
-  "meta_description": "How Histiva handles data collected on histiva.github.io.",
+  "meta_title": "Privacy · MediSina",
+  "meta_description": "How MediSina handles data collected on medisina-health.github.io.",
   "eyebrow": "Privacy",
   "title": "Privacy policy"
 }
@@ -2798,7 +2798,7 @@ git commit -m "feat: shared 404 page"
 
 Fill one row per image actually committed. Track here so credits stay accurate.
 
-- [x] **Step 4: Create `public/og/default.png`** — 1200x630px, Trust Blue background (#0c2461), centered white "Histiva" wordmark + tagline. Easiest: build in Figma or PowerPoint and export. (One image is enough for v1; per-page OG images deferred.) _Stub: programmatically generated via `scripts/gen-og-default.mjs` (sharp SVG-to-PNG). Human can overwrite with a designed export at the same path._
+- [x] **Step 4: Create `public/og/default.png`** — 1200x630px, Trust Blue background (#0c2461), centered white "MediSina" wordmark + tagline. Easiest: build in Figma or PowerPoint and export. (One image is enough for v1; per-page OG images deferred.) _Stub: programmatically generated via `scripts/gen-og-default.mjs` (sharp SVG-to-PNG). Human can overwrite with a designed export at the same path._
 
 - [ ] **Step 5: Wire the hero image into HomeBody.astro** — import `clinician-tablet.jpg` and pass to `<Hero image={...} />` in Task 22's component. This is an Edit to that file.
 
@@ -2817,7 +2817,7 @@ git commit -m "feat: curated photos + unDraw illustrations + default OG image"
 > completed in the stub commit. What is on disk after the stub commit:
 >
 > - `public/og/default.png` — programmatically generated 1200x630 placeholder
->   (Trust Blue + white "Histiva" wordmark + subtitle). Generator lives at
+>   (Trust Blue + white "MediSina" wordmark + subtitle). Generator lives at
 >   `scripts/gen-og-default.mjs`; re-run with `node scripts/gen-og-default.mjs`.
 >   A human can overwrite this PNG with a designed export (Figma/PowerPoint)
 >   without changing any wiring — `Layout.astro` references the path directly.
@@ -3078,7 +3078,7 @@ _Impl 2026-05-13: confirmed `<html lang="ar" dir="rtl">`, footer LangSwitcher us
 
 In a fresh browser profile, open `http://localhost:4321/` (with `PUBLIC_GA_MEASUREMENT_ID` set). Network tab: confirm NO request to `googletagmanager.com`. Click "Accept" in the banner — now the request fires.
 
-_Impl 2026-05-13: covered by `tests/e2e/homepage.spec.ts` ("cookie banner appears on first visit and dismisses" — 3rd test). Static check: zero unconditional `googletagmanager` references in dist; Analytics inline script only emitted when `PUBLIC_GA_MEASUREMENT_ID` env is set; the gated loader checks `localStorage.getItem('histiva.consent') === 'accept'` before injecting gtag. Interactive verification with real GA_ID + browser deferred to user pre-deploy._
+_Impl 2026-05-13: covered by `tests/e2e/homepage.spec.ts` ("cookie banner appears on first visit and dismisses" — 3rd test). Static check: zero unconditional `googletagmanager` references in dist; Analytics inline script only emitted when `PUBLIC_GA_MEASUREMENT_ID` env is set; the gated loader checks `localStorage.getItem('medisina.consent') === 'accept'` before injecting gtag. Interactive verification with real GA_ID + browser deferred to user pre-deploy._
 
 - [x] **Step 6: Address any issue inline; commit fixes individually with descriptive messages.**
 
@@ -3094,7 +3094,7 @@ _Impl 2026-05-13: ONE issue found and fixed — Task 34 verification surfaced no
 
 - [x] **Step 1: Configure repo settings**
 
-In the GitHub repo (`histiva/histiva.github.io`), under Settings:
+In the GitHub repo (`medisina/medisina-health.github.io`), under Settings:
 - Pages → Source: GitHub Actions
 - Variables (under "Secrets and variables" → Actions → Variables):
   - `PUBLIC_GA_MEASUREMENT_ID` = (the GA4 ID)
@@ -3118,7 +3118,7 @@ _Impl 2026-05-13: Run ID `25807374718` — build job completed in seconds (npm c
 
 - [x] **Step 4: Smoke-test live site**
 
-Visit `https://histiva.github.io/`:
+Visit `https://medisina-health.github.io/`:
 - Hero loads, font is Inter
 - All nav links resolve to 200
 - Cookie banner appears, accepts/declines correctly
@@ -3132,7 +3132,7 @@ _Impl 2026-05-13: curl-based smoke tests confirmed: homepage HTTP 200 with corre
 Add at top:
 
 ```markdown
-**Status:** Live at https://histiva.github.io/ since 2026-MM-DD.
+**Status:** Live at https://medisina-health.github.io/ since 2026-MM-DD.
 ```
 
 - [ ] **Step 6: Commit + push the README update**
@@ -3167,7 +3167,7 @@ When acceptance gate green: close out with one final commit tagging the mileston
 These are NOT plan tasks (they're business decisions, not engineering work), but listed here so the engineer notices them while executing:
 
 1. Legal entity name + jurisdiction (placeholder text shipped — needs replacement before legal exposure).
-2. Contact email addresses (`contact@`, `privacy@`, `press@`) need to be set up at the chosen domain (currently `histiva.org` is referenced as a placeholder).
+2. Contact email addresses (`contact@`, `privacy@`, `press@`) need to be set up at the chosen domain (currently `medisina.health` is referenced as a placeholder).
 3. First-partner hospital consent for naming.
 4. OG image illustrator decision (DIY in Figma vs. unDraw-derived templates).
 5. Cookie-banner legal-review pass.

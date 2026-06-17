@@ -21,7 +21,7 @@ const {
 
 const safeLocale: Locale = isValidLocale(locale) ? locale : DEFAULT_LOCALE;
 const dir = getLocaleDir(safeLocale);
-const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://histiva.github.io';
+const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://medisina-health.github.io';
 const canonical = new URL(Astro.url.pathname, siteUrl).toString();
 ---
 <!doctype html>
@@ -31,13 +31,13 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <ClientRouter />
-    <title>{title} · Histiva</title>
+    <title>{title} · MediSina</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex,nofollow" />}
     <link rel="canonical" href={canonical} />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={`${title} · Histiva`} />
+    <meta property="og:title" content={`${title} · MediSina`} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={new URL(ogImage, siteUrl).toString()} />

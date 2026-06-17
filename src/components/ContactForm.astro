@@ -3,7 +3,7 @@ import { type Locale, t, localizedPath } from '~/i18n/utils';
 interface Props { locale: Locale; defaultInterest?: 'hospital' | 'donor' | 'press' | 'other'; }
 const { locale, defaultInterest = 'hospital' } = Astro.props;
 const endpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
-const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PUBLIC_SITE_URL ?? 'https://histiva.github.io').toString();
+const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PUBLIC_SITE_URL ?? 'https://medisina-health.github.io').toString();
 ---
 {!endpoint && (
   <div class="bg-warning-50 border border-amber-300 rounded-lg p-4 text-warning-700 text-sm">
@@ -15,7 +15,7 @@ const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PU
   <Fragment>
     <form action={endpoint} method="POST" class="grid gap-4 max-w-2xl" id="contact-form">
       <input type="hidden" name="_redirect" value={thankYou} />
-      <input type="hidden" name="_subject" id="form-subject" value="Histiva contact — hospital" />
+      <input type="hidden" name="_subject" id="form-subject" value="MediSina contact — hospital" />
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
 
       <label class="grid gap-1">
@@ -65,7 +65,7 @@ const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PU
       const interest = document.getElementById('form-interest') as HTMLSelectElement | null;
       const subject = document.getElementById('form-subject') as HTMLInputElement | null;
       if (interest && subject) {
-        const update = () => { subject.value = `Histiva contact — ${interest.value}`; };
+        const update = () => { subject.value = `MediSina contact — ${interest.value}`; };
         interest.addEventListener('change', update);
         update();
       }

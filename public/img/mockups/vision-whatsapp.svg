@@ -104,14 +104,14 @@
     <rect x="546" y="36" width="208" height="40" fill="#075e54"/>
     <circle cx="566" cy="56" r="11" fill="#dbeafe"/>
     <text x="566" y="60" font-size="9" font-weight="700" fill="#1e40af" text-anchor="middle">HC</text>
-    <text x="586" y="54" font-size="9" font-weight="600" fill="#ffffff">Histiva Clinic</text>
+    <text x="586" y="54" font-size="9" font-weight="600" fill="#ffffff">MediSina Clinic</text>
     <text x="586" y="66" font-size="7" fill="#a7d3cc">online</text>
 
     <!-- message 1: appointment reminder -->
     <g transform="translate(556, 92)">
       <rect width="160" height="56" rx="6" fill="#ffffff"/>
       <rect x="0" y="0" width="6" height="56" fill="#ffffff"/>
-      <text x="10" y="14" font-size="7" font-weight="700" fill="#075e54">Histiva Clinic</text>
+      <text x="10" y="14" font-size="7" font-weight="700" fill="#075e54">MediSina Clinic</text>
       <text x="10" y="28" font-size="8" fill="#0f172a">Reminder: appointment</text>
       <text x="10" y="40" font-size="8" fill="#0f172a">tomorrow 09:30 with Dr.</text>
       <text x="10" y="52" font-size="8" fill="#0f172a">Adamu. Reply YES to confirm.</text>
@@ -130,7 +130,7 @@
     <g transform="translate(556, 224)">
       <rect width="170" height="68" rx="6" fill="#ffffff"/>
       <rect x="0" y="0" width="6" height="68" fill="#ffffff"/>
-      <text x="10" y="14" font-size="7" font-weight="700" fill="#075e54">Histiva Clinic</text>
+      <text x="10" y="14" font-size="7" font-weight="700" fill="#075e54">MediSina Clinic</text>
       <text x="10" y="28" font-size="8" fill="#0f172a">Your lab results are ready.</text>
       <text x="10" y="40" font-size="8" fill="#0f172a">Please visit the clinic to</text>
       <text x="10" y="52" font-size="8" fill="#0f172a">collect them at your</text>
@@ -142,7 +142,7 @@
     <g transform="translate(556, 316)">
       <rect width="170" height="56" rx="6" fill="#ffffff"/>
       <rect x="0" y="0" width="6" height="56" fill="#ffffff"/>
-      <text x="10" y="14" font-size="7" font-weight="700" fill="#075e54">Histiva Clinic</text>
+      <text x="10" y="14" font-size="7" font-weight="700" fill="#075e54">MediSina Clinic</text>
       <text x="10" y="28" font-size="8" fill="#0f172a">Day 3 post-op check-in.</text>
       <text x="10" y="40" font-size="8" fill="#0f172a">Pain right now? Reply with</text>
       <text x="10" y="52" font-size="8" fill="#0f172a">a number 0-10.</text>

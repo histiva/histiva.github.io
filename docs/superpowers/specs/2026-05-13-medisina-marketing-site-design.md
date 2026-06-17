@@ -1,22 +1,22 @@
-# Histiva Marketing Site — Design Spec
+# MediSina Marketing Site — Design Spec
 
 **Status:** Draft for approval
 **Date:** 2026-05-13
-**Project root:** `/home/cevheri/projects/hbys/histiva.github.io/`
-**Live URL (target):** `https://histiva.github.io/`
-**Related product:** Histiva ClinicFlow HBYS (`/home/cevheri/projects/hbys/histiva-app/`)
+**Project root:** `/home/cevheri/projects/hbys/medisina-health.github.io/`
+**Live URL (target):** `https://medisina-health.github.io/`
+**Related product:** MediSina ClinicFlow HBYS (`/home/cevheri/projects/hbys/medisina-app/`)
 **Reference design:** [healthytogether.co](https://www.healthytogether.co/)
 
 ---
 
 ## 1. Purpose
 
-Build a static marketing website for **Histiva**, the nonprofit hospital information system (HBYS) deployed in low-resource clinics in Africa and similar regions. The site exists to:
+Build a static marketing website for **MediSina**, the nonprofit hospital information system (HBYS) deployed in low-resource clinics in Africa and similar regions. The site exists to:
 
-1. **Bring in operators** — clinic administrators, NGOs (MSF, faith-based mission hospitals, Red Crescent partners) who want to evaluate, schedule a demo, and ultimately deploy Histiva.
+1. **Bring in operators** — clinic administrators, NGOs (MSF, faith-based mission hospitals, Red Crescent partners) who want to evaluate, schedule a demo, and ultimately deploy MediSina.
 2. **Bring in funders** — foundations, individual donors, philanthropic programs who want to sponsor a deployment for a specific clinic or region.
 
-The product itself (HBYS) ships in parallel with site launch; the first hospital pilot will be live within weeks of site go-live. The site speaks in **present tense** — "Histiva runs hospital operations" — not "we're building". No mock case studies; the first real partner is referenced (anonymized or named, per partner consent).
+The product itself (HBYS) ships in parallel with site launch; the first hospital pilot will be live within weeks of site go-live. The site speaks in **present tense** — "MediSina runs hospital operations" — not "we're building". No mock case studies; the first real partner is referenced (anonymized or named, per partner consent).
 
 ---
 
@@ -31,7 +31,7 @@ Two co-equal primary audiences. The homepage holds both in tension via a **missi
 | Secondary: clinician | "Is this safe? Is the workflow sane?" | `/product`, `/ai` | Reads, hopefully shares with admin |
 | Secondary: tech evaluator | "What stack? Open source? Extensible?" | `/ai`, `/product` | GitHub link, contact form |
 
-The Contact form is **one form**, with a hidden "interest type" select (default to "use Histiva at our clinic", or "fund a deployment", or "other") so we route incoming Formspree submissions to the right inbox internally.
+The Contact form is **one form**, with a hidden "interest type" select (default to "use MediSina at our clinic", or "fund a deployment", or "other") so we route incoming Formspree submissions to the right inbox internally.
 
 ---
 
@@ -68,7 +68,7 @@ The Contact form is **one form**, with a hidden "interest type" select (default 
 - Body: weight 400, line-height 1.55.
 - Monospace fallback for code samples: system `ui-monospace` stack.
 
-**Logo:** Wordmark for v1 — "Histiva" set in Inter 700, primary-900, optical-sized for nav. A small clinical glyph (lowercase "h" in a rounded square, or a stethoscope-derived mark) may be added later by a designer; not blocking v1.
+**Logo:** Wordmark for v1 — "MediSina" set in Inter 700, primary-900, optical-sized for nav. A small clinical glyph (lowercase "h" in a rounded square, or a stethoscope-derived mark) may be added later by a designer; not blocking v1.
 
 ---
 
@@ -111,7 +111,7 @@ The Contact form is **one form**, with a hidden "interest type" select (default 
 
 ### 5.2 `/product` — Product (module tour)
 
-Single page, anchored sections (one per module). TOC at top. For each module (10 modules from `histiva-app` per `rfp.md` §3): short description, 2-3 bullet capabilities, screenshot or illustration, link to `/contact` for "see it live".
+Single page, anchored sections (one per module). TOC at top. For each module (10 modules from `medisina-app` per `rfp.md` §3): short description, 2-3 bullet capabilities, screenshot or illustration, link to `/contact` for "see it live".
 
 Module list (English names; source: `CLAUDE.md` repo layout + `rfp.md` §3.2-3.4):
 - Patient Management
@@ -140,11 +140,11 @@ Sections:
 ### 5.4 `/for-hospitals` — Deployment story
 
 Sections:
-- Hero: "Bring Histiva to your clinic in days, not months."
+- Hero: "Bring MediSina to your clinic in days, not months."
 - "Who this is for" — list of hospital profiles (small private hospital, NGO-operated clinic, faith-based mission, rural district hospital).
 - "How deployment works" — 4-step timeline: (1) Discovery call, (2) Site assessment + sizing, (3) Install + data setup (1-2 days on-site or remote), (4) Training + go-live (1 week).
 - "What you need" — hardware minimums (1 server-grade laptop or small server, router, ≥2 client devices). "What we provide" — installation, training, ongoing support model.
-- Cost section — transparent: "Histiva software is free to nonprofit clinics. Deployment cost (installation, training, year-one support) is typically funded by a sponsor — we'll help you find one if needed."
+- Cost section — transparent: "MediSina software is free to nonprofit clinics. Deployment cost (installation, training, year-one support) is typically funded by a sponsor — we'll help you find one if needed."
 - FAQ — 5-6 items.
 - CTA: "Schedule a demo" → contact form pre-filled with interest=hospital.
 
@@ -160,10 +160,10 @@ Sections:
 
 ### 5.6 `/about` — Mission, team, history
 
-- Mission statement (3-4 paragraphs). The story of why Histiva exists. Written in plain language, no jargon.
+- Mission statement (3-4 paragraphs). The story of why MediSina exists. Written in plain language, no jargon.
 - Principles (5-6 short statements: auditable-by-design, clinician-led, privacy-by-default, low-resource-tested, nonprofit-governed, AI-with-guardrails).
 - Team — initially small (founders / core contributors). Photos + 1-line bios. Open to growth (v1 ships with whoever is on the team today).
-- Governance — nonprofit structure (when registered). Until then, generic: "Operated by the Histiva working group, in the process of forming a nonprofit legal entity." Specific framework (e.g., Türkiye dernek, US 501(c)(3), UK CIC) decided with counsel before launch — open question §17.
+- Governance — nonprofit structure (when registered). Until then, generic: "Operated by the MediSina working group, in the process of forming a nonprofit legal entity." Specific framework (e.g., Türkiye dernek, US 501(c)(3), UK CIC) decided with counsel before launch — open question §17.
 
 _Resolved 2026-05-13: HBYS is closed-source proprietary. The earlier draft of this section included an "Open source — Apache-2.0" line; that has been removed from the live `/about` page (commit `a768b0b`). The principles grid swaps "open-source-first" for "auditable by design"._
 
@@ -174,9 +174,9 @@ Form fields (Formspree-hosted):
 - Email (required)
 - Organization
 - Country
-- Interest (**required dropdown**): "Bring Histiva to our clinic" / "Sponsor a deployment" / "Press inquiry" / "Open source / contribute" / "Other"
+- Interest (**required dropdown**): "Bring MediSina to our clinic" / "Sponsor a deployment" / "Press inquiry" / "Open source / contribute" / "Other"
 - Message (required, min 30 chars)
-- GDPR consent checkbox (required) — "I consent to Histiva storing my submission to respond. See Privacy."
+- GDPR consent checkbox (required) — "I consent to MediSina storing my submission to respond. See Privacy."
 
 On submit: Formspree sends email to a routed inbox (we configure routing rules by `_subject` field). Success page: thank-you message + "we respond within 3 business days" + link to GitHub.
 
@@ -188,7 +188,7 @@ No file upload v1 (Formspree free tier limits).
 - Cookie banner explanation — GA4, with opt-out.
 - Data retention: contact submissions kept 24 months, then purged.
 - Children's data — not collected. Site not aimed at <18.
-- Contact for privacy questions: `privacy@histiva.org` (mailto).
+- Contact for privacy questions: `privacy@medisina.health` (mailto).
 - Linked legal entity once formed.
 
 ---
@@ -250,7 +250,7 @@ i18n: {
 |-------|--------|--------|
 | Framework | Astro 6.3 | Static site, MPA, fast, content-first |
 | Output | Static (`output: 'static'`) | GitHub Pages requires static |
-| Styles | Tailwind CSS v4 (CSS-first config) | Matches `histiva-app` stack, modern tokens |
+| Styles | Tailwind CSS v4 (CSS-first config) | Matches `medisina-app` stack, modern tokens |
 | Icons | `astro-icon` + Lucide pack | Consistent stroke icons |
 | Images | Astro `<Image />` + Sharp | Auto-optimize Unsplash + local |
 | Fonts | `@fontsource-variable/inter` | Self-hosted (privacy) |
@@ -272,7 +272,7 @@ i18n: {
 
 **Setup:**
 1. Create Formspree account (free tier: 50 submissions/month).
-2. Create one form: "Histiva Contact". Note the endpoint: `https://formspree.io/f/XXXXX`.
+2. Create one form: "MediSina Contact". Note the endpoint: `https://formspree.io/f/XXXXX`.
 3. In Formspree dashboard, enable email forwarding + spam filter (Akismet built-in).
 4. Configure inbox routing rules by `_subject` field (set client-side from "Interest" dropdown).
 
@@ -280,7 +280,7 @@ i18n: {
 
 **Privacy:** Form submissions are stored by Formspree in the US; this is disclosed in `/privacy`.
 
-**Failure mode:** If Formspree is down, form shows inline error after 10s timeout: "Submission failed — please email contact@histiva.org directly". This is the documented escape hatch.
+**Failure mode:** If Formspree is down, form shows inline error after 10s timeout: "Submission failed — please email contact@medisina.health directly". This is the documented escape hatch.
 
 ---
 
@@ -288,7 +288,7 @@ i18n: {
 
 **Tag:** Standard GA4 gtag.js, loaded conditionally after user accepts consent. GA4 measurement ID stored as build-time env var `PUBLIC_GA_MEASUREMENT_ID`; if absent, GA is not loaded (e.g., on PR previews).
 
-**Consent banner (`<CookieBanner />`):** Slides in from bottom on first visit. Two buttons: "Accept all" / "Decline non-essential". Choice persists in `localStorage` (key: `histiva.consent`). Decline disables GA4 entirely.
+**Consent banner (`<CookieBanner />`):** Slides in from bottom on first visit. Two buttons: "Accept all" / "Decline non-essential". Choice persists in `localStorage` (key: `medisina.consent`). Decline disables GA4 entirely.
 
 **No third-party consent platforms** (Cookiebot, OneTrust, etc.) — overkill for current scope.
 
@@ -302,7 +302,7 @@ i18n: {
 
 ## 11. Deployment — GitHub Pages + Actions
 
-**Repo:** `histiva/histiva.github.io` (organization GitHub Pages).
+**Repo:** `medisina/medisina-health.github.io` (organization GitHub Pages).
 
 **Branching:** `main` is source of truth. Deploy on push to `main`.
 
@@ -365,7 +365,7 @@ Illustrations exported as SVG, lightly recolored to match Trust Blue palette (pr
 ## 15. Project Structure
 
 ```
-histiva.github.io/
+medisina-health.github.io/
 ├── astro.config.mjs              # i18n + integrations + sitemap
 ├── package.json
 ├── tsconfig.json
@@ -412,7 +412,7 @@ histiva.github.io/
 ├── docs/
 │   └── superpowers/
 │       └── specs/
-│           └── 2026-05-13-histiva-marketing-site-design.md   # THIS FILE
+│           └── 2026-05-13-medisina-marketing-site-design.md   # THIS FILE
 ├── .gitignore
 ├── .nvmrc
 ├── README.md
@@ -425,7 +425,7 @@ histiva.github.io/
 
 - Blog / Press / News (waiting for real content)
 - Case studies (waiting for 2nd+ deployment)
-- Open-source docs site (`docs.histiva.org` style)
+- Open-source docs site (`docs.medisina.health` style)
 - Team detail pages
 - Roadmap page
 - Careers / Volunteer page
@@ -454,7 +454,7 @@ histiva.github.io/
 
 **Open questions to resolve before implementation:**
 
-1. Legal entity name + jurisdiction for Privacy / About copy? (placeholder: "Histiva, a nonprofit in formation")
+1. Legal entity name + jurisdiction for Privacy / About copy? (placeholder: "MediSina, a nonprofit in formation")
 2. Contact email address(es) — `contact@`, `privacy@`, `press@`?
 3. First partner hospital — anonymized or named in launch copy? Need partner consent.
 4. OG image illustrator — DIY in Figma or use unDraw-derived templates? Default: unDraw-derived for v1.
@@ -473,7 +473,7 @@ When the site is "done v1":
 - Cookie banner accept/decline state persists and gates GA4 correctly.
 - Language switcher works: EN renders full content; TR/FR/AR render shell + translation banner.
 - Arabic RTL renders without layout breaks on hero + module grid.
-- GitHub Actions deploys on push to `main`, site live at `https://histiva.github.io/` within 90s of push.
+- GitHub Actions deploys on push to `main`, site live at `https://medisina-health.github.io/` within 90s of push.
 - README documents local dev (`npm install`, `npm run dev`) and content-editing workflow.
 - CLAUDE.md (root) gives future Claude sessions the project context.
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * Generate the default Open Graph image for the Histiva marketing site.
+ * Generate the default Open Graph image for the MediSina marketing site.
  *
  * This is a *placeholder* renderer — it produces a Trust Blue background
- * with a white "Histiva" wordmark and short subtitle, sized 1200x630 (the
+ * with a white "MediSina" wordmark and short subtitle, sized 1200x630 (the
  * Open Graph spec standard). It exists so the site's <meta property="og:image">
  * resolves to a real file in v1.
  *
@@ -34,7 +34,7 @@ const SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${
   <text x="600" y="290" text-anchor="middle"
         font-family="Inter, system-ui, -apple-system, sans-serif"
         font-size="120" font-weight="800" fill="#ffffff"
-        letter-spacing="-2.4">Histiva</text>
+        letter-spacing="-2.4">MediSina</text>
   <text x="600" y="370" text-anchor="middle"
         font-family="Inter, system-ui, -apple-system, sans-serif"
         font-size="32" font-weight="400" fill="#dbeafe">

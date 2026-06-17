@@ -7,7 +7,7 @@ const { locale } = Astro.props;
   <div class="container-page py-4 flex flex-wrap items-center justify-between gap-4">
     <div class="text-sm max-w-2xl">
       <p id="cookie-title" class="font-semibold text-ink-900 mb-1">{t('cookie.title', locale)}</p>
-      <p class="text-ink-600">{t('cookie.body', locale)} <a href="/privacy" class="underline" aria-label="Learn more about Histiva's privacy policy">{t('cookie.learn_more', locale)}</a></p>
+      <p class="text-ink-600">{t('cookie.body', locale)} <a href="/privacy" class="underline" aria-label="Learn more about MediSina's privacy policy">{t('cookie.learn_more', locale)}</a></p>
     </div>
     <div class="flex gap-2">
       <button type="button" id="cookie-decline" class="px-4 py-2 text-sm rounded-md border border-slate-300 hover:bg-slate-50">{t('cookie.decline', locale)}</button>
@@ -16,7 +16,7 @@ const { locale } = Astro.props;
   </div>
 </div>
 <script>
-  const KEY = 'histiva.consent';
+  const KEY = 'medisina.consent';
   const banner = document.getElementById('cookie-banner');
   const stored = localStorage.getItem(KEY);
   if (banner && stored === null) banner.classList.remove('hidden');
@@ -25,7 +25,7 @@ const { locale } = Astro.props;
     localStorage.setItem(KEY, value);
     banner?.classList.add('hidden');
     if (value === 'accept') {
-      document.dispatchEvent(new CustomEvent('histiva:consent-accepted'));
+      document.dispatchEvent(new CustomEvent('medisina:consent-accepted'));
     }
   }
 
