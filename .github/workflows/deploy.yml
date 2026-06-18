@@ -26,7 +26,7 @@ jobs:
         env:
           PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
           PUBLIC_FORMSPREE_ENDPOINT: ${{ vars.PUBLIC_FORMSPREE_ENDPOINT }}
-          PUBLIC_SITE_URL: https://histiva.github.io
+          PUBLIC_SITE_URL: https://medisina-health.github.io
       - uses: actions/upload-pages-artifact@v3
         with: { path: dist }
 

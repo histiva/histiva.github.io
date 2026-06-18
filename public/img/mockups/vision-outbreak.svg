@@ -21,7 +21,7 @@
   <rect x="40" y="40" width="720" height="48" rx="14" fill="#0c2461"/>
   <rect x="40" y="74" width="720" height="14" fill="#0c2461"/>
   <text x="60" y="70" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Outbreak Watch</text>
-  <text x="60" y="84" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#93c5fd">Federated sentinel · 38 Histiva clinics in network</text>
+  <text x="60" y="84" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#93c5fd">Federated sentinel · 38 MediSina clinics in network</text>
 
   <text x="744" y="70" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#dbeafe" text-anchor="end">Region: East Africa</text>
   <text x="744" y="84" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#dbeafe" text-anchor="end">Updated 2 min ago</text>

@@ -1,10 +1,10 @@
-# Histiva Marketing Site
+# MediSina Marketing Site
 
-**Status:** Live at https://histiva.github.io/ since 2026-05-13.
+**Status:** Live at https://medisina-health.github.io/ since 2026-05-13.
 
-Static marketing site for Histiva — a nonprofit hospital information system for low-resource clinics.
+Static marketing site for MediSina — a nonprofit hospital information system for low-resource clinics.
 
-**Production:** https://histiva.github.io/
+**Production:** https://medisina-health.github.io/
 
 ## Tech
 
@@ -41,5 +41,5 @@ If either is absent, the feature degrades gracefully (GA off, form shows "config
 
 ## Documentation
 
-- Spec: `docs/superpowers/specs/2026-05-13-histiva-marketing-site-design.md`
-- Plan: `docs/superpowers/plans/2026-05-13-histiva-marketing-site.md`
+- Spec: `docs/superpowers/specs/2026-05-13-medisina-marketing-site-design.md`
+- Plan: `docs/superpowers/plans/2026-05-13-medisina-marketing-site.md`

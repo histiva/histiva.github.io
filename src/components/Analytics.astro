@@ -3,10 +3,10 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 ---
 {GA_ID && (
   <script is:inline define:vars={{ GA_ID }}>
-    const KEY = 'histiva.consent';
+    const KEY = 'medisina.consent';
     function load() {
-      if (window.__histivaGaLoaded) return;
-      window.__histivaGaLoaded = true;
+      if (window.__medisinaGaLoaded) return;
+      window.__medisinaGaLoaded = true;
       const s = document.createElement('script');
       s.async = true;
       s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
@@ -17,6 +17,6 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
       window.gtag('config', GA_ID, { anonymize_ip: true });
     }
     if (localStorage.getItem(KEY) === 'accept') load();
-    document.addEventListener('histiva:consent-accepted', load);
+    document.addEventListener('medisina:consent-accepted', load);
   </script>
 )}
