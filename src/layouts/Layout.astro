@@ -21,7 +21,7 @@ const {
 
 const safeLocale: Locale = isValidLocale(locale) ? locale : DEFAULT_LOCALE;
 const dir = getLocaleDir(safeLocale);
-const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://medisina-health.github.io';
+const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://medisina.health';
 const canonical = new URL(Astro.url.pathname, siteUrl).toString();
 ---
 <!doctype html>

@@ -5,7 +5,7 @@ import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://medisina-health.github.io',
+  site: 'https://medisina.health',
   output: 'static',
   trailingSlash: 'ignore',
   i18n: {
