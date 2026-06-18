@@ -3,7 +3,7 @@ import { type Locale, t, localizedPath } from '~/i18n/utils';
 interface Props { locale: Locale; defaultInterest?: 'hospital' | 'donor' | 'press' | 'other'; }
 const { locale, defaultInterest = 'hospital' } = Astro.props;
 const endpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
-const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PUBLIC_SITE_URL ?? 'https://medisina-health.github.io').toString();
+const thankYou = new URL(localizedPath('/thank-you', locale), import.meta.env.PUBLIC_SITE_URL ?? 'https://medisina.health').toString();
 ---
 {!endpoint && (
   <div class="bg-warning-50 border border-amber-300 rounded-lg p-4 text-warning-700 text-sm">
